@@ -1,0 +1,95 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+@import url('https://fonts.googleapis.com/css2?family=Palanquin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@media (min-width: 320px) and (max-width: 999px) {
+  img {
+    min-width: 80px;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .sideimg {
+    height: auto;
+  }
+  body {
+    margin: 15px;
+    line-height: 1.6;
+  }
+  h2 {
+    font-size: 125%;
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    margin: 100px;
+  }
+  img {
+    max-height: 50%;
+    max-width: 50%;
+  }
+}
+
+body {
+  background-color: #232323;
+  color: #e0e0e0;
+  font-family: "Open Sans";
+  margin-top: 10px;
+}
+
+/*header*/
+h2 {
+  color: #e6cfa5;
+  font-family: "Palanquin";
+}
+
+/*hyperlink color*/
+a {
+  color: #FFBF00 ;
+}
+
+/*active nav tab*/
+.active {
+  background-color: #c9932e;
+}
+
+.highlight {
+  color: #FFBF00;
+}
+
+.light {
+  color: #dbb367;
+}
+
+/*nav bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/*makes elements of nav bar align left*/
+li {
+  float: left;
+}
+
+/*nav bar text*/
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/*nav bar text hover*/
+li a:hover {
+  background-color: #a8730f;
+}
+
+  
