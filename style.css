@@ -33,11 +33,22 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
 body {
   background-color: #232323;
   color: #e0e0e0;
   font-family: "Open Sans";
   margin-top: 10px;
+}
+
+/*project images*/
+.project_img {
+  min-width: 100%;
 }
 
 /*header*/
@@ -76,6 +87,20 @@ ul {
 /*makes elements of nav bar align left*/
 li {
   float: left;
+}
+
+/*Columns*/
+.column {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /*nav bar text*/
