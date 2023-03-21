@@ -49,6 +49,7 @@ body {
 /*project images*/
 .project_img {
   min-width: 100%;
+  float: left;
 }
 
 /*header*/
