@@ -1,18 +1,10 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
+@import url('https://fonts.googleapis.com/css2?family=Palanquin&family=Open+Sans&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Palanquin&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-@media (min-width: 320px) and (max-width: 999px) {
+@media (max-width: 999px) {
   img {
     min-width: 80px;
     max-height: 100%;
     max-width: 100%;
-  }
-  .sideimg {
-    height: auto;
   }
   body {
     margin: 15px;
@@ -20,6 +12,9 @@
   }
   h2 {
     font-size: 125%;
+  }
+  .column {
+    width: 100%;
   }
 }
 
@@ -33,17 +28,25 @@
   }
 }
 
-@media screen and (max-width: 720px) {
-  .column {
-    width: 100%;
-  }
-}
-
 body {
   background-color: #232323;
   color: #e0e0e0;
   font-family: "Open Sans";
   margin-top: 10px;
+}
+
+/*Columns*/
+.column {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /*project images*/
@@ -76,7 +79,7 @@ a {
   color: #dbb367;
 }
 
-/*nav bar*/
+/* Navigation bar styles */
 ul {
   list-style-type: none;
   margin: 0;
@@ -85,26 +88,10 @@ ul {
   background-color: #333;
 }
 
-/*makes elements of nav bar align left*/
 li {
   float: left;
 }
 
-/*Columns*/
-.column {
-  float: left;
-  width: 48%;
-  margin-right: 2%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/*nav bar text*/
 li a {
   display: block;
   color: white;
@@ -113,9 +100,6 @@ li a {
   text-decoration: none;
 }
 
-/*nav bar text hover*/
 li a:hover {
   background-color: #a8730f;
 }
-
-  
