@@ -64,7 +64,20 @@
       <p><a href="https://steamcommunity.com/id/altcode255">Steam</a> | <span class=highlight>SW-4891-4405-5800 (Nintendo Switch)</span> | <span class=highlight>26796086945787912 (Project Sekai JP)</span></p>
     </div>
   </div>
-  {% include footer.html %}
+  <footer>
+		<hr>
+		<center>
+			<span style="color:#d9d9d9" id="last-updated"><b>Last Updated:</b></span>
+		</center>
+		<script>
+			fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?per_page=1')
+				.then(res => res.json())
+				.then(res => {
+					date = new Date(res[0].commit.committer.date)
+					document.getElementById('last-updated').innerHTML = "<b>Last Updated:</b> " + date.toLocaleString().replace(",", " @") + " (PDT)";
+				})
+		</script>
+	</footer>
 </body>
 
 </html>
