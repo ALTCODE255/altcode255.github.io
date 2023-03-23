@@ -1,0 +1,14 @@
+<footer>
+	<hr>
+	<center>
+		<span style="color:#d9d9d9" id="last-updated"><b>Last Updated:</b></span>
+	</center>
+	<script>
+		fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?per_page=1')
+			.then(res => res.json())
+			.then(res => {
+				date = new Date(res[0].commit.committer.date)
+				document.getElementById('last-updated').innerHTML = "<b>Last Updated:</b> " + date.toLocaleString().replace(",", " @") + " (PDT)";
+			})
+	</script>
+</footer>
