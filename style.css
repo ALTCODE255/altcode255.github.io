@@ -79,36 +79,30 @@ a {
 }
 
 /* Navigation bar styles */
-.nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #6b6b6b4c;
 }
 
-.nav li {
+.navbar a {
   float: left;
-}
-
-.nav li a {
   display: block;
+  font-size: 1rem;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-.nav li a:hover {
+.navbar a:hover {
   background-color: #a8730f;
 }
 
-/*active nav tab*/
-.active {
+.navbar a.active {
   background-color: #c9932e;
 }
 
-.special {
+.navbar a.special {
   background-color: #726b60;
 }
 
