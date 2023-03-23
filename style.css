@@ -35,6 +35,10 @@ body {
   margin-top: 10px;
 }
 
+hr {
+  margin: 25px;
+}
+
 /*Columns*/
 .column {
   float: left;
@@ -106,4 +110,24 @@ a {
 
 .special {
   background-color: #726b60;
+}
+
+.ProjectsTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-style: solid;
+  color: #ffffff;
+}
+
+.ProjectsTable td,
+.ProjectsTable th {
+  border-width: 2px;
+  border-color: #e7b551;
+  border-style: solid;
+  padding: 10px;
+}
+
+.ProjectsTable thead {
+  background-color: #dc9822;
 }
