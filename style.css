@@ -34,7 +34,7 @@
 }
 
 html {
-	background: var(--bs-body-bg)!important;
+	background: var(--bs-body-bg) !important;
 }
 
 body {
@@ -47,6 +47,10 @@ h2 {
 	color: var(--bs-secondary);
 	font-family: "Palanquin";
 	font-size: 1.5rem;
+}
+
+img {
+	margin-top: 5px;
 }
 
 .nav-item {
@@ -69,5 +73,5 @@ h2 {
 }
 
 ::selection {
-	background: #366d85a5!important;
+	background: #366d85a5 !important;
 }
