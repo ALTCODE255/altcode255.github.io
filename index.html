@@ -96,7 +96,7 @@
 				.then(res => res.json())
 				.then(res => {
 					date = new Date(res[0].commit.committer.date)
-					document.getElementById('last-updated').innerHTML = "<b>Last Updated:</b> " + date.toLocaleString().replace(",", " @") + " (PDT)";
+					document.getElementById('last-updated').innerHTML = "<b>Last Updated:</b> " + date.toLocaleString().replace(",", " @");
 				})
 		</script>
 		<hr>
