@@ -80,6 +80,10 @@ h2 {
 	font-size: 1.5rem;
 }
 
+b {
+	color: var(--bs-secondary);
+}
+
 .navbar {
 	z-index: 1000;
 }
