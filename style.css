@@ -80,6 +80,12 @@ h2 {
 	font-size: 1.5rem;
 }
 
+h3 {
+	color: var(--bs-primary);
+	font-family: "Palanquin";
+	font-size: 1.25rem;
+}
+
 b {
 	color: var(--bs-secondary);
 }
