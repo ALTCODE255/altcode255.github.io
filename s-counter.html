@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALT255 | Live S Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav p-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq">Frequently Asked Questions</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="s-counter">Live S Counter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://shuuenpro.github.io">Nameless's Shuuen no Shiori Guide</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <div class="animate-in" id="content">
+        <div class="container-fluid p-2">
+            <center>
+                <h2>Live S Counter</h2>
+                <p>The "S Counter" is a utility / spreadsheet / program (a lot of automation is involved) I use to keep track of how many times I type or say "Shuuen" or "Sonic" in a given day. View full Google Sheet <a href="https://docs.google.com/spreadsheets/d/1VyD1fDG6noKldoNCQIhoGNAX7cTwuP8HAI0PViik0k0/">here</a>.</p>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQEmQEjkmew7g2gXAjt89m9bFSkQfxRRL8kkmusn14m24DOTZEIe84RPLDGlzgIv-x8bcG2H8rD1t0j/pubhtml?gid=1581346059&amp;widget=false&amp;headers=false" width="495px" height="540px"></iframe>
+                </div>
+            </center>
+        </div>
+    </div>
+    <footer>
+        <hr>
+        <center>
+            <span id="last-updated"><b>Last Updated:</b></span>
+        </center>
+        <script>
+            fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?per_page=1')
+                .then(res => res.json())
+                .then(res => {
+                    date = new Date(res[0].commit.committer.date)
+                    document.getElementById('last-updated').innerHTML = "<b>Last Updated:</b> " + date.toLocaleString().replace(",", " @");
+                })
+        </script>
+        <hr>
+    </footer>
+</body>
+
+</html>
