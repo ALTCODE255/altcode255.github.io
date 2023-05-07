@@ -29,7 +29,7 @@
     --bs-link-color: rgb(255, 191, 0);
     --bs-link-color-rgb: 255, 191, 0;
     --bs-link-decoration: underline;
-    --bs-link-hover-color: rgba(234, 196, 82, 0.856);
+    --bs-link-hover-color: rgba(243, 231, 104, 0.856);
     --bs-link-hover-color-rgb: 234, 196, 82;
 }
 
@@ -121,4 +121,5 @@ b {
 
 ::selection {
     background: #366d85a5 !important;
+    color: white;
 }
