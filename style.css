@@ -4,7 +4,7 @@
 :root {
     --bs-primary: #ffbf00;
     --bs-primary-rgb: 255, 191, 0;
-    --bs-secondary: #f5e0b5;
+    --bs-secondary: #00b7ff;
     --bs-secondary-rgb: 245, 224, 181;
     --bs-success: #198754;
     --bs-success-rgb: 25, 135, 84;
@@ -16,7 +16,7 @@
     --bs-danger-rgb: 220, 53, 69;
     --bs-light: #f8f9fa;
     --bs-light-rgb: 248, 249, 250;
-    --bs-dark: #212529;
+    --bs-dark: #1d1f2a;
     --bs-dark-rgb: 33, 37, 41;
     --bs-body-font-family: "Open Sans";
     --bs-body-font-size: 1rem;
