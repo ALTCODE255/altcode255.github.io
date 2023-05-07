@@ -98,6 +98,7 @@ b {
 
 .navbar {
     z-index: 1000;
+    margin: auto !important;
 }
 
 .nav-item {
