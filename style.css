@@ -4,7 +4,7 @@
 :root {
     --bs-primary: #ffbf00;
     --bs-primary-rgb: 255, 191, 0;
-    --bs-secondary: #00b7ff;
+    --bs-secondary: #4e96d6;
     --bs-secondary-rgb: 245, 224, 181;
     --bs-success: #198754;
     --bs-success-rgb: 25, 135, 84;
@@ -103,7 +103,7 @@ b {
 .nav-item {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    background-color: #343a40;
+    background-color: #313d4b;
 }
 
 .nav-link {
