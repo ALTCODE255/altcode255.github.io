@@ -2,55 +2,55 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALT255 | Template</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="style.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ALT255 | Template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <ul class="navbar-nav p-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects">Personal Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="s-counter">The S Counter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://shuuenpro.github.io">Nameless's Shuuen no Shiori Guide</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <div class="animate-in" id="content">
-        <div class="container-fluid p-2">
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div class="container-fluid">
+				<ul class="navbar-nav p-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="projects">Personal Projects</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="s-counter">The S Counter</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://shuuenpro.github.io">Nameless's Shuuen no Shiori Guide</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<div class="animate-in" id="content">
+		<div class="container-fluid p-2">
 
-        </div>
-    </div>
-    <footer>
-        <hr>
-        <center>
-            <span id="last-updated"><b>Last Updated:</b></span>
-        </center>
-        <script>
-            fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?per_page=1')
-                .then(res => res.json())
-                .then(res => {
-                    date = new Date(res[0].commit.committer.date)
-                    document.getElementById('last-updated').innerHTML = "<b>Last Updated:</b> " + date.toLocaleString().replace(",", " @");
-                })
-        </script>
-        <hr>
-    </footer>
+		</div>
+	</div>
+	<footer>
+		<hr>
+		<center>
+			<span id="last-updated"><b>Page Last Updated:</b></span>
+		</center>
+		<script>
+			fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=template.html')
+				.then(res => res.json())
+				.then(res => {
+					date = new Date(res[0].commit.committer.date)
+					document.getElementById('last-updated').innerHTML = "<b>Page Last Updated:</b> " + date.toLocaleString().replace(",", " @");
+				})
+		</script>
+		<hr>
+	</footer>
 </body>
 
 </html>

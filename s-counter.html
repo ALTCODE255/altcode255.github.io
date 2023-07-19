@@ -45,14 +45,14 @@
 	<footer>
 		<hr>
 		<center>
-			<span id="last-updated"><b>Last Updated:</b></span>
+			<span id="last-updated"><b>Page Last Updated:</b></span>
 		</center>
 		<script>
-			fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?per_page=1')
+			fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=s-counter.html')
 				.then(res => res.json())
 				.then(res => {
 					date = new Date(res[0].commit.committer.date)
-					document.getElementById('last-updated').innerHTML = "<b>Last Updated:</b> " + date.toLocaleString().replace(",", " @");
+					document.getElementById('last-updated').innerHTML = "<b>Page Last Updated:</b> " + date.toLocaleString().replace(",", " @");
 				})
 		</script>
 		<hr>
