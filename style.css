@@ -1,14 +1,3 @@
-@font-face {
-    font-family: "Open Sans";
-    src: url("Open Sans.ttf");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Palanquin";
-    src: url("Palanquin.ttf");
-}
-
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
 
 :root {
@@ -132,4 +121,27 @@ b {
 ::selection {
     background: #366d85a5 !important;
     color: white;
+}
+
+.gist, .gist-data {
+    background: none!important;
+}
+
+.gist .gist-file {
+    border: none!important;
+}
+
+.gist .markdown-body tr {
+    background: #414873!important;
+    color: #fbcf4b;
+}
+
+.gist .markdown-body table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gist-meta {
+    background: var(--bs-primary)!important;
+    color: white!important;
 }
