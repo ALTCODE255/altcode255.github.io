@@ -134,25 +134,18 @@ b {
     color: white;
 }
 
-.gist, .gist-data {
-    background: none!important;
+
+.table {
+    --bs-table-bg: #2a2f47;
+    --bs-table-color: #fbcf4b;
 }
 
-.gist .gist-file {
-    border: none!important;
+.table-striped > tbody:nth-child(1) > tr > * {
+    background: #272c43;
+    color: var(--bs-primary);
 }
 
-.gist .markdown-body tr {
-    background: #414873!important;
-    color: #fbcf4b;
-}
-
-.gist .markdown-body table {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.gist-meta {
-    background: var(--bs-primary)!important;
-    color: white!important;
+.table-striped > tbody:nth-child(2) > tr:nth-of-type(2n+1) > * {
+	--bs-table-color-type: var(--bs-table-color);
+	--bs-table-bg-type: #33395e;
 }
