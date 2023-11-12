@@ -46,7 +46,7 @@
                         var converter = new showdown.Converter();
                         converter.setOption('tables', true);
                         text = t.split("\n").slice(0, 33).join("\n");
-                        html = converter.makeHtml(text).replace("<table>", "<table class=\"table table-bordered table-striped w-auto\">").replaceAll("<th>", "<th class=\"ps-3 pe-3\">").replaceAll("<td>", "<td class=\"ps-3 pe-3\">");
+                        html = converter.makeHtml(text).replace("<table>", "<table class=\"table table-bordered table-striped w-75 m-auto\">").replaceAll("<th>", "<th class=\"ps-3 pe-3\">").replaceAll("<td>", "<td class=\"ps-3 pe-3\">");
                         document.getElementById("s-table").innerHTML = html;
                     })
                 </script>
