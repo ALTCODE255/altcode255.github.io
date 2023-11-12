@@ -45,7 +45,7 @@
                     .then(t => {
                         var converter = new showdown.Converter();
                         converter.setOption('tables', true);
-                        text = t.split("\n").slice(0, 30).join("\n");
+                        text = t.split("\n").slice(0, 33).join("\n");
                         html = converter.makeHtml(text).replace("<table>", "<table class=\"table table-bordered table-striped\"");
                         document.getElementById("s-table").innerHTML = html;
                     })
