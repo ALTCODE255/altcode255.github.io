@@ -141,6 +141,6 @@ b {
 }
 
 .table-striped > tbody > tr:nth-of-type(2n+1) > * {
-	--bs-table-color-type: var(--bs-table-color);
-	--bs-table-bg-type: #33395e;
+    --bs-table-color-type: var(--bs-table-color);
+    --bs-table-bg-type: #33395e;
 }
