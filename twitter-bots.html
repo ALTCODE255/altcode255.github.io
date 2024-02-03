@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALT255 | Twitter Bots</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav p-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects">Projects</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="twitter-bots">Twitter Bots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="s-counter">The S Counter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://shuuenpro.github.io">Nameless's Shuuen no Shiori Guide</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="animate-in" id="content">
+        <div class="container-fluid p-2">
+            <h1 class="text-primary">Nameless's Twitter Quote Bots</h1>
+            <p> Submit quotes for any of these bots <a href="https://forms.gle/L2QqR4dAGMNXcGCU6">here</a>.</p>
+            <p>
+                <span class="text-primary"><a href="https://twitter.com/hourlygamesonic">Hourly (Game) Sonic Quotes (Twitter Bot)</a></span> - <span class="text-success">APR 9 2023 -> PRESENT</span><br>
+                Twitter bot that posts quotes said by Sonic the Hedgehog from various pieces of official Sonic media every hour.
+                <br>
+                <b>Utilizes:</b> <a href="https://github.com/ALTCODE255/hourlygamesonic/">Python (Tweepy)</a>, Raspberry Pi (cron job)
+            </p>
+            <p>
+                <span class="text-primary"><a href="https://twitter.com/hourlyshadowbot">Hourly Shadow Quotes</a></span> - <span class="text-success">JUN 1 2023 -> PRESENT</span><br>
+                Twitter bot that posts quotes said by Shadow the Hedgehog from various pieces of official Sonic media every hour.
+                <br>
+            </p>
+            <p>
+                <span class="text-primary"><a href="https://twitter.com/coolsonicquotes">Cool Sonic Quotes</a></span> - <span class="text-success">NOV 19 2023 -> PRESENT</span><br>
+                Twitter bot that posts memorable quotes from various pieces of official Sonic media every hour.
+                <br>
+                <b>Utilizes:</b> <a href="https://github.com/ALTCODE255/coolsonicquotes/">Python (Tweepy)</a>, Raspberry Pi (cron job)
+            </p>
+            <p>
+                <span class="text-primary"><a href="https://twitter.com/akechiquotebot">Goro Akechi Quotes</a></span> - <span class="text-success">FEB 2 2024 -> PRESENT</span><br>
+                Twitter bot that posts quotes said by Goro Akechi from various pieces of official Persona 5 media every hour.
+                <br>
+                <b>Utilizes:</b> <a href="https://github.com/ALTCODE255/hourlyshadowbot/">Python (Tweepy)</a>, Raspberry Pi (cron job)
+            </p>
+        </div>
+    </div>
+    <footer>
+        <hr>
+        <center>
+            <span id="last-updated"><b>Page Last Updated:</b></span>
+        </center>
+        <script>
+            fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=twitter-bots.html')
+                .then(res => res.json())
+                .then(res => {
+                    date = new Date(res[0].commit.committer.date)
+                    document.getElementById('last-updated').innerHTML = "<b>Page Last Updated:</b> " + date.toLocaleString().replace(",", " @");
+                })
+        </script>
+        <hr>
+    </footer>
+</body>
+
+</html>
