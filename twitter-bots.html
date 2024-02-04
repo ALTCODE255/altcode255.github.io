@@ -44,7 +44,7 @@
                 .then(text => text.text())
                 .then((text) => {
                     iframes.forEach(function (iframe) {
-                        var url = "https://twitframe.com/show?url=https%3A%2F%2Ftwitter.com%2Fuser%2Fstatus%2F" + text.split("\n")[idx]
+                        var url = "https://twitframe.com/show?url=https%3A%2F%2Ftwitter.com%2Fuser%2Fstatus%2F" + text.split("\n")[idx] + "&theme=dark"
                         iframe.setAttribute("src", url)
                         idx++;
                     })
