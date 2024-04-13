@@ -48,12 +48,6 @@
   animation: fadeIn 0.5s ease-in;
 }
 
-.animate-out {
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
