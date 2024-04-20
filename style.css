@@ -143,7 +143,3 @@ blockquote.quote {
   padding: 0.5em 10px;
   margin: 0;
 }
-
-blockquote p {
-  display: inline-block;
-}
