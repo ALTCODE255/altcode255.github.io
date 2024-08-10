@@ -143,3 +143,13 @@ blockquote.quote {
   padding: 0.5em 10px;
   margin: 0;
 }
+
+
+.form-control::placeholder{
+    color: rgba(var(--bs-body-color-rgb), 0.3);
+}
+
+input[name="username"], input[name="email"] {
+    position: absolute;
+    left: -999999999px;
+}
