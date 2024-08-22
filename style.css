@@ -47,7 +47,7 @@
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .animate-in {
         -webkit-animation: none !important;
         animation: none !important;
