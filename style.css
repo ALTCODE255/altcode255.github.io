@@ -36,11 +36,11 @@
   --bs-body-color-rgb: var(--bs-light-rgb);
   --bs-body-bg: var(--bs-dark);
   --bs-body-bg-rgb: var(--bs-dark-rgb);
-  --bs-link-color: rgb(240, 202, 135);
-  --bs-link-color-rgb: 240, 202, 135;
+  --bs-link-color: rgb(239, 213, 108);
+  --bs-link-color-rgb: 239, 213, 108;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: rgba(243, 231, 104, 0.856);
-  --bs-link-hover-color-rgb: 234, 196, 82;
+  --bs-link-hover-color: rgb(150, 238, 244);
+  --bs-link-hover-color-rgb: 150, 238, 244;
 }
 
 .animate-in {
