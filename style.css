@@ -16,8 +16,8 @@
   --bs-primary-rgb: 255, 191, 0;
   --bs-secondary: #3bb9d8;
   --bs-secondary-rgb: 59, 185, 216;
-  --bs-success: #e3b2b9;
-  --bs-success-rgb: 227, 178, 185;
+  --bs-success: #28a745;
+  --bs-success-rgb: 40, 167, 69;
   --bs-info: #0dcaf0;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning: #f69636;
@@ -163,4 +163,9 @@ input[name="email"] {
 
 .card {
   border: none;
+}
+
+.card-subtitle {
+    font-size: 80%;
+    color: #98c8f7;
 }
