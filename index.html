@@ -37,14 +37,13 @@
         </nav>
     </header>
     <div class="animate-in" id="content">
-        <div class="container-fluid">
+        <div class="container-fluid p-2">
             <h1><span class="text-primary">Nameless</span> • 20 • <span class="text-primary">they/them 🏳️‍⚧️🏳️‍🌈</span> • aroace agender • <span class="text-primary">Chinese-American</span></h1>
             <hr>
             <p>*Click on image to be redirected to its source</p>
             <hr>
             <div class="row">
-                <div class="col-md">
-                    <center>
+                <div class="col-md text-center">
                         <h2>Used Header / Icons</h2>
                         <style>
                             img {
@@ -62,18 +61,17 @@
                             <a href="https://twitter.com/WeeklyFamitsu/status/1721361997940605433"><img src="akechi.png" alt="ID: Art of Goro Akechi for Persona 5 Tactica from Weekly Famitsu Cover #1823; Artist is Hanako Oribe"></a>
                         </p>
                         <h2>Ask Box</h2>
-                        <form id="ask-box">
+                        <form id="ask-box" class="w-75 mx-auto">
                             <input type="text" name="username" placeholder="Your username" tabindex="-1" autocomplete="new-password">
                             <input type="text" name="email" placeholder="Your email" tabindex="-1" autocomplete="new-password">
                             <!-- :)  -->
-                            <input class="form-control w-75" id="n" name="who" placeholder="Name (optional)" maxlength="35">
-                            <textarea class="form-control w-75" id="m" name="msg" rows="4" placeholder="Ask or send me anything!" required maxlength="4000"></textarea>
-                            <small><div class="text-light text-opacity-50 text-end w-75" id="charactersRemaining">0/4000</div></small>
-                            <button class="btn btn-mini submit-btn w-75 m-2" type="submit">Submit</button>
+                            <input class="form-control" id="n" name="who" placeholder="Name (optional)" maxlength="35">
+                            <textarea class="form-control" id="m" name="msg" rows="4" placeholder="Ask or send me anything!" required maxlength="4000"></textarea>
+                            <small><div class="text-light text-opacity-50 text-end" id="charactersRemaining">0/4000</div></small>
+                            <button class="btn btn-mini submit-btn w-100 mx-auto" type="submit">Submit</button>
                         </form>
                         <script src="showMaxLength.js"></script>
                         <script src="askSubmit.js"></script>
-                    </center>
                 </div>
                 <div class="col-md">
                     <h2>Interests</h2>
@@ -101,9 +99,7 @@
     </div>
     <footer>
         <hr>
-        <center>
-            <span id="last-updated"><b>Page Last Updated:</b></span>
-        </center>
+        <div class="text-center" id="last-updated"><b>Page Last Updated:</b></div>
         <script>
             fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=index.html')
                 .then(res => res.json())

@@ -37,16 +37,11 @@
         </nav>
     </header>
     <div class="animate-in" id="content">
-        <div class="container-fluid">
-            <style>
-                h2 {
-                    text-align: center;
-                }
-            </style>
+        <div class="container-fluid p-2">
             <h1 class="text-primary">Projects</h1>
             <div class="row">
                 <div class="col-md">
-                    <h2>Coding Projects</h2>
+                    <h2 class="text-center">Coding Projects</h2>
                     <p>More small coding projects</a> can be found on my <a href="https://github.com/ALTCODE255">Github page</a>.</p>
                     <p>
                         <a href="https://twitter.com/search?q=%23namelessbot%20from%3AALTCODE255">The S Counter / #namelessbot (Twitter Bot)</a> - <span class="text-success">JAN 17 2022 -> PRESENT</span><br>
@@ -86,7 +81,7 @@
                     </p>
                 </div>
                 <div class="col-md">
-                    <h2>Community Things</h2>
+                    <h2 class="text-center">Community Things</h2>
                     <p>
                         <a href="https://twitter.com/shuuenartweek">Week of Demise (Shuuen no Shiori Art Week)</a> - <span class="text-success">SUMMER 2019 -> SUMMER 2021</span><br>
                         Art week themed on Shuuen no Shiori that was held every year with a choice of different single-word prompts.
@@ -99,7 +94,7 @@
                         <a href="https://twitter.com/shuuenprofacts">Shuuen no Shiori Facts (Twitter Account)</a> - <span class="text-success">JUNE 30 2023 -> AUG 2 2024</span><br>
                         Twitter account that tweeted fun facts related to Shuuen no Shiori. Tweets were scheduled with the help of a Python script.
                     </p>
-                    <h2>Other</h2>
+                    <h2 class="text-center">Other</h2>
                     <p>
                         <a href="https://www.youtube.com/playlist?list=PLSvaLUgBdYh80aEJisHDky4cR6EWtqksp">[YouTube] P5R: Goro Akechi Justice Confidant (All Dialogue Choices)</a> - <span class="text-success">AUG 1 2024 -> AUG 14 2024</span><br>
                         A playlist of videos featuring every dialogue choice that can be taken during Goro Akechi's P5R Confidant.
@@ -108,7 +103,7 @@
                         <a href="https://www.youtube.com/playlist?list=PLSvaLUgBdYh_QWn75iTXjcUcVp-aOkWpL">[YouTube] Goro Akechi Dialogue Event Archive (Non-Comprehensive)</a> - <span class="text-success">AUG 1 2024 -> ?</span><br>
                         A playlist of videos featuring story events with Goro Akechi, with every dialogue choice taken if possible.
                     </p>
-                    <h2>Obsolete</h2>
+                    <h2 class="text-center">Obsolete</h2>
                     <p>
                         <span class="text-primary"><a href="https://twitter.com/ALTCODE255/status/1644089177624150016?s=20">Simple Twitter Bot Using Google Sheets + Power Automate Guide</a></span> - <span class="text-success">APR 6 2023 -> APR 19 2023</span><br>
                         A guide on how to make a simple Twitter bot for free using a combination of Google Sheets and Microsoft Power Automate.
@@ -122,9 +117,7 @@
         </div>
     <footer>
         <hr>
-        <center>
-            <span id="last-updated"><b>Page Last Updated:</b></span>
-        </center>
+        <div class="text-center" id="last-updated"><b>Page Last Updated:</b></div>
         <script>
             fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=projects.html')
                 .then(res => res.json())

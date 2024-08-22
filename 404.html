@@ -38,17 +38,15 @@
     </header>
     <div class="animate-in" id="content">
         <div class="container-fluid p-2">
-            <center>
+            <div class="text-center">
                 <h2>Page Not Found</h2>
                 <p>The requested page was not found.</p>
-            </center>
+            </div>
         </div>
     </div>
     <footer>
         <hr>
-        <center>
-            <span id="last-updated"><b>Page Last Updated:</b></span>
-        </center>
+        <div class="text-center" id="last-updated"><b>Page Last Updated:</b></div>
         <script>
             fetch('https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=404.html')
                 .then(res => res.json())
