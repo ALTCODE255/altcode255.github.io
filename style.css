@@ -104,10 +104,6 @@ b {
   color: var(--bs-secondary);
 }
 
-.navbar {
-  z-index: 1000;
-}
-
 .nav-item {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
