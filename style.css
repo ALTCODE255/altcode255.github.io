@@ -103,9 +103,7 @@ h2 {
 }
 
 h3 {
-  color: var(--bs-primary);
-  font-family: "Palanquin";
-  font-size: 1.25rem;
+  font-size: 1.05rem;
 }
 
 b {
@@ -162,4 +160,8 @@ blockquote.quote {
 input[name="username"], input[name="email"] {
     position: absolute;
     left: -999999999px;
+}
+
+.card {
+    border: none;
 }
