@@ -41,6 +41,10 @@
   --bs-link-decoration: underline;
   --bs-link-hover-color: rgb(150, 238, 244);
   --bs-link-hover-color-rgb: 150, 238, 244;
+
+  --primary-muted: rgb(184, 130, 31);
+  --primary-muted-rgb: 184, 130, 31;
+  
 }
 
 .animate-in {
@@ -115,12 +119,14 @@ b {
 }
 
 .nav-item:hover,
-.nav-item.special:hover {
-  background-color: #ba8117e7;
+.nav-item.special:hover,
+.submit-btn:hover {
+  background-color: rgba(var(--primary-muted-rgb), 0.8);
 }
 
-.nav-item.active {
-  background-color: #c9932e;
+.nav-item.active,
+.submit-btn {
+  background-color: var(--primary-muted);
 }
 
 ::selection {
