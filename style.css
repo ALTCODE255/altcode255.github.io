@@ -44,16 +44,14 @@
 
   --primary-muted: rgb(184, 130, 31);
   --primary-muted-rgb: 184, 130, 31;
-  
 }
 
 @media (max-width: 1000px) {
-    .animate-in {
-        -webkit-animation: none !important;
-        animation: none !important;
-      }
+  .animate-in {
+    -webkit-animation: none !important;
+    animation: none !important;
   }
-
+}
 
 .animate-in {
   -webkit-animation: fadeIn 0.5s ease-in;
@@ -91,6 +89,7 @@ body {
 }
 
 h1 {
+  color: var(--bs-primary);
   font-size: 1.5rem;
   padding: 0.25rem;
   text-align: center;
@@ -152,16 +151,16 @@ blockquote.quote {
   margin: 0;
 }
 
-
-.form-control::placeholder{
-    color: rgba(var(--bs-body-color-rgb), 0.3);
+.form-control::placeholder {
+  color: rgba(var(--bs-body-color-rgb), 0.3);
 }
 
-input[name="username"], input[name="email"] {
-    position: absolute;
-    left: -999999999px;
+input[name="username"],
+input[name="email"] {
+  position: absolute;
+  left: -999999999px;
 }
 
 .card {
-    border: none;
+  border: none;
 }
