@@ -21,4 +21,6 @@ document.getElementById("ask-box").addEventListener("submit", function (event) {
     .catch((err) => console.log("err", err));
   var textarea = document.getElementById("m");
   textarea.value = "";
+  var input = document.getElementById("n");
+  input.value = "";
 });
