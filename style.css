@@ -155,9 +155,10 @@ blockquote.quote {
   border-radius: 0;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-control {
   box-shadow: none;
-  border-color: var(--bs-secondary);
+  border-color: var(--bs-link-color);
 }
 
 .form-control.rounded-bottom {
