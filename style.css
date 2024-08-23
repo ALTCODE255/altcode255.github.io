@@ -187,5 +187,5 @@ input[name="email"] {
 textarea {
   resize: none;
   overflow: hidden;
-  height: 6rem;
+  height: 6em;
 }
