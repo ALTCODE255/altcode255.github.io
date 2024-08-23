@@ -1,11 +1,19 @@
-var el;                                                    
+var el;
 
-function countCharacters(e) {                                    
-  var textEntered, countRemaining, counter;          
-  textEntered = document.getElementById("m").value;  
+function countCharacters() {
+  var textEntered, countRemaining, counter;
+  textEntered = this.value;
   counter = textEntered.length + "/4000";
-  countRemaining = document.getElementById("charactersRemaining"); 
-  countRemaining.textContent = counter;       
+  countRemaining = document.getElementById("charactersRemaining");
+  countRemaining.textContent = counter;
 }
-el = document.getElementById("m");                   
+
+function autoGrow() {
+  var fontSize = parseInt(window.getComputedStyle(this).fontSize);
+  this.style.height = fontSize * 6 + "px";
+  this.style.height = this.scrollHeight + "px";
+}
+
+el = document.getElementById("textinput");
 el.addEventListener("keyup", countCharacters, false);
+el.addEventListener("input", autoGrow, false);
