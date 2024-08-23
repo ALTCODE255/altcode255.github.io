@@ -19,8 +19,8 @@ document.getElementById("ask-box").addEventListener("submit", function (event) {
       console.log("Successful", data);
     })
     .catch((err) => console.log("err", err));
-  var textarea = document.getElementById("m");
-  textarea.value = "";
-  var input = document.getElementById("n");
-  input.value = "";
+  var inputs = document.getElementsByClassName("form-control");
+  for (let i = 0; i < inputs.length; i++) {
+    inputs.item(i).value = "";
+  }
 });
