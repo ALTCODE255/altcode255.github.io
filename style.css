@@ -177,6 +177,10 @@ blockquote.quote {
   color: rgba(var(--bs-body-color-rgb), 0.3);
 }
 
+.form-control:disabled {
+    background: rgba(var(--bs-body-bg-rgb), 0.2);
+}
+
 input[name="username"],
 input[name="email"] {
   position: absolute;
