@@ -24,6 +24,7 @@ function fetchText() {
       document.getElementById("quotes").innerHTML = html;
     });
   document.getElementById("search").disabled = false;
+  return false;
 }
 
 function filterText() {
