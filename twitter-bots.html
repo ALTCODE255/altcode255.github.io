@@ -47,18 +47,14 @@
                     <div class="card">
                         <h3 class="card-title"><a href="https://twitter.com/hourlygamesonic">Hourly Sonic Quotes</a></h3>
                         <div class="card-subtitle">APR 9 2023 -> PRESENT</div>
-                        <blockquote class="card-body twitter-tweet" data-theme="dark">
-                            <p lang="en" dir="ltr">The will to live, the drive to achieve, the desire to protect the ones you love - that kind of thing can grant a power you can&#39;t imagine.</p>&mdash; Hourly Sonic Quotes (@hourlygamesonic) <a href="https://twitter.com/hourlygamesonic/status/1660442860347588609?ref_src=twsrc%5Etfw">May 22, 2023</a>
-                        </blockquote>
+                        <div class="card-body"><a href="https://twitter.com/hourlygamesonic/status/1660442860347588609"><img src="hourlygamesonic.png" class="img-fluid" alt="Tweet by Hourly Sonic Quotes: The will to live, the drive to achieve, the desire to protect the ones you love - that kind of thing can grant a power you can't imagine."></a></div>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="card">
                         <h3 class="card-title"><a href="https://twitter.com/hourlyshadowbot">Hourly Shadow Quotes</a></h3>
                         <div class="card-subtitle">JUN 1 2023 -> PRESENT</div>
-                        <blockquote class="card-body twitter-tweet" data-theme="dark">
-                            <p lang="en" dir="ltr">If the world chooses to become my enemy, I will fight like I always have!</p>&mdash; Hourly Shadow Quotes (@hourlyshadowbot) <a href="https://twitter.com/hourlyshadowbot/status/1668264402917752835?ref_src=twsrc%5Etfw">June 12, 2023</a>
-                        </blockquote>
+                        <div class="card-body"><a href="https://twitter.com/hourlyshadowbot/status/1668264402917752835"><img src="hourlyshadowbot.png" class="img-fluid" alt="Tweet by Hourly Shadow Quotes: If the world chooses to become my enemy, I will fight like I always have!"></a></div>
                     </div>
                 </div>
             </div>
@@ -67,24 +63,53 @@
                     <div class="card">
                         <h3 class="card-title"><a href="https://twitter.com/coolsonicquotes">Cool Sonic Quotes</a></h3>
                         <div class="card-subtitle">NOV 19 2023 -> PRESENT</div>
-                        <blockquote class="card-body twitter-tweet" data-theme="dark">
-                            <p lang="en" dir="ltr">Merlina... Every world has its end. I know that&#39;s kinda sad, but... That&#39;s why we gotta live life to the fullest in the time we have. At least, that&#39;s what I figure.</p>&mdash; Cool Sonic Quotes (@coolsonicquotes) <a href="https://twitter.com/coolsonicquotes/status/1726386128625037678?ref_src=twsrc%5Etfw">November 19, 2023</a>
-                        </blockquote>
+                        <div class="card-body"><a href="https://twitter.com/coolsonicquotes/status/1726386128625037678"><img src="coolsonicquotes.png" class="img-fluid" alt="Tweet by Cool Sonic Quotes: Merlina... Every world has its end. I know that's kinda sad, but... That's why we gotta live life to the fullest in the time we have. At least, that's what I figure."></a></div>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="card">
                         <h3 class="card-title"><a href="https://twitter.com/akechiquotebot">Goro Akechi Quotes</a></h3>
                         <div class="card-subtitle">FEB 2 2024 -> PRESENT</div>
-                        <blockquote class="card-body twitter-tweet" data-theme="dark">
-                            <p lang="en" dir="ltr">...I will carve my own path for myself. I refuse to accept a reality concocted by someone else, stuck under their control for the rest of my days.</p>&mdash; Goro Akechi Quotes 🏳️‍🌈 (@akechiquotebot) <a href="https://twitter.com/akechiquotebot/status/1754603321166528963?ref_src=twsrc%5Etfw">February 5, 2024</a>
-                        </blockquote>
+                        <div class="card-body"><a href="https://twitter.com/akechiquotebot/status/1754603321166528963"><img src="akechiquotebot.png" class="img-fluid" alt="Tweet by Goro Akechi Quotes: ...I will carve my own path for myself. I refuse to accept a reality concocted by someone else, stuck under their control for the rest of my days."></a></div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div class="card">
+                        <h3 class="card-title"><a href="https://twitter.com/akechiyearning">Quotes That Make You Miss Goro Akechi</a></h3>
+                        <div class="card-subtitle">AUG 23 2024 -> PRESENT</div>
+                    </div>
+                </div>
+            </div>
+            <h1>Quotes Search</h1>
+            <div class="card">
+                <div class="card-body rounded" style="background:#2a2f47">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#">@hourlygamesonic</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">@hourlyshadowbot</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">@coolsonicquotes</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">@akechiquotebot</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">@akechiyearning</a>
+                        </li>
+                    </ul>
+                    <input type="search" id="search" class="form-control" placeholder="Type to search quotes..."><br>
+                    <div id="quotes">Click on a tab to view the respective bot's quotes.</div>
                 </div>
             </div>
         </div>
     </div>
-    <script>getTweetIds()</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.js"></script>
+    <script src="searchQuotes.js"></script>
     <footer>
         <hr>
         <div class="text-center" id="last-updated"><b>Page Last Updated:</b></div>
@@ -101,7 +126,6 @@
         <hr>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="localRedirect.js"></script>
 </body>
 

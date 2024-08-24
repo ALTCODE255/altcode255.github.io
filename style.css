@@ -121,13 +121,21 @@ b {
 
 .nav-item:hover,
 .nav-item.special:hover,
-.submit-btn:hover {
+.submit-btn:hover,
+.page-link:hover {
   background-color: rgba(var(--primary-muted-rgb), 0.8);
 }
 
+.page-link:focus,
 .nav-item.active,
 .submit-btn {
   background-color: var(--primary-muted);
+  box-shadow: none;
+}
+
+.page-link:hover,
+.page-link:focus {
+  color: white;
 }
 
 ::selection {
