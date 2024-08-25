@@ -60,8 +60,8 @@ function filterText() {
   document.getElementById("quotes").innerHTML = html
     .replaceAll(nonmatch, "")
     .replaceAll(/<ul>\s*<\/ul>/gm, "")
-    .replaceAll(/<h3.*h3>(?=[\s]*<ul>)/gm, "")
-    .replaceAll(/<h2.*h2>(?=[\s]*(<ul>|<h3.*h3>))/gm, "");
+    .replaceAll(/<h3.*h3>(?![\s]*<ul>)/gm, "")
+    .replaceAll(/<h2.*h2>(?![\s]*(<ul>|<h3.*h3>))/gm, "");
 }
 
 el = document.getElementById("search");
