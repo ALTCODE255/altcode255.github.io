@@ -1,5 +1,5 @@
 let html;
-let searchDisabled = true;
+let activeSection;
 
 function loadQuotes() {
   let quoteSets = document.getElementById("quoteSets").children;
@@ -36,6 +36,9 @@ function fetchQuotes(url, el) {
 }
 
 function updateActiveSection(id) {
+  if (!activeSection) {
+    document.getElementById("search").disabled = false;
+  }
   activeSection = document.getElementById(id);
 
   // disable other sections
@@ -49,25 +52,38 @@ function updateActiveSection(id) {
 
   // activate section
   activeSection.className = "active";
-  if (searchDisabled) {
-    document.getElementById("search").disabled = false;
-  }
+
   html = activeSection.innerHTML;
   countQuotes(activeSection);
 }
 
 function countQuotes(el) {
   document.getElementById("results").innerHTML =
-    "Results: " + el.querySelectorAll("li").length + " quote(s)";
+    "Results: " +
+    el.querySelectorAll("li:not([style*='display: none;']").length +
+    " quote(s)";
 }
 
 function filterText() {
-  let activeSection = document.querySelector("#quoteSets > div.active");
-  let nonmatch = new RegExp(String.raw`<li>(?!.*${this.value}).*</li>`, "gmi");
-  activeSection.innerHTML = html
-    .replaceAll(nonmatch, "")
-    .replaceAll(/<ul>\s*<\/ul>/gm, "")
-    .replaceAll(/<h3.*h3>(?![\s]*<ul>)/gm, "")
-    .replaceAll(/<h2.*h2>(?![\s]*(<ul>|<h3.*h3>))/gm, "");
+  let elements = activeSection.querySelectorAll("li, h2, h3");
+  for (let el of elements) {
+    el.style.display = "none";
+  }
+  let items = Array.from(activeSection.querySelectorAll("li"));
+  let filteredQuotes = items.filter((item) =>
+    item.innerHTML.match(new RegExp(this.value, "i"))
+  );
+  for (let q of filteredQuotes) {
+    q.style.display = "list-item";
+    let heading = q.parentNode.previousElementSibling;
+    displayHeadingRecur(heading);
+  }
   countQuotes(activeSection);
+}
+
+function displayHeadingRecur(el) {
+  if (el && el.tagName.match(/H[2-6]/)) {
+    el.style.display = "block";
+    displayHeadingRecur(el.previousElementSibling);
+  }
 }
