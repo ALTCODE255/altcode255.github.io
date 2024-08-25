@@ -7,9 +7,9 @@ window.addEventListener("hashchange", (event) => {
 
 function fetchText() {
   if (window.location.hash) {
-    var converter = new showdown.Converter();
+    let converter = new showdown.Converter();
     converter.setOption("simpleLineBreaks", true);
-    var url =
+    let url =
       "https://gist.githubusercontent.com/ALTCODE255/947280561356cf037ce6f749638277d5/raw/" +
       window.location.hash.substring(1) +
       ".txt";
@@ -17,18 +17,20 @@ function fetchText() {
       .then((response) => {
         if (response.status == 200) {
           return response.text();
+        } else {
+          throw new Error("Status code " + response.status);
         }
       })
-      .then((cleanText) => {
-        html = converter
-          .makeHtml(cleanText)
+      .then((text) => {
+        let html = converter
+          .makeHtml(text)
           .replaceAll(/<em>|<\/em>/g, "*")
           .replaceAll("\\n", "<br>");
         document.getElementById("quotes").innerHTML = html;
+        document.getElementById("search").disabled = false;
         countQuotes();
+        setActiveSection();
       });
-    document.getElementById("search").disabled = false;
-    setActiveSection();
   }
   return false;
 }
