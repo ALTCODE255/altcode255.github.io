@@ -26,7 +26,7 @@ function fetchText() {
       .then(
         (text) =>
           text
-            .replaceAll(/^\s+$/gm, "") // remove empty lines
+            .replaceAll(/\s+$/gm, "") // remove empty lines
             .replaceAll(/^(?!#.*$)(\S.*)/gm, "- $1") // display each quote as list item
             .replaceAll(/^#/gm, "##") // nerf heading size
       )
