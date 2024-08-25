@@ -20,7 +20,7 @@ document.getElementById("ask-box").addEventListener("submit", function (event) {
     })
     .catch((err) => console.log("err", err));
   var inputs = document.getElementsByClassName("form-control");
-  for (let i = 0; i < inputs.length; i++) {
-    inputs.item(i).value = "";
+  for (i of inputs) {
+    i.value = "";
   }
 });
