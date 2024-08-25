@@ -6,15 +6,7 @@ window.addEventListener("hashchange", (event) => {
 });
 
 function fetchText() {
-  if (
-    [
-      "#hourlygamesonic",
-      "#hourlyshadowbot",
-      "#coolsonicquotes",
-      "#akechiquotebot",
-      "#akechiyearning",
-    ].includes(window.location.hash)
-  ) {
+  if (window.location.hash) {
     var converter = new showdown.Converter();
     converter.setOption("simpleLineBreaks", true);
     var url =
@@ -22,7 +14,11 @@ function fetchText() {
       window.location.hash.substring(1) +
       ".txt";
     fetch(url)
-      .then((response) => response.text())
+      .then((response) => {
+        if (response.status == 200) {
+          return response.text();
+        }
+      })
       .then((cleanText) => {
         html = converter
           .makeHtml(cleanText)
@@ -51,7 +47,9 @@ function setActiveSection() {
 
 function countQuotes() {
   document.getElementById("results").innerHTML =
-    "Results: " + document.getElementById("quotes").querySelectorAll("li").length + " quotes";
+    "Results: " +
+    document.getElementById("quotes").querySelectorAll("li").length +
+    " quotes";
 }
 
 function filterText() {
@@ -61,7 +59,7 @@ function filterText() {
     .replaceAll(/<ul>\s*<\/ul>/gm, "")
     .replaceAll(/<h3.*h3>(?![\s]*<ul>)/gm, "")
     .replaceAll(/<h2.*h2>(?![\s]*(<ul>|<h3.*h3>))/gm, "");
-    countQuotes();
+  countQuotes();
 }
 
 document.getElementById("search").addEventListener("input", filterText, false);
