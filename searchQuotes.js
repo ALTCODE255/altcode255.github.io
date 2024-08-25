@@ -31,7 +31,10 @@ function fetchText() {
             .replaceAll(/^#/gm, "##") // nerf heading size
       )
       .then((cleanText) => {
-        html = converter.makeHtml(cleanText);
+        html = converter
+          .makeHtml(cleanText)
+          .replaceAll(/<em>|<\/em>/g, "*")
+          .replaceAll("\\n", "<br>");
         document.getElementById("quotes").innerHTML = html;
       });
     document.getElementById("search").disabled = false;
@@ -53,10 +56,7 @@ function setActiveSection() {
 }
 
 function filterText() {
-  var nonmatch = new RegExp(
-    String.raw`<li>(?!.*${this.value}).*</li>`,
-    "gmi"
-  );
+  var nonmatch = new RegExp(String.raw`<li>(?!.*${this.value}).*</li>`, "gmi");
   document.getElementById("quotes").innerHTML = html
     .replaceAll(nonmatch, "")
     .replaceAll(/<ul>\s*<\/ul>/gm, "")
