@@ -126,7 +126,7 @@ b {
   background-color: rgba(var(--primary-muted-rgb), 0.8);
 }
 
-.page-link:focus,
+.page-link.active,
 .nav-item.active,
 .submit-btn {
   background-color: var(--primary-muted);
@@ -134,8 +134,16 @@ b {
 }
 
 .page-link:hover,
-.page-link:focus {
+.page-link.active {
   color: white;
+}
+
+.page-link:focus {
+    display: none;
+}
+
+.page-link.active {
+    border-color: white;
 }
 
 ::selection {
