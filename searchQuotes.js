@@ -23,19 +23,13 @@ function fetchText() {
       ".txt";
     fetch(url)
       .then((response) => response.text())
-      .then(
-        (text) =>
-          text
-            .replaceAll(/\s+$/gm, "") // remove empty lines
-            .replaceAll(/^(?!#.*$)(\S.*)/gm, "- $1") // display each quote as list item
-            .replaceAll(/^#/gm, "##") // nerf heading size
-      )
       .then((cleanText) => {
         html = converter
           .makeHtml(cleanText)
           .replaceAll(/<em>|<\/em>/g, "*")
           .replaceAll("\\n", "<br>");
         document.getElementById("quotes").innerHTML = html;
+        countQuotes();
       });
     document.getElementById("search").disabled = false;
     setActiveSection();
@@ -55,6 +49,11 @@ function setActiveSection() {
   }
 }
 
+function countQuotes() {
+  document.getElementById("results").innerHTML =
+    "Results: " + document.getElementById("quotes").querySelectorAll("li").length + " quotes";
+}
+
 function filterText() {
   var nonmatch = new RegExp(String.raw`<li>(?!.*${this.value}).*</li>`, "gmi");
   document.getElementById("quotes").innerHTML = html
@@ -62,7 +61,7 @@ function filterText() {
     .replaceAll(/<ul>\s*<\/ul>/gm, "")
     .replaceAll(/<h3.*h3>(?![\s]*<ul>)/gm, "")
     .replaceAll(/<h2.*h2>(?![\s]*(<ul>|<h3.*h3>))/gm, "");
+    countQuotes();
 }
 
-el = document.getElementById("search");
-el.addEventListener("input", filterText, false);
+document.getElementById("search").addEventListener("input", filterText, false);
