@@ -86,8 +86,8 @@
                 </div>
             </div>
             <h1>Quotes Search</h1>
-            <div class="card">
-                <div class="card-body rounded" style="background:#2a2f47">
+            <div id="quotesCard" class="card">
+                <div class="card-body rounded">
                     <div class="btn-group flex-wrap w-100" role="group">
                         <input id="hourlygamesonic-radio" type="radio" class="btn-check" name="bot" onchange="updateActiveSection(this.value);" value="hourlygamesonic" autocomplete="off">
                         <label for="hourlygamesonic-radio" class="btn rounded-top btn-outline-primary">@hourlygamesonic</label>
@@ -104,7 +104,7 @@
                         <input id="ourtruereality_-radio" type="radio" class="btn-check" name="bot" onchange="updateActiveSection(this.value);" value="ourtruereality_" autocomplete="off">
                         <label for="ourtruereality_-radio" class="btn rounded-top btn-outline-primary">@ourtruereality_</label>
                     </div>
-                    <input type="search" id="search" class="form-control mb-2" placeholder="Type here to search quotes..." autocomplete="off">
+                    <input type="search" id="search" class="form-control mb-2" placeholder="Type here to search quotes..." autocomplete="off" disabled>
                     <div id="results">Results: 0 quote(s)</div>
                     <div>Click on a tab to view the respective bot's quotes.</div>
                     <div id="quoteSets">

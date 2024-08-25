@@ -1,4 +1,5 @@
 let html;
+let searchDisabled = true;
 
 function loadQuotes() {
   let quoteSets = document.getElementById("quoteSets").children;
@@ -48,6 +49,9 @@ function updateActiveSection(id) {
 
   // activate section
   activeSection.className = "active";
+  if (searchDisabled) {
+    document.getElementById("search").disabled = false;
+  }
   html = activeSection.innerHTML;
   countQuotes(activeSection);
 }

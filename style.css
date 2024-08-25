@@ -36,6 +36,8 @@
   --bs-body-color-rgb: var(--bs-light-rgb);
   --bs-body-bg: var(--bs-dark);
   --bs-body-bg-rgb: var(--bs-dark-rgb);
+  --bs-secondary-bg: #2a2f47;
+  --bs-secondary-bg-rgb: 42, 47, 71;
   --bs-link-color: rgb(239, 213, 108);
   --bs-link-color-rgb: 239, 213, 108;
   --bs-link-decoration: underline;
@@ -78,10 +80,6 @@
   }
 }
 
-html {
-  background: var(--bs-body-bg) !important;
-}
-
 body {
   margin-right: auto;
   margin-left: auto;
@@ -89,14 +87,14 @@ body {
 }
 
 h1 {
-  color: var(--bs-primary);
+  --bs-heading-color: var(--bs-primary);
   font-size: 1.5rem;
   padding: 0.25rem;
   text-align: center;
 }
 
 h2 {
-  color: var(--bs-secondary);
+  --bs-heading-color: var(--bs-secondary);
   font-family: "Palanquin";
   font-size: 1.4rem;
 }
@@ -110,34 +108,34 @@ b {
 }
 
 .nav-item {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   background-color: #313d4b;
-}
-
-.nav-link {
-  color: white !important;
+  --bs-nav-link-color: white;
+  --bs-nav-link-hover-color: white;
+  --bs-nav-item-hover-bg: rgba(var(--primary-muted-rgb), 0.8);
+  --bs-navbar-nav-link-padding-x: 1rem;
 }
 
 .btn-outline-primary {
-    --bs-btn-active-bg: var(--primary-muted);
-    --bs-btn-active-border-color: white;
-    --bs-btn-color: white;
-    --bs-btn-border-color: white;
-    --bs-btn-bg: var(--bs-body-bg);
+  --bs-btn-active-bg: var(--primary-muted);
+  --bs-btn-active-border-color: white;
+  --bs-btn-color: white;
+  --bs-btn-border-color: var(--bs-light);
+  --bs-btn-bg: var(--bs-body-bg);
 }
 
 .nav-item:hover,
-.nav-item.special:hover,
-.submit-btn:hover,
 .btn-outline-primary:hover {
   background-color: rgba(var(--primary-muted-rgb), 0.8) !important;
 }
 
-.nav-item.active,
+.nav-item.active {
+  background-color: var(--primary-muted);
+}
+
 .submit-btn {
-  background-color: var(--primary-muted) !important;
-  box-shadow: none;
+  --bs-btn-bg: var(--primary-muted);
+  --bs-btn-hover-color: var(--bs-light);
+  --bs-btn-hover-bg: rgba(var(--primary-muted-rgb), 0.8);
 }
 
 ::selection {
@@ -163,24 +161,15 @@ blockquote.quote {
 
 .form-control {
   border-radius: 0;
+  --bs-border-color: var(--bs-link-color);
 }
 
-.form-control:focus,
-.form-control {
-  box-shadow: none;
-  border-color: var(--bs-link-color);
-}
-
-.form-control.rounded-bottom {
-  border-top: none;
+.form-control:focus {
+  border-color: var(--bs-border-color);
 }
 
 .form-control::placeholder {
   color: rgba(var(--bs-body-color-rgb), 0.3);
-}
-
-.form-control:disabled {
-  background: rgba(var(--bs-body-bg-rgb), 0.2);
 }
 
 input[name="username"],
@@ -194,14 +183,18 @@ input[name="email"] {
 }
 
 .card-subtitle {
+  --bs-card-subtitle-color: #98c8f7;
   font-size: 80%;
-  color: #98c8f7;
 }
 
 textarea {
   resize: none;
   overflow: hidden;
   height: 6em;
+}
+
+#quotesCard {
+  --bs-card-bg: var(--bs-secondary-bg);
 }
 
 #quoteSets > div {
