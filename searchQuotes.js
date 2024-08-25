@@ -51,7 +51,7 @@ function countQuotes() {
   document.getElementById("results").innerHTML =
     "Results: " +
     document.getElementById("quotes").querySelectorAll("li").length +
-    " quotes";
+    " quote(s)";
 }
 
 function filterText() {
