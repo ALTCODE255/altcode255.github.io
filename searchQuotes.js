@@ -22,7 +22,7 @@ function fetchText() {
         }
       })
       .then((text) => {
-        let html = converter
+        html = converter
           .makeHtml(text)
           .replaceAll(/<em>|<\/em>/g, "*")
           .replaceAll("\\n", "<br>");
