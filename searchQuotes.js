@@ -38,6 +38,7 @@ function fetchQuotes(url, el) {
 function updateActiveSection(id) {
   if (!activeSection) {
     document.getElementById("search").disabled = false;
+    document.getElementById("search").placeholder = "Type here to search quotes...";
   }
   activeSection = document.getElementById(id);
 
