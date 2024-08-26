@@ -190,7 +190,7 @@ input[name="email"] {
 textarea {
   resize: none;
   overflow: hidden;
-  height: 6em;
+  height: 7.5em;
 }
 
 #quotesCard {

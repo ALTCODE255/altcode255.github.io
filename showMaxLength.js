@@ -10,7 +10,7 @@ function countCharacters() {
 
 function autoGrow() {
   var fontSize = parseInt(window.getComputedStyle(this).fontSize);
-  this.style.height = fontSize * 6 + "px";
+  this.style.height = fontSize * 7 + "px";
   this.style.height = this.scrollHeight + "px";
 }
 
