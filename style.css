@@ -113,6 +113,7 @@ b {
   --bs-nav-link-hover-color: white;
   --bs-nav-item-hover-bg: rgba(var(--primary-muted-rgb), 0.8);
   --bs-navbar-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-x: 0.5rem;
 }
 
 .btn-outline-primary {
