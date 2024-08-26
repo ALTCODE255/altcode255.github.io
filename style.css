@@ -194,6 +194,10 @@ textarea {
   height: 7.5em;
 }
 
+#ask-box {
+    max-width: 325px;
+}
+
 #quotesCard {
   --bs-card-bg: var(--bs-secondary-bg);
 }
@@ -208,10 +212,10 @@ textarea {
 
 img.icon {
   margin-top: 5px;
-  width: 160px;
+  max-width: 160px;
 }
 
 img.header {
   margin-top: 5px;
-  width: 325px;
+  max-width: 325px;
 }
