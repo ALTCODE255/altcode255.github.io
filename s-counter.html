@@ -106,7 +106,7 @@
                 <h2 class="text-center">Live Table</h2>
                 <p>Data used to be stored on <a href="https://docs.google.com/spreadsheets/d/1VyD1fDG6noKldoNCQIhoGNAX7cTwuP8HAI0PViik0k0/">Google Sheets</a>, moved to SQLite3 database. Source code for practically everything that makes this work is <a href="https://github.com/ALTCODE255/S_Counter">here</a>.</p>
                 <p>(Updates hourly at :20. Only data from the past 30 days is shown below; see <a href="https://gist.github.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/">gist</a> for more.)</p>
-                <div class="table-responsive m-3" , id="s-table"></div>
+                <div class="table-responsive w-100 mx-auto", id="s-table"></div>
                 <script>
                     fetch("https://gist.githubusercontent.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/raw/")
                         .then(r => r.text())
@@ -114,7 +114,7 @@
                             var converter = new showdown.Converter();
                             converter.setOption('tables', true);
                             text = t.split("\n").slice(0, 33).join("\n");
-                            html = converter.makeHtml(text).replace("<table>", "<table class=\"table table-bordered table-striped w-75 m-auto\">").replaceAll("<th>", "<th class=\"px-3\">").replaceAll("<td>", "<td class=\"px-3\">");
+                            html = converter.makeHtml(text).replace("<table>", "<table class=\"table table-bordered table-striped\">").replaceAll("<th>", "<th class=\"px-3\">").replaceAll("<td>", "<td class=\"px-3\">");
                             document.getElementById("s-table").innerHTML = html;
                         })
                 </script>

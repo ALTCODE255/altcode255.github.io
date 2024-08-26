@@ -48,7 +48,7 @@
   --primary-muted-rgb: 184, 130, 31;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .animate-in {
     -webkit-animation: none !important;
     animation: none !important;
@@ -79,6 +79,14 @@
     opacity: 1;
   }
 }
+
+
+@media (min-width: 769px) {
+    #s-table {
+        max-width: 75%;
+    }
+  }
+  
 
 body {
   margin-right: auto;
