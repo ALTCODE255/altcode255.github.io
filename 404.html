@@ -49,7 +49,7 @@
         <hr>
         <div class="text-center" id="last-updated"><b>Page Last Updated:</b></div>
         <script>
-            var filepath = location.pathname.substring(1) + ".html";
+            var filepath = location.pathname.endsWith("html") ? location.pathname.substring(1) : location.pathname.substring(1) + ".html";
             fetch(`https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=${filepath}`)
                 .then(res => res.json())
                 .then(res => {
