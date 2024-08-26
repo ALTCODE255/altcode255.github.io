@@ -40,6 +40,7 @@ function updateActiveSection(id) {
     document.getElementById("search").disabled = false;
     document.getElementById("search").placeholder = "Type here to search quotes...";
   }
+  window.location.hash = id;
   activeSection = document.getElementById(id);
 
   // disable other sections
