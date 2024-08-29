@@ -106,11 +106,13 @@ h2 {
 }
 
 h3 {
+    --bs-heading-color: var(--bs-primary);
   font-size: 1.15rem;
+  font-family: "Palanquin";
 }
 
 h4 {
-  font-size: 1.05rem;
+  font-size: 1.025rem;
 }
 
 b {
