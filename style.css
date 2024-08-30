@@ -112,6 +112,7 @@ h3 {
 }
 
 h4 {
+--bs-heading-color: #c3efef;
   font-size: 1.05rem;
   font-family: "Palanquin";
 }
