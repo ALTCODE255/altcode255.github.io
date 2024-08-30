@@ -38,10 +38,10 @@ function fetchQuotes(url, el) {
 }
 
 function updateActiveSection(id) {
-  if (document.getElementById("search").disabled) {
-    document.getElementById("search").disabled = false;
-    document.getElementById("search").placeholder =
-      "Type here to filter quotes...";
+  let search = document.getElementById("search");
+  if (search.disabled) {
+    search.disabled = false;
+    search.placeholder = "Type here to filter quotes...";
   }
   window.location.hash = id;
   activeSection = document.getElementById(id);
