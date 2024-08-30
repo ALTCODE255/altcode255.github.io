@@ -106,7 +106,7 @@ h2 {
 }
 
 h3 {
-    --bs-heading-color: var(--bs-primary);
+  --bs-heading-color: var(--bs-primary);
   font-size: 1.15rem;
   font-family: "Palanquin";
 }
@@ -223,4 +223,8 @@ img.icon {
 img.header {
   margin-top: 5px;
   max-width: 325px;
+}
+
+#quoteSets li:not([style*='display: none;']):not(:last-child) { 
+   margin-bottom: 0.3rem;  
 }
