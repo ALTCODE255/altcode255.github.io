@@ -44,7 +44,6 @@ function updateActiveSection(id) {
     search.placeholder = "Type here to filter quotes...";
   }
   window.location.hash = id;
-  activeSection = document.getElementById(id);
 
   // disable other sections
   $(`#quoteSets > div:not(#${id})`).hide();
