@@ -2,9 +2,6 @@ var script = document.createElement("script");
 script.src = "https://code.jquery.com/jquery-3.7.1.min.js"; // Check https://jquery.com/ for the current version
 document.getElementsByTagName("head")[0].appendChild(script);
 
-let html;
-let activeSection;
-
 function loadQuotes() {
   let quoteSets = document.getElementById("quoteSets").children;
   for (let set of quoteSets) {
@@ -41,56 +38,48 @@ function fetchQuotes(url, el) {
 }
 
 function updateActiveSection(id) {
-  if (!activeSection) {
+  if (document.getElementById("search").disabled) {
     document.getElementById("search").disabled = false;
     document.getElementById("search").placeholder =
-      "Type here to search quotes...";
+      "Type here to filter quotes...";
   }
   window.location.hash = id;
   activeSection = document.getElementById(id);
 
   // disable other sections
-  let sections = document.querySelectorAll(`#quoteSets > div:not(#${id})`);
-  for (let s of sections) {
-    if (s.className == "active") {
-      s.innerHTML = html;
-    }
-    s.removeAttribute("class");
-  }
-
+  $(`#quoteSets > div:not(#${id})`).hide();
   // activate section
-  activeSection.className = "active";
+  $("#" + id).show();
 
-  html = activeSection.innerHTML;
-  countQuotes(activeSection);
+  countQuotes();
 }
 
-function countQuotes(el) {
+function countQuotes() {
   document.getElementById("results").innerHTML =
     "Results: " +
-    el.querySelectorAll("li:not([style*='display: none;']").length +
+    $(
+      "#quoteSets > div:not([style*='display: none;']) li:not([style*='display: none;'])"
+    ).length +
     " quote(s)";
 }
 
 function filterText() {
   let regex = this.value;
-  $(activeSection).find("li, h2, h3, h4, h5, h6").hide();
-  let filteredQuotes = $(activeSection)
-    .find("li")
-    .filter(function () {
-      return this.innerHTML.match(new RegExp(regex, "i"));
-    });
+  $("#quoteSets").find("li, h2, h3, h4, h5, h6").hide();
+  let filteredQuotes = $("#quoteSets li").filter(function () {
+    return this.innerHTML.match(new RegExp(regex, "i"));
+  });
   filteredQuotes.css("display", "list-item");
   filteredQuotes.each(function () {
     displayHeadingRecur($(this).parent().prev());
   });
-  countQuotes(activeSection);
+  countQuotes();
 }
 
 function displayHeadingRecur(obj) {
   if (obj.length) {
     obj.show();
-    let size = parseInt(obj[0].nodeName.match(/H[2-6]/)[0].substring(1));
+    let size = parseInt(obj[0].nodeName[1]);
     if (size > 2) {
       let prevHeader = obj.prevAll(`h${size - 1}`).first();
       displayHeadingRecur(prevHeader);

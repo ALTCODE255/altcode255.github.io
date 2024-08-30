@@ -215,14 +215,6 @@ textarea {
   --bs-card-bg: var(--bs-secondary-bg);
 }
 
-#quoteSets > div {
-  display: none;
-}
-
-#quoteSets > .active {
-  display: block;
-}
-
 img.icon {
   margin-top: 5px;
   max-width: 160px;
