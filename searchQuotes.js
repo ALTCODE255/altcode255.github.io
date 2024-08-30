@@ -77,7 +77,7 @@ function filterText() {
 }
 
 function displayHeadingRecur(obj) {
-  if (obj.length) {
+  if (obj.length && obj.css("display") == "none") {
     obj.show();
     let size = parseInt(obj[0].nodeName[1]);
     if (size > 2) {
