@@ -30,6 +30,7 @@ function fetchQuotes(url, el) {
         .replaceAll(/<em>|<\/em>/g, "*")
         .replaceAll("\\n", "<br>")
         .replace("MES*GROUP7*04", "MES_GROUP7_04");
+      $(el).hide();
       if (window.location.hash.substring(1) == el.id) {
         updateActiveSection(el.id);
         document.getElementById(el.id + "-radio").checked = "true";
