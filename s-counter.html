@@ -5,7 +5,7 @@
     <meta name="darkreader-lock">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALT255 | The S Counter</title>
+    <title>ALT255 | The ASS Counter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
@@ -28,7 +28,7 @@
                         <a class="nav-link" href="twitter-bots">Twitter Bots</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="s-counter">The S Counter</a>
+                        <a class="nav-link" href="counter">The ASS Counter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://shuuenpro.github.io">Nameless' Shuuen no Shiori Guide</a>
@@ -39,12 +39,12 @@
     </header>
     <div class="animate-in" id="content">
         <div class="container-fluid p-2">
-            <h1>The S Counter</h1>
+            <h1>The ASS Counter</h1>
             <div class="container" id="what">
                 <h2>What is this?</h2>
                 <p>
                     <b class="text-primary">Short answer:</b>
-                    The "S Counter" is a utility / program / automated-system-of-various-different-programs I use to keep track of how many times I type or say "Shuuen" or "Sonic" in a given day.
+                    The "ASS Counter" is a utility / program / automated-system-of-various-different-programs I use to keep track of how many times I type or say "Akechi", "Sonic", or "Shuuen" in a given day.
                 </p>
                 <b class="text-primary">Long answer:</b>
                 <a data-bs-toggle="collapse" href="#long-answer" role="button" aria-expanded="false" aria-controls="long-answer">
@@ -53,16 +53,19 @@
                 <div class="collapse" id="long-answer">
                     <div class="card card-body">
                         <p>
-                            In summary, the S Counter is my firstborn child. My beloved. The silly little tally counter/table/sheet that has been with me through hell and back (since <b>August 22nd, 2020</b>). It started as a way for me to keep track of how many times I mentioned <b>Shuuen</b> on any given day, but then later evolved to capture major current interests / passions that happened to begin with the letter 'S' that would become a regular part of my vocabulary.
+                            In summary, the counter is my firstborn child. My beloved. The silly little tally counter/table/sheet that has been with me through hell and back (since <b>August 22nd, 2020</b>). It started as a way for me to keep track of how many times I mentioned <b>Shuuen</b> on any given day, but then later evolved to capture major current interests / passions that would become a regular part of my vocabulary. Prior to October 14th, 2024, it was named the "S Counter", due to words prior to "Akechi" on the counter beginning with the letter S.
                         </p>
                         <p>
                             (At some point, <b>Stanley</b> was a word on the counter (<b>June 2022 -> August 2022</b>) in reference to the Stanley Parable, before getting removed due to a loss in interest.)
                         </p>
                         <p>
-                            The most recent notable addition to the sheet was in <b>July of 2022</b>, when <b>Sonic</b> the Hedgehog became a major interest. This word has flourished in the bot ever since, to the point of being said more than <em>twice</em> the total number of times as Shuuen.
+                            The most recent notable addition to the counter was on <b>October 14th, 2024</b>, when <b>Akechi</b> was added to the counter in reference to Goro Akechi from Persona 5.
+                        </p>
+                        <p>
+                            <strike>The most recent notable addition to the counter was in <b>July of 2022</b>, when <b>Sonic</b> the Hedgehog became a major interest. This word has flourished in the bot ever since, to the point of being said more than <em>twice</em> the total number of times as Shuuen.</strike>
                         </p>
                         <li>
-                            The S Counter has been through many developments. Originally, the data was kept on a plain Google spreadsheet (archived <a href="https://docs.google.com/spreadsheets/d/1VyD1fDG6noKldoNCQIhoGNAX7cTwuP8HAI0PViik0k0/">here</a>), with statistics calculated using a crap ton of formulas. It was just that for the longest time, actually. Until:
+                            The ASS Counter has been through many developments. Originally, the data was kept on a plain Google spreadsheet (archived <a href="https://docs.google.com/spreadsheets/d/1VyD1fDG6noKldoNCQIhoGNAX7cTwuP8HAI0PViik0k0/">here</a>), with statistics calculated using a crap ton of formulas. It was just that for the longest time, actually. Until:
                             <ul>
                                 <li>
                                     On <a href="https://twitter.com/ALTCODE255/status/1483347946305466368">January 17th, 2022</a>, I made a Twitter bot out of it using a combination of Zapier (later moving to Microsoft Power Automate) and more complicated Google Sheets formulas. Note: I didn't learn my first real programming language until March 2022.
@@ -74,7 +77,7 @@
                                     On <a href="https://twitter.com/ALTCODE255/status/1646057020699869184">April 12th, 2023</a>, I wrote a Python script to run in the background of my computer that would automatically increment the counter when I typed Shuuen/Sonic or pressed certain hotkeys.
                                     <ul>
                                         <li>Around the same time, I wrote a similar script I could manually activate on Home Assistant from my phone to perform the same task, minus the keyboard tracking.</li>
-                                        <li>Also around the same time, I integrated the S Counter with my personal Discord bot, so that I could increment it using commands.</li>
+                                        <li>Also around the same time, I integrated the ASS Counter with my personal Discord bot, so that I could increment it using commands.</li>
                                     </ul>
                                 </li>
                                 <li>
@@ -96,6 +99,7 @@
                                 </li>
                                 <li>
                                     On <b>February 5th, 2024</b>, I ditched using Python's keyboard module for hotkeys and hotstrings and replaced my startup Python script with an AHK script. AHK is definitely more suitable for this job.
+                                </li>
                             </ul>
                             </p>
                     </div>
@@ -106,7 +110,7 @@
                 <h2 class="text-center">Live Table</h2>
                 <p>Data used to be stored on <a href="https://docs.google.com/spreadsheets/d/1VyD1fDG6noKldoNCQIhoGNAX7cTwuP8HAI0PViik0k0/">Google Sheets</a>, moved to SQLite3 database. Source code for practically everything that makes this work is <a href="https://github.com/ALTCODE255/S_Counter">here</a>.</p>
                 <p>(Updates hourly at :20. Only data from the past 30 days is shown below; see <a href="https://gist.github.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/">gist</a> for more.)</p>
-                <div class="table-responsive w-100 mx-auto", id="s-table"></div>
+                <div class="table-responsive w-100 mx-auto" , id="s-table"></div>
                 <script>
                     fetch("https://gist.githubusercontent.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/raw/")
                         .then(r => r.text())
