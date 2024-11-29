@@ -52,10 +52,6 @@
                         (A long tangent about its history. Click to expand.)
                     </a>
                 </p>
-                <h2>Why is it named like this?</h2>
-                <p>
-                    Simple. ASS as an abbreviation for "Akechi, Sonic, Shuuen" is really funny. It used to be called the S Counter, and I needed to rename it after Akechi broke the pattern.
-                </p>
                 <div class="collapse" id="long-answer">
                     <div class="card card-body">
                         <p>
@@ -70,46 +66,52 @@
                         <p>
                             <strike>The most recent notable addition to the counter was in <b>July of 2022</b>, when <b>Sonic</b> the Hedgehog became a major interest. This word has flourished in the bot ever since, to the point of being said more than <em>twice</em> the total number of times as Shuuen.</strike>
                         </p>
-                        <li>
-                            The ASS Counter has been through many developments. Originally, the data was kept on a plain Google spreadsheet (archived <a href="https://docs.google.com/spreadsheets/d/1VyD1fDG6noKldoNCQIhoGNAX7cTwuP8HAI0PViik0k0/">here</a>), with statistics calculated using a crap ton of formulas. It was just that for the longest time, actually. Until:
-                            <ul>
-                                <li>
-                                    On <a href="https://twitter.com/ALTCODE255/status/1483347946305466368">January 17th, 2022</a>, I made a Twitter bot out of it using a combination of Zapier (later moving to Microsoft Power Automate) and more complicated Google Sheets formulas. Note: Separate from this, I learned Python, my first (proper) programming language, in the same month.
-                                </li>
-                                <li>
-                                    In <b>January of 2023</b>, I added tally boxes that had scripted functionality (using Google Apps Script) to increment the value of a cell by one, so I didn't have to manually type numbers myself anymore. I also had it automatically add new rows every day.
-                                </li>
-                                <li>
-                                    On <a href="https://twitter.com/ALTCODE255/status/1646057020699869184">April 12th, 2023</a>, I wrote a Python script to run in the background of my computer that would automatically increment the counter when I typed Shuuen/Sonic or pressed certain hotkeys.
-                                    <ul>
-                                        <li>Around the same time, I wrote a similar script I could manually activate on Home Assistant from my phone to perform the same task, minus the keyboard tracking.</li>
-                                        <li>Also around the same time, I integrated the ASS Counter with my personal Discord bot, so that I could increment it using commands.</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    On <a href="https://twitter.com/ALTCODE255/status/1648968037889110016">April 20th, 2023</a>, when the Twitter API's free functionality got limited and MS Power Automate stopped providing a shared application for the Twitter API, I finally migrated the bot to a Python script (scheduled to run with cron on my Raspberry Pi) using Tweepy, while still pulling data from Google Sheets using Pygsheets.
-                                </li>
-                                <li>
-                                    On <a href="https://twitter.com/ALTCODE255/status/1654260297912451075">May 4th, 2023</a>, this page was created.
-                                </li>
-                                <li>
-                                    On <a href="https://twitter.com/ALTCODE255/status/1715208772078141770">October 19th, 2023</a>, I finally stopped using Google Sheets to store the tally counter's data, and moved the table to an SQLite3 database. I still needed a way to keep this page live, so I wrote a simple bash script to export the database to a markdown file and upload said file to Github as a gist every hour, which would then be embedded onto this webpage.
-                                </li>
-                                <li>
-                                    On <a href="https://twitter.com/ALTCODE255/status/1723615819874390225">November 11th, 2023</a>, I ditched Github's gist embed to write a cleaner one, using Showdown.js to convert the contents of the markdown file to an HTML table.
-                                    <ul>
-                                        <li>
-                                            And then I also wrote an absurdly long tangent gushing about a project featuring a table with useless numbers. Which is what you see here.
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    On <b>February 5th, 2024</b>, I ditched using Python's keyboard module for hotkeys and hotstrings and replaced my startup Python script with an AHK script. AHK is definitely more suitable for this job.
-                                </li>
-                            </ul>
-                            </p>
+                        <p>
+                            The ASS Counter has been through many developments. Originally, the data was kept on a plain Google spreadsheet (archived <a href="https://docs.google.com/spreadsheets/d/1VyD1fDG6noKldoNCQIhoGNAX7cTwuP8HAI0PViik0k0/">here</a>), with statistics calculated using a crap ton of formulas. It was just that for the longest time, actually.
+                        </p>
+                        Until:
+                        <ul>
+                            <li>
+                                On <a href="https://twitter.com/ALTCODE255/status/1483347946305466368">January 17th, 2022</a>, I made a Twitter bot out of it using a combination of Zapier (later moving to Microsoft Power Automate) and more complicated Google Sheets formulas. Note: Separate from this, I learned Python, my first (proper) programming language, in the same month.
+                            </li>
+                            <li>
+                                In <b>January of 2023</b>, I added tally boxes that had scripted functionality (using Google Apps Script) to increment the value of a cell by one, so I didn't have to manually type numbers myself anymore. I also had it automatically add new rows every day.
+                            </li>
+                            <li>
+                                On <a href="https://twitter.com/ALTCODE255/status/1646057020699869184">April 12th, 2023</a>, I wrote a Python script to run in the background of my computer that would automatically increment the counter when I typed Shuuen/Sonic or pressed certain hotkeys.
+                                <ul>
+                                    <li>Around the same time, I wrote a similar script I could manually activate on Home Assistant from my phone to perform the same task, minus the keyboard tracking.</li>
+                                    <li>Also around the same time, I integrated the ASS Counter with my personal Discord bot, so that I could increment it using commands.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                On <a href="https://twitter.com/ALTCODE255/status/1648968037889110016">April 20th, 2023</a>, when the Twitter API's free functionality got limited and MS Power Automate stopped providing a shared application for the Twitter API, I finally migrated the bot to a Python script (scheduled to run with cron on my Raspberry Pi) using Tweepy, while still pulling data from Google Sheets using Pygsheets.
+                            </li>
+                            <li>
+                                On <a href="https://twitter.com/ALTCODE255/status/1654260297912451075">May 4th, 2023</a>, this page was created.
+                            </li>
+                            <li>
+                                On <a href="https://twitter.com/ALTCODE255/status/1715208772078141770">October 19th, 2023</a>, I finally stopped using Google Sheets to store the tally counter's data, and moved the table to an SQLite3 database. I still needed a way to keep this page live, so I wrote a simple bash script to export the database to a markdown file and upload said file to Github as a gist every hour, which would then be embedded onto this webpage.
+                            </li>
+                            <li>
+                                On <a href="https://twitter.com/ALTCODE255/status/1723615819874390225">November 11th, 2023</a>, I ditched Github's gist embed to write a cleaner one, using Showdown.js to convert the contents of the markdown file to an HTML table.
+                                <ul>
+                                    <li>
+                                        And then I also wrote an absurdly long tangent gushing about a project featuring a table with useless numbers. Which is what you see here.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                On <b>February 5th, 2024</b>, I ditched using Python's keyboard module for hotkeys and hotstrings and replaced my startup Python script with an AHK script. AHK is definitely more suitable for this job.
+                            </li>
+                        </ul>
+                        </p>
                     </div>
                 </div>
+                <h2>Why is it named like this?</h2>
+                <p>
+                    Simple. ASS as an abbreviation for "Akechi, Sonic, Shuuen" is really funny. It used to be called the S Counter, and I needed to rename it after Akechi broke the pattern.
+                </p>
             </div>
             <hr>
             <div class="container" id="live">
