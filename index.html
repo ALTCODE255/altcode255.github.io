@@ -103,16 +103,10 @@
     </div>
     <footer>
         <hr>
-        <div class="text-center" id="last-updated"><b>Page Last Updated:</b></div>
+        <center><b>Page Last Updated: </b><span id="last-updated"></span></center>
+        <script src="footer.js"></script>
         <script>
-            fetch("https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=index.html")
-                .then(res => res.json())
-                .then(res => {
-                    date = new Date(res[0].commit.committer.date)
-                    formatDate = date.toLocaleString("sv-SE").split(" ")[0];
-                    formatTime = date.toLocaleTimeString()
-                    document.getElementById('last-updated').innerHTML = "<b>Page Last Updated:</b> " + formatDate + " @ " + formatTime;
-                })
+            getLastUpdateTimestamp("last-updated", "index.html");
         </script>
         <hr>
     </footer>

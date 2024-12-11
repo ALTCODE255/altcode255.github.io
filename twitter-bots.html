@@ -114,17 +114,11 @@
     </div>
     <footer>
         <hr>
-        <div class="text-center" id="last-updated"><b>Page Last Updated:</b></div>
+        <center><b>Page Last Updated:</b><span id="last-updated"></span></center>
+        <script src="footer.js"></script>
         <script>
             var filepath = location.pathname.endsWith("html") ? location.pathname.substring(1) : location.pathname.substring(1) + ".html";
-            fetch(`https://api.github.com/repos/ALTCODE255/altcode255.github.io/commits?path=${filepath}`)
-                .then(res => res.json())
-                .then(res => {
-                    date = new Date(res[0].commit.committer.date)
-                    formatDate = date.toLocaleString("sv-SE").split(" ")[0];
-                    formatTime = date.toLocaleTimeString()
-                    document.getElementById('last-updated').innerHTML = "<b>Page Last Updated:</b> " + formatDate + " @ " + formatTime;
-                })
+            getLastUpdateTimestamp("last-updated", filepath)
         </script>
         <hr>
     </footer>
