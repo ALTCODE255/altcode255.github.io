@@ -81,6 +81,7 @@
             <h1>Quotes Search</h1>
             <div id="quotesCard" class="card">
                 <div class="card-body rounded">
+                    <p>Quotes last updated: <code id="quotes-updated"></code></p>
                     <div class="btn-group flex-wrap w-100" role="group">
                         <input id="hourlysonicbot-radio" type="radio" class="btn-check" name="bot" onchange="updateActiveSection(this.value);" value="hourlysonicbot" autocomplete="off">
                         <label for="hourlysonicbot-radio" class="btn rounded-top btn-outline-primary">@hourlysonicbot</label>
@@ -108,6 +109,7 @@
                     </div>
                 </div>
             </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.js"></script>
             <script src="./scripts/searchQuotes.js"></script>
         </div>
     </div>

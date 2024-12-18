@@ -8,6 +8,7 @@ function loadQuotes() {
     let url = `https://gist.githubusercontent.com/ALTCODE255/947280561356cf037ce6f749638277d5/raw/${set.id}.txt`;
     fetchQuotes(url, set);
   }
+  getLastUpdated();
   document
     .getElementById("search")
     .addEventListener("input", filterText, false);
@@ -36,6 +37,18 @@ function fetchQuotes(url, el) {
         document.getElementById(el.id + "-radio").checked = "true";
       }
     });
+}
+
+function getLastUpdated() {
+    fetch("https://api.github.com/gists/947280561356cf037ce6f749638277d5")
+        .then((res) => res.json())
+        .then((res) => {
+            date = new Date(res.updated_at);
+            formatDate = date.toLocaleString("sv-SE").split(" ")[0];
+            formatTime = date.toLocaleTimeString();
+            document.getElementById("quotes-updated").innerHTML =
+                formatDate + " @ " + formatTime;
+        });
 }
 
 function updateActiveSection(id) {
