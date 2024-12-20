@@ -107,6 +107,9 @@
                             <li>
                                 On <b>December 10th, 2024</b>, I migrated the database from SQLite3 to a PostgreSQL instance hosted in Supabase.
                             </li>
+                            <li>
+                                On <b>December 20th, 2024</b>, I added a cool plot to represent the data, using Plotly.js.
+                            </li>
                         </ul>
                         </p>
                     </div>
@@ -124,7 +127,9 @@
                     <p class="text-small text-light text-opacity-75">(Only data from the past 30 days is shown below; see <a href="https://gist.github.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/">gist</a> for more.)</p>
                     <p>Last updated: <code id="table-updated"></code></p>
                 </div>
-                <div class="table-responsive w-100 mx-auto" , id="s-table"></div>
+                <div class=" w-100 mx-auto" id="graph" style="width:600px;height:500px;"></div>
+                <div class="table-responsive w-100 mx-auto", id="s-table"></div>
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
                 <script src="./scripts/liveTable.js"></script>
                 <script>getLiveTable()</script>
             </div>
