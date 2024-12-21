@@ -127,11 +127,16 @@
                     <p class="text-small text-light text-opacity-75">(Only data from the past 30 days is shown below; see <a href="https://gist.github.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/">gist</a> for more.)</p>
                     <p>Last updated: <code id="table-updated"></code></p>
                 </div>
-                <div class=" w-100 mx-auto" id="graph" style="width:600px;height:500px;"></div>
+                <div class="container-fluid mx-auto" id="plot"></div>
                 <div class="table-responsive w-100 mx-auto", id="s-table"></div>
                 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                <script src="./scripts/liveTable.js"></script>
-                <script>getLiveTable()</script>
+                <script src="./scripts/liveTally.js"></script>
+                <script>
+                    getData("table-updated").then((array) => {
+                        createTable("s-table", array);
+                        createPlot("plot", array);
+                    });
+                </script>
             </div>
         </div>
     </div>
