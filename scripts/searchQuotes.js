@@ -2,6 +2,10 @@ var script = document.createElement("script");
 script.src = "https://code.jquery.com/jquery-3.7.1.min.js"; // Check https://jquery.com/ for the current version
 document.getElementsByTagName("head")[0].appendChild(script);
 
+var script = document.createElement("script");
+script.src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.js";
+document.getElementsByTagName("head")[0].appendChild(script);
+
 function loadQuotes() {
   let quoteSets = document.getElementById("quoteSets").children;
   for (let set of quoteSets) {
