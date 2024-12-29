@@ -134,8 +134,6 @@ b {
 }
 
 .dropdown-item {
-    --bs-dropdown-link-color: white;
-    --bs-dropdown-link-hover-color: white;
     --bs-dropdown-link-active-bg: var(--primary-muted);
 }
 
@@ -154,7 +152,8 @@ b {
     background-color: rgba(var(--primary-muted-rgb), 0.8) !important;
 }
 
-.nav-item.active {
+.nav-item.active,
+.dropdown.active {
     background-color: var(--primary-muted);
 }
 
