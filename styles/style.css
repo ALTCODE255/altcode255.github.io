@@ -1,231 +1,242 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
 
 @font-face {
-  font-family: "Open Sans";
-  src: url("Open Sans.ttf");
-  font-weight: normal;
+    font-family: "Open Sans";
+    src: url("Open Sans.ttf");
+    font-weight: normal;
 }
 
 @font-face {
-  font-family: "Palanquin";
-  src: url("Palanquin.ttf");
+    font-family: "Palanquin";
+    src: url("Palanquin.ttf");
 }
 
 :root {
-  --bs-primary: #ffbf00;
-  --bs-primary-rgb: 255, 191, 0;
-  --bs-secondary: #3bb9d8;
-  --bs-secondary-rgb: 59, 185, 216;
-  --bs-success: #28a745;
-  --bs-success-rgb: 40, 167, 69;
-  --bs-info: #0dcaf0;
-  --bs-info-rgb: 13, 202, 240;
-  --bs-warning: #ef8011;
-  --bs-warning-rgb: 239, 128, 17;
-  --bs-danger: #dc3545;
-  --bs-danger-rgb: 220, 53, 69;
-  --bs-light: #f8f9fa;
-  --bs-light-rgb: 248, 249, 250;
-  --bs-dark: #1d1f2a;
-  --bs-dark-rgb: 33, 37, 41;
-  --bs-body-font-family: "Open Sans";
-  --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 500;
-  --bs-body-line-height: 1.6;
-  --bs-body-color: var(--bs-light);
-  --bs-body-color-rgb: var(--bs-light-rgb);
-  --bs-body-bg: var(--bs-dark);
-  --bs-body-bg-rgb: var(--bs-dark-rgb);
-  --bs-secondary-bg: #2a2f47;
-  --bs-secondary-bg-rgb: 42, 47, 71;
-  --bs-link-color: rgb(239, 213, 108);
-  --bs-link-color-rgb: 239, 213, 108;
-  --bs-link-decoration: underline;
-  --bs-link-hover-color: rgb(150, 238, 244);
-  --bs-link-hover-color-rgb: 150, 238, 244;
+    --bs-primary: #ffbf00;
+    --bs-primary-rgb: 255, 191, 0;
+    --bs-secondary: #3bb9d8;
+    --bs-secondary-rgb: 59, 185, 216;
+    --bs-success: #28a745;
+    --bs-success-rgb: 40, 167, 69;
+    --bs-info: #0dcaf0;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning: #ef8011;
+    --bs-warning-rgb: 239, 128, 17;
+    --bs-danger: #dc3545;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light: #f8f9fa;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark: #1d1f2a;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-body-font-family: "Open Sans";
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 500;
+    --bs-body-line-height: 1.6;
+    --bs-body-color: var(--bs-light);
+    --bs-body-color-rgb: var(--bs-light-rgb);
+    --bs-body-bg: var(--bs-dark);
+    --bs-body-bg-rgb: var(--bs-dark-rgb);
+    --bs-secondary-bg: #2a2f47;
+    --bs-secondary-bg-rgb: 42, 47, 71;
+    --bs-link-color: rgb(239, 213, 108);
+    --bs-link-color-rgb: 239, 213, 108;
+    --bs-link-decoration: underline;
+    --bs-link-hover-color: rgb(150, 238, 244);
+    --bs-link-hover-color-rgb: 150, 238, 244;
 
-  --primary-muted: rgb(184, 130, 31);
-  --primary-muted-rgb: 184, 130, 31;
+    --primary-muted: rgb(184, 130, 31);
+    --primary-muted-rgb: 184, 130, 31;
 }
 
 @media (max-width: 768px) {
-  .animate-in {
-    -webkit-animation: none !important;
-    animation: none !important;
-  }
+    .animate-in {
+        -webkit-animation: none !important;
+        animation: none !important;
+    }
 }
 
 .animate-in {
-  -webkit-animation: fadeIn 0.5s ease-in;
-  animation: fadeIn 0.5s ease-in;
+    -webkit-animation: fadeIn 0.5s ease-in;
+    animation: fadeIn 0.5s ease-in;
 }
 
 @-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 769px) {
-  #s-table {
-    max-width: 75%;
-  }
+    #s-table {
+        max-width: 75%;
+    }
 }
 
 body {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 60rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 60rem;
 }
 
 h1 {
-  --bs-heading-color: var(--bs-primary);
-  font-size: 1.5rem;
-  padding: 0.25rem;
-  text-align: center;
+    --bs-heading-color: var(--bs-primary);
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    text-align: center;
 }
 
 h2 {
-  --bs-heading-color: var(--bs-secondary);
-  font-family: "Palanquin";
-  font-size: 1.4rem;
+    --bs-heading-color: var(--bs-secondary);
+    font-family: "Palanquin";
+    font-size: 1.4rem;
 }
 
 h3 {
-  --bs-heading-color: var(--bs-primary);
-  font-size: 1.15rem;
-  font-family: "Palanquin";
+    --bs-heading-color: var(--bs-primary);
+    font-size: 1.15rem;
+    font-family: "Palanquin";
 }
 
 h4 {
---bs-heading-color: #c3efef;
-  font-size: 1.05rem;
-  font-family: "Palanquin";
+    --bs-heading-color: #c3efef;
+    font-size: 1.05rem;
+    font-family: "Palanquin";
 }
 
 b {
-  color: var(--bs-secondary);
+    color: var(--bs-secondary);
+}
+
+.dropdown-menu,
+.nav-item {
+    background-color: #313d4b;
 }
 
 .nav-item {
-  background-color: #313d4b;
-  --bs-nav-link-color: white;
-  --bs-nav-link-hover-color: white;
-  --bs-nav-item-hover-bg: rgba(var(--primary-muted-rgb), 0.8);
-  --bs-navbar-nav-link-padding-x: 1rem;
-  --bs-nav-link-padding-x: 0.5rem;
+    --bs-nav-link-color: white;
+    --bs-nav-link-hover-color: white;
+    --bs-navbar-nav-link-padding-x: 1rem;
+    --bs-nav-link-padding-x: 0.5rem;
+}
+
+.dropdown-item {
+    --bs-dropdown-link-color: white;
+    --bs-dropdown-link-hover-color: white;
+    --bs-dropdown-link-active-bg: var(--primary-muted);
 }
 
 .btn-outline-primary {
-  --bs-btn-active-bg: var(--primary-muted);
-  --bs-btn-active-border-color: white;
-  --bs-btn-color: white;
-  --bs-btn-border-color: var(--bs-light);
-  --bs-btn-bg: var(--bs-body-bg);
+    --bs-btn-active-bg: var(--primary-muted);
+    --bs-btn-active-border-color: white;
+    --bs-btn-color: white;
+    --bs-btn-border-color: var(--bs-light);
+    --bs-btn-bg: var(--bs-body-bg);
 }
 
 .nav-item:hover,
+.dropdown:hover,
+.dropdown-item:hover,
 .btn-outline-primary:hover {
-  background-color: rgba(var(--primary-muted-rgb), 0.8) !important;
+    background-color: rgba(var(--primary-muted-rgb), 0.8) !important;
 }
 
 .nav-item.active {
-  background-color: var(--primary-muted);
+    background-color: var(--primary-muted);
 }
 
 .submit-btn {
-  --bs-btn-bg: var(--primary-muted);
-  --bs-btn-hover-color: var(--bs-light);
-  --bs-btn-hover-bg: rgba(var(--primary-muted-rgb), 0.8);
+    --bs-btn-bg: var(--primary-muted);
+    --bs-btn-hover-color: var(--bs-light);
+    --bs-btn-hover-bg: rgba(var(--primary-muted-rgb), 0.8);
 }
 
 ::selection {
-  background: #366d85a5 !important;
-  color: white;
+    background: #366d85a5 !important;
+    color: white;
 }
 
 .table {
-  --bs-table-bg: #2a2f47;
-  --bs-table-color: #fbcf4b;
+    --bs-table-bg: #2a2f47;
+    --bs-table-color: #fbcf4b;
 }
 
 .table-striped > tbody > tr:nth-of-type(2n + 1) > * {
-  --bs-table-color-type: var(--bs-table-color);
-  --bs-table-bg-type: #33395e;
+    --bs-table-color-type: var(--bs-table-color);
+    --bs-table-bg-type: #33395e;
 }
 
 blockquote.quote {
-  border-left: 3px solid #ccc;
-  padding: 0.5em 10px;
-  margin: 0;
+    border-left: 3px solid #ccc;
+    padding: 0.5em 10px;
+    margin: 0;
 }
 
 .form-control {
-  border-radius: 0;
-  --bs-border-color: var(--bs-link-color);
+    border-radius: 0;
+    --bs-border-color: var(--bs-link-color);
 }
 
 .form-control:focus {
-  border-color: var(--bs-border-color);
+    border-color: var(--bs-border-color);
 }
 
 .form-control::placeholder {
-  color: rgba(var(--bs-body-color-rgb), 0.3);
+    color: rgba(var(--bs-body-color-rgb), 0.3);
 }
 
 input[name="username"],
 input[name="email"] {
-  position: absolute;
-  left: -999999999px;
+    position: absolute;
+    left: -999999999px;
 }
 
 .card {
-  border: none;
+    border: none;
 }
 
 .card-subtitle {
-  --bs-card-subtitle-color: #98c8f7;
-  font-size: 80%;
+    --bs-card-subtitle-color: #98c8f7;
+    font-size: 80%;
 }
 
 textarea {
-  resize: none;
-  overflow: hidden;
-  height: 7.5em;
+    resize: none;
+    overflow: hidden;
+    height: 7.5em;
 }
 
 #ask-box {
-  max-width: 325px;
+    max-width: 325px;
 }
 
 #quotesCard {
-  --bs-card-bg: var(--bs-secondary-bg);
+    --bs-card-bg: var(--bs-secondary-bg);
 }
 
 img.icon {
-  margin-top: 5px;
-  max-width: 160px;
+    margin-top: 5px;
+    max-width: 160px;
 }
 
 img.header {
-  margin-top: 5px;
-  max-width: 325px;
+    margin-top: 5px;
+    max-width: 325px;
 }
 
-#quoteSets li:not([style*='display: none;']):not(:last-child) { 
-   margin-bottom: 0.3rem;  
+#quoteSets li:not([style*="display: none;"]):not(:last-child) {
+    margin-bottom: 0.3rem;
 }
