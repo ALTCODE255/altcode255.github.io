@@ -137,6 +137,10 @@ b {
     --bs-dropdown-link-active-bg: var(--primary-muted);
 }
 
+.dropdown-menu {
+    --bs-border-radius: 0;
+}
+
 .btn-outline-primary {
     --bs-btn-active-bg: var(--primary-muted);
     --bs-btn-active-border-color: white;
