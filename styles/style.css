@@ -146,14 +146,12 @@ b {
 }
 
 .nav-item:hover,
-.dropdown:hover,
 .dropdown-item:hover,
 .btn-outline-primary:hover {
     background-color: rgba(var(--primary-muted-rgb), 0.8) !important;
 }
 
-.nav-item.active,
-.dropdown.active {
+.nav-item.active {
     background-color: var(--primary-muted);
 }
 
