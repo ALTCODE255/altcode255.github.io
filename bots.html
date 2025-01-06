@@ -47,37 +47,42 @@
             <p>Want to make your own bot? Have a server / machine you can use to run it? Consider checking out <a href="https://github.com/ALTCODE255/template_post_bot">this</a>.</p>
             <div class="row">
                 <div class="col-sm">
-                    <div class="card p-2">
+                    <div class="card p-1">
                         <h3 class="card-title"><a href="https://twitter.com/30music_shuuen">30s Shuuen no Shiori Bot</a></h3>
                         <div class="card-subtitle">FEB 15 2022 -> PRESENT</div>
                         <div class="card-body">Posts trimmed clips of Shuuen no Shiori tracks every two hours.</div>
                     </div>
-                    <div class="card p-2">
+                    <div class="card p-1">
                         <h3 class="card-title"><a href="https://twitter.com/hourlysonicbot">Bihourly Sonic Quotes</a></h3>
                         <div class="card-subtitle">APR 9 2023 -> PRESENT</div>
                         <div class="card-body">Posts quotes said by Sonic the Hedgehog every two hours.</div>
                     </div>
-                    <div class="card p-2">
+                    <div class="card p-1">
                         <h3 class="card-title"><a href="https://twitter.com/hourlyshadowbot">Bihourly Shadow Quotes</a></h3>
                         <div class="card-subtitle">JUN 1 2023 -> PRESENT</div>
                         <div class="card-body">Posts quotes said by Shadow the Hedgehog every two hours.</div>
                     </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card p-2">
+                    <div class="card p-1">
                         <h3 class="card-title"><a href="https://twitter.com/coolsonicquotes">Cool Sonic Quotes</a></h3>
                         <div class="card-subtitle">NOV 19 2023 -> PRESENT</div>
                         <div class="card-body">Posts memorable quotes said by various Sonic characters every two hours.</div>
                     </div>
-                    <div class="card p-2">
+                </div>
+                <div class="col-sm">
+                    <div class="card p-1">
                         <h3 class="card-title text-primary">Goro Akechi Quotes (<a href="https://twitter.com/akechiquotebot">Twitter</a>) (<a href="https://akechiquotebot.bsky.social">Bluesky</a>)</h3>
                         <div class="card-subtitle">FEB 2 2024 -> PRESENT</div>
                         <div class="card-body">Posts quotes said by Goro Akechi. Hourly on Bluesky, bihourly on Twitter.</div>
                     </div>
-                    <div class="card p-2">
+                    <div class="card p-1">
                         <h3 class="card-title text-primary">Quotes That Make You Miss Goro Akechi (<a href="https://twitter.com/ourtruereality_">Twitter</a>) (<a href="https://ourtruereality.bsky.social">Bluesky</a>)</h3>
                         <div class="card-subtitle">AUG 23 2024 -> PRESENT</div>
                         <div class="card-body">Posts quotes or conversation snippets relating to Goro Akechi (not necessarily spoken by him). Hourly on Bluesky, bihourly on Twitter.</div>
+                    </div>
+                    <div class="card p-1">
+                        <h3 class="card-title text-primary">E-ki Quote Bot (<a href="https://twitter.com/thereses_sigh">Twitter</a>) (<a href="https://thereses-sigh.bsky.social">Bluesky</a>)</h3>
+                        <div class="card-subtitle">JAN 6 2025 -> PRESENT</div>
+                        <div class="card-body">Posts quotes/lyrics said by E-ki from <a href="https://shuuenpro.github.io">Shuuen no Shiori</a>. Hourly on Bluesky, bihourly on Twitter.</div>
                     </div>
                 </div>
             </div>
@@ -85,22 +90,18 @@
             <div id="quotesCard" class="card">
                 <div class="card-body rounded">
                     <p>Quotes last updated: <code id="quotes-updated"></code></p>
-                    <div class="btn-group flex-wrap w-100" role="group">
-                        <input id="hourlysonicbot-radio" type="radio" class="btn-check" name="bot" onchange="updateActiveSection(this.value);" value="hourlysonicbot" autocomplete="off">
-                        <label for="hourlysonicbot-radio" class="btn rounded-top btn-outline-primary">@hourlysonicbot</label>
-
-                        <input id="hourlyshadowbot-radio" type="radio" class="btn-check" name="bot" onchange="updateActiveSection(this.value);" value="hourlyshadowbot" autocomplete="off">
-                        <label for="hourlyshadowbot-radio" class="btn rounded-top btn-outline-primary">@hourlyshadowbot</label>
-
-                        <input id="coolsonicquotes-radio" type="radio" class="btn-check" name="bot" onchange="updateActiveSection(this.value);" value="coolsonicquotes" autocomplete="off">
-                        <label for="coolsonicquotes-radio" class="btn rounded-top btn-outline-primary">@coolsonicquotes</label>
-
-                        <input id="akechiquotebot-radio" type="radio" class="btn-check" name="bot" onchange="updateActiveSection(this.value);" value="akechiquotebot" autocomplete="off">
-                        <label for="akechiquotebot-radio" class="btn rounded-top btn-outline-primary">@akechiquotebot</label>
-
-                        <input id="ourtruereality_-radio" type="radio" class="btn-check" name="bot" onchange="updateActiveSection(this.value);" value="ourtruereality_" autocomplete="off">
-                        <label for="ourtruereality_-radio" class="btn rounded-top btn-outline-primary">@ourtruereality_</label>
-                    </div>
+                    <div class="form-floating">
+                        <select class="form-select shadow-none" id="selectBot" onchange="updateActiveSection(this.value);">
+                          <option selected>Click to select a bot to view the quotes of</option>
+                          <option value="hourlysonicbot">Bihourly Sonic Quotes (@hourlysonicbot)</option>
+                          <option value="hourlyshadowbot">Bihourly Shadow Quotes (@hourlyshadowbot)</option>
+                          <option value="coolsonicquotes">Cool Sonic Quotes (@coolsonicquotes)</option>
+                          <option value="akechiquotebot">Goro Akechi Quotes (@akechiquotebot)</option>
+                          <option value="ourtruereality_">Quotes That Make You Miss Goro Akechi (@ourtruereality_)</option>
+                          <option value="thereses_sigh">E-ki Quote Bot (@thereses_sigh)</option>
+                        </select>
+                        <label for="selectBot">Quote Bot Selection</label>
+                      </div>
                     <input type="search" id="search" class="form-control shadow-none mb-2" placeholder="Select a tab to view a bot's quotes." autocomplete="off" disabled>
                     <div id="results"></div>
                     <div id="quoteSets">
@@ -109,6 +110,7 @@
                         <div id="coolsonicquotes"></div>
                         <div id="akechiquotebot"></div>
                         <div id="ourtruereality_"></div>
+                        <div id="thereses_sigh"></div>
                     </div>
                 </div>
             </div>

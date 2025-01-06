@@ -38,7 +38,7 @@ function fetchQuotes(url, el) {
       $(el).hide();
       if (window.location.hash.substring(1) == el.id) {
         updateActiveSection(el.id);
-        document.getElementById(el.id + "-radio").checked = "true";
+        document.getElementById("selectBot").value = el.id;
       }
     });
 }

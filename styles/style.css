@@ -141,17 +141,8 @@ b {
     --bs-border-radius: 0;
 }
 
-.btn-outline-primary {
-    --bs-btn-active-bg: var(--primary-muted);
-    --bs-btn-active-border-color: white;
-    --bs-btn-color: white;
-    --bs-btn-border-color: var(--bs-light);
-    --bs-btn-bg: var(--bs-body-bg);
-}
-
 .nav-item:hover,
-.dropdown-item:hover,
-.btn-outline-primary:hover {
+.dropdown-item:hover {
     background-color: rgba(var(--primary-muted-rgb), 0.8) !important;
 }
 
@@ -186,12 +177,14 @@ blockquote.quote {
     margin: 0;
 }
 
-.form-control {
+.form-control,
+.form-select {
     border-radius: 0;
     --bs-border-color: var(--bs-link-color);
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
     border-color: var(--bs-border-color);
 }
 
