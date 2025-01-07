@@ -223,12 +223,12 @@ textarea {
 
 img.icon {
     margin-top: 5px;
-    max-width: 160px;
+    max-width: 120px;
 }
 
 img.header {
     margin-top: 5px;
-    max-width: 325px;
+    max-width: 370px;
 }
 
 #quoteSets li:not([style*="display: none;"]):not(:last-child) {
