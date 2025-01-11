@@ -221,16 +221,6 @@ textarea {
     --bs-card-bg: var(--bs-secondary-bg);
 }
 
-img.icon {
-    margin-top: 5px;
-    max-width: 120px;
-}
-
-img.header {
-    margin-top: 5px;
-    max-width: 370px;
-}
-
 #quoteSets li:not([style*="display: none;"]):not(:last-child) {
     margin-bottom: 0.3rem;
 }
