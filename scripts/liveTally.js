@@ -60,7 +60,7 @@ function createPlot(id, array) {
     plot = document.getElementById(id);
 
     layout = {
-        title: "Word Count Over Past 30 Days",
+        title: "Mention Count Over Past 30 Days",
         paper_bgcolor: "rgba(0, 0, 0, 0)",
         plot_bgcolor: "rgba(0, 0, 0, 0)",
         font: {
