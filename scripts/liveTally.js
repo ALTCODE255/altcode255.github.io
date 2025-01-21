@@ -1,11 +1,13 @@
-function getData(update_id) {
+let DATA_ARRAY = getData();
+
+function getData() {
     fetch("https://api.github.com/gists/f674d02b89b93cdeb51ea782e03f06ff")
         .then((res) => res.json())
         .then((res) => {
             date = new Date(res.updated_at);
             formatDate = date.toLocaleString("sv-SE").split(" ")[0];
             formatTime = date.toLocaleTimeString();
-            document.getElementById(update_id).innerHTML =
+            document.getElementById("table-updated").innerHTML =
                 formatDate + " @ " + formatTime;
         });
     return fetch(
@@ -17,7 +19,17 @@ function getData(update_id) {
         }
     )
         .then((res) => res.json())
-        .then((data) => data.slice(0, 30));
+        .then(data);
+}
+
+function createFromData(plot_id, table_id, num_id) {
+    num_days = parseInt(document.getElementById(num_id).value) || 30;
+    DATA_ARRAY.then((data) => data.slice(0, num_days))
+        .then((array) => {
+            createTable(table_id, array);
+            createPlot(plot_id, array);
+        });
+    return false;
 }
 
 function createTable(id, array) {
@@ -60,7 +72,7 @@ function createPlot(id, array) {
     plot = document.getElementById(id);
 
     layout = {
-        title: "Mention Count Over Past 30 Days",
+        title: `Mention Count Over Past ${array.length} Days`,
         paper_bgcolor: "rgba(0, 0, 0, 0)",
         plot_bgcolor: "rgba(0, 0, 0, 0)",
         font: {
@@ -70,7 +82,7 @@ function createPlot(id, array) {
             l: 20,
             r: 20,
             t: 40,
-            b: 40
+            b: 40,
         },
         xaxis: {
             fixedrange: true,
@@ -82,8 +94,8 @@ function createPlot(id, array) {
         },
         legend: {
             y: 0.99,
-            x: 0.05
-        }
+            x: 0.05,
+        },
     };
 
     plot_data = [
