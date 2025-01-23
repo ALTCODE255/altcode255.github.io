@@ -22,13 +22,51 @@ function getData() {
         .then(data);
 }
 
+function createStatsTable(id) {
+    stats_array = fetch(
+        "https://gist.githubusercontent.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/raw/Stats.json",
+        {
+            headers: {
+                Accept: "application/json",
+            },
+        }
+    )
+        .then((res) => res.json())
+        .then(data);
+
+    table = `
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="px-3">Word</th>
+                <th class="px-3">Start Date</th>
+                <th class="px-3">Average</th>
+                <th class="px-3">Best</th>
+                <th class="px-3">Total</th>
+            </tr>
+        </thead>
+    `;
+    stats_array.then((array) => {
+        array.forEach((item) => {
+            table += `
+            <tr>
+                <td class="px-3">${item.word}</td>
+                <td class="px-3">${item.start_date}</td>
+                <td class="px-3">${item.average}</td>
+                <td class="px-3">${item.best}</td>
+                <td class="px-3">${item.total}</td>
+            </tr>`;
+        });
+    });
+    document.getElementById(id).innerHTML = table;
+}
+
 function createFromData(plot_id, table_id, num_id) {
     num_days = parseInt(document.getElementById(num_id).value) || 30;
-    DATA_ARRAY.then((data) => data.slice(0, num_days))
-        .then((array) => {
-            createTable(table_id, array);
-            createPlot(plot_id, array);
-        });
+    DATA_ARRAY.then((data) => data.slice(0, num_days)).then((array) => {
+        createTable(table_id, array);
+        createPlot(plot_id, array);
+    });
     return false;
 }
 

@@ -116,6 +116,9 @@
                             <li>
                                 On <b>January 21st, 2025</b>, I added a way to customize the number of days displayed by the table/graph.
                             </li>
+                            <li>
+                                On <b>January 22nd, 2025</b>, I added a table to show total stats per word.
+                            </li>
                         </ul>
                         </p>
                     </div>
@@ -139,11 +142,13 @@
                             <button class="rounded-0 rounded-bottom btn submit-btn w-100" type="submit">Change</button>
                         </form>
                     </div>
-                    <div class="table-responsive w-100 mx-auto" id="s-table"></div>
+                    <div class="table-responsive w-75 mx-auto" id="stats-table"></div>
+                    <div class="table-responsive w-75 mx-auto" id="s-table"></div>
                 </div>
                 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
                 <script src="./scripts/liveTally.js"></script>
                 <script>
+                    createStatsTable("stats-table");
                     createFromData("plot", "s-table", "number-of-days");
                 </script>
             </div>
