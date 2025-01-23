@@ -23,7 +23,7 @@ function getData() {
 }
 
 function createStatsTable(id) {
-    stats_array = fetch(
+    fetch(
         "https://gist.githubusercontent.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/raw/Stats.json",
         {
             headers: {
@@ -32,21 +32,20 @@ function createStatsTable(id) {
         }
     )
         .then((res) => res.json())
-        .then(data);
-
-    table = `
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th class="px-3">Word</th>
-                <th class="px-3">Start Date</th>
-                <th class="px-3">Average</th>
-                <th class="px-3">Best</th>
-                <th class="px-3">Total</th>
-            </tr>
-        </thead>
-    `;
-    stats_array.then((array) => {
+        .then(data)
+        .then((array) => {
+        table = `
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="px-3">Word</th>
+                    <th class="px-3">Start Date</th>
+                    <th class="px-3">Average</th>
+                    <th class="px-3">Best</th>
+                    <th class="px-3">Total</th>
+                </tr>
+            </thead>
+        `;
         array.forEach((item) => {
             table += `
             <tr>
@@ -57,8 +56,8 @@ function createStatsTable(id) {
                 <td class="px-3">${item.total}</td>
             </tr>`;
         });
+        document.getElementById(id).innerHTML = table;
     });
-    document.getElementById(id).innerHTML = table;
 }
 
 function createFromData(plot_id, table_id, num_id) {
