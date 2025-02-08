@@ -38,8 +38,8 @@ function createStatsTable(id) {
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
+                    <th class="px-3">Start</th>
                     <th class="px-3">Word</th>
-                    <th class="px-3">Start Date</th>
                     <th class="px-3">Average (30D)</th>
                     <th class="px-3">Average (All)</th>
                     <th class="px-3">Best</th>
@@ -50,8 +50,8 @@ function createStatsTable(id) {
         array.forEach((item) => {
             table += `
             <tr>
-                <td class="px-3">${item.word}</td>
                 <td class="px-3">${item.start_date}</td>
+                <td class="px-3">${item.word}</td>
                 <td class="px-3">${item.avg_30d}</td>
                 <td class="px-3">${item.average}</td>
                 <td class="px-3">${item.best}</td>
