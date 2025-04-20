@@ -34,6 +34,8 @@
     --bs-body-line-height: 1.6;
     --bs-body-color: var(--bs-light);
     --bs-body-color-rgb: var(--bs-light-rgb);
+    --bs-secondary-color: rgb(170, 170, 170);
+    --bs-secondary-color-rgb: 170, 170, 170;
     --bs-body-bg: var(--bs-dark);
     --bs-body-bg-rgb: var(--bs-dark-rgb);
     --bs-secondary-bg: #2a2f47;
@@ -225,3 +227,6 @@ textarea {
     margin-bottom: 0.3rem;
 }
 
+small, .text-gray {
+    color: var(--bs-secondary-color);
+}
