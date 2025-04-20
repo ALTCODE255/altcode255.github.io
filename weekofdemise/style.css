@@ -24,7 +24,7 @@
     --bs-light: rgb(225, 225, 225);
     --bs-light-rgb: 225, 225, 225;
     --bs-body-font-family: "Quicksand SemiBold";
-    --bs-body-font-size: 1.25rem;
+    --bs-body-font-size: 1.2rem;
     --bs-body-color: var(--bs-light);
     --bs-body-color-rgb: var(--bs-light-rgb);
     --bs-secondary-color: rgb(170, 170, 170);
@@ -40,8 +40,11 @@
         -webkit-animation: none !important;
         animation: none !important;
     }
-    details img {
+    details img, table {
         max-width: 100% !important;
+    }
+    :root {
+        --bs-body-font-size: 1rem !important;
     }
 }
 
@@ -82,7 +85,7 @@ html {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3em;
     font-family: "Righteous";
     background: linear-gradient(90deg, #F62A83, #4157FD);
     background-clip: text;
