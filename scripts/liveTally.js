@@ -77,7 +77,6 @@ function createTable(id, array) {
         <thead>
             <tr>
                 <th class="px-3">Date</th>
-                <th class="px-3">Akechi</th>
                 <th class="px-3">Sonic</th>
                 <th class="px-3">Shuuen</th>
             </tr>
@@ -87,7 +86,6 @@ function createTable(id, array) {
         table += `
             <tr>
                 <td class="px-3">${item.date}</td>
-                <td class="px-3">${item.akechi}</td>
                 <td class="px-3">${item.sonic}</td>
                 <td class="px-3">${item.shuuen}</td>
             </tr>`;
