@@ -138,15 +138,6 @@ function createPlot(id, array) {
     plot_data = [
         {
             x: x_val,
-            y: y_akc,
-            mode: "lines",
-            name: "Akechi",
-            marker: {
-                color: "rgb(216, 59, 59)",
-            },
-        },
-        {
-            x: x_val,
             y: y_sth,
             mode: "lines",
             name: "Sonic",
