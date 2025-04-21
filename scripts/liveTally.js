@@ -40,8 +40,7 @@ function createStatsTable(id) {
                 <tr>
                     <th class="px-3">Start</th>
                     <th class="px-3">Word</th>
-                    <th class="px-3">Average (30D)</th>
-                    <th class="px-3">Average (All)</th>
+                    <th colspan=2 class="px-3">Average<br>(30D vs All)</th>
                     <th class="px-3">Best</th>
                     <th class="px-3">Total</th>
                 </tr>
