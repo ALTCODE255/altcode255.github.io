@@ -1,4 +1,5 @@
 let DATA_ARRAY = getData();
+DATA_ARRAY.then((data) => {document.getElementById("num-days").innerHTML = data.length;});
 
 function getData() {
     fetch("https://api.github.com/gists/f674d02b89b93cdeb51ea782e03f06ff")
