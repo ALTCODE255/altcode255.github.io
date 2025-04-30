@@ -3,9 +3,6 @@ script.src = "https://cdn.plot.ly/plotly-3.0.1.min.js";
 document.getElementsByTagName("head")[0].appendChild(script);
 
 let DATA_ARRAY = getData();
-DATA_ARRAY.then((data) => {document.getElementById("num-days").innerHTML = data.length;});
-createStatsTable("stats-table");
-createFromData("plot", "s-table", "number-of-days");
 
 function getData() {
     fetch("https://api.github.com/gists/f674d02b89b93cdeb51ea782e03f06ff")
@@ -17,7 +14,7 @@ function getData() {
             document.getElementById("table-updated").innerHTML =
                 formatDate + " @ " + formatTime;
         });
-    return fetch(
+    promise = fetch(
         "https://gist.githubusercontent.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/raw/",
         {
             headers: {
@@ -27,6 +24,10 @@ function getData() {
     )
         .then((res) => res.json())
         .then(data);
+    promise.then((data) => {
+        document.getElementById("num-days").innerHTML = data.length;
+    });
+    return promise;
 }
 
 function createStatsTable(id) {
@@ -41,7 +42,7 @@ function createStatsTable(id) {
         .then((res) => res.json())
         .then(data)
         .then((array) => {
-        table = `
+            table = `
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -53,8 +54,8 @@ function createStatsTable(id) {
                 </tr>
             </thead>
         `;
-        array.forEach((item) => {
-            table += `
+            array.forEach((item) => {
+                table += `
             <tr>
                 <td class="px-3">${item.start_date}</td>
                 <td class="px-3">${item.word}</td>
@@ -63,9 +64,9 @@ function createStatsTable(id) {
                 <td class="px-3">${item.best}</td>
                 <td class="px-3">${item.total}</td>
             </tr>`;
+            });
+            document.getElementById(id).innerHTML = table;
         });
-        document.getElementById(id).innerHTML = table;
-    });
 }
 
 function createFromData(plot_id, table_id, num_id) {
@@ -116,7 +117,7 @@ function createPlot(id, array) {
 
     layout = {
         title: {
-            text: `Mention Count Over Past ${array.length} Days`
+            text: `Mention Count Over Past ${array.length} Days`,
         },
         paper_bgcolor: "rgba(0, 0, 0, 0)",
         plot_bgcolor: "rgba(0, 0, 0, 0)",

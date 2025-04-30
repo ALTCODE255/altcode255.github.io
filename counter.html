@@ -154,6 +154,10 @@
                     <div class="table-responsive mx-auto" id="s-table"></div>
                 </div>
                 <script src="./scripts/liveTally.js"></script>
+                <script>
+                    createStatsTable("stats-table");
+                    createFromData("plot", "s-table", "number-of-days");
+                </script>
             </div>
         </div>
     </div>
