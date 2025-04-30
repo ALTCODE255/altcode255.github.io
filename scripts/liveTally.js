@@ -1,7 +1,3 @@
-var script = document.createElement("script");
-script.src = "https://cdn.plot.ly/plotly-3.0.1.min.js";
-document.getElementsByTagName("head")[0].appendChild(script);
-
 let DATA_ARRAY = getData();
 
 function getData() {
