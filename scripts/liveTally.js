@@ -109,7 +109,9 @@ function createPlot(id, array) {
     plot = document.getElementById(id);
 
     layout = {
-        title: `Mention Count Over Past ${array.length} Days`,
+        title: {
+            text: `Mention Count Over Past ${array.length} Days`
+        },
         paper_bgcolor: "rgba(0, 0, 0, 0)",
         plot_bgcolor: "rgba(0, 0, 0, 0)",
         font: {
