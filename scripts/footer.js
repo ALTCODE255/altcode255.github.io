@@ -10,3 +10,9 @@ function getLastUpdateTimestamp(id, filepath) {
             document.getElementById(id).innerHTML = formatDate + " @ " + formatTime;
         });
 }
+
+
+function getHits(path) {
+    path = path.replace("/", "%2F");
+    document.getElementById("hits").src = `https://hitscounter.dev/api/hit?url=https%3A%2F%2Faltcode255.github.io${path}&label=Page+Visits&color=%23ffc107`;
+}

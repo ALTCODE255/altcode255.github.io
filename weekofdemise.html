@@ -66,9 +66,9 @@
                 <!-- <h3 id="prompts-2026">2026</h3>
                 <p>Nothing here yet. I usually release/share the prompt list <u>at least one month prior</u> (sometimes earlier) to the start of Week of Demise. Once a date gets decided upon, check back a month before then!</p> -->
                 <div class="table-responsive" id="prompts-2025">
-                <h3>2025</h3>
-                <img src="./weekofdemise/2025.png">
-                <table class="table table-striped table-bordered table-dark">
+                    <h3>2025</h3>
+                    <img src="./weekofdemise/2025.png">
+                    <table class="table table-striped table-bordered table-dark">
                         <caption>Dates: July 20th, 2025 - July 26th, 2025</caption>
                         <thead>
                             <tr>
@@ -126,7 +126,7 @@
                         </tbody>
                     </table>
                 </div>
-                
+
                 <details class="table-responsive" id="prompts-2021">
                     <summary>2021</summary>
                     <img src="./weekofdemise/2021.png">
@@ -452,10 +452,14 @@
     <footer class="text-center">
         <hr>
         <p><b>Page Last Updated: </b><span id="last-updated"></span></p>
+        <img id="hits" src="">
         <script src="./scripts/footer.js"></script>
         <script>
             var filepath = location.pathname.endsWith("html") ? location.pathname.substring(1) : location.pathname.substring(1) + ".html";
             getLastUpdateTimestamp("last-updated", filepath)
+            if (!location.pathname.endsWith("html")) {
+                getHits("%2Fweekofdemise")
+            }
         </script>
         <hr>
     </footer class="text-center">
