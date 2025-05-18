@@ -129,6 +129,11 @@ h4 {
     font-family: "Palanquin";
 }
 
+h6 {
+    line-height: 1.5;
+    font-size: 0.75rem;
+}
+
 .dropdown-menu,
 .nav-item {
     background-color: #313d4b;
@@ -234,18 +239,17 @@ input[name="email"] {
     border: none;
     --bs-card-bg: rgba(49, 46, 82, 0.39);
     --bs-card-title-color: var(--bs-primary);
-    padding: 0.5rem;
-    padding-bottom: 0;
+    padding: 0.8rem;
     margin-bottom: 1rem;
+}
+
+.card-subtitle {
+    --bs-card-subtitle-color: var(--bs-secondary-color);
+    margin-bottom: 0.5em;
 }
 
 #akc .card {
     --bs-card-bg: none;
-}
-
-.card-subtitle {
-    --bs-card-subtitle-color: #98c8f7;
-    font-size: 80%;
 }
 
 textarea {
@@ -266,7 +270,6 @@ textarea {
     margin-bottom: 0.3rem;
 }
 
-small, .text-gray,
-#orphaned-bots .card-body {
+small, .text-gray {
     color: var(--bs-secondary-color);
 }
