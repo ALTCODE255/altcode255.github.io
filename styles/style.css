@@ -239,7 +239,6 @@ input[name="email"] {
     border: none;
     --bs-card-bg: rgba(49, 46, 82, 0.39);
     --bs-card-title-color: var(--bs-primary);
-    padding: 0.8rem;
     margin-bottom: 1rem;
 }
 
