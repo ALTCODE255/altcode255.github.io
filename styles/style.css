@@ -27,7 +27,7 @@
     --bs-light: rgb(239, 239, 239);
     --bs-light-rgb: 239, 239, 239;
     --bs-dark: #1d1f2a;
-    --bs-dark-rgb: 33, 37, 41;
+    --bs-dark-rgb: 29, 31, 42;
     --bs-body-font-family: "Open Sans";
     --bs-body-font-size: 1rem;
     --bs-body-font-weight: 500;
@@ -224,6 +224,11 @@ input[name="email"] {
 
 .card {
     border: none;
+    --bs-card-bg: rgba(49, 46, 82, 0.39);
+    --bs-card-title-color: var(--bs-primary);
+    padding: 0.5rem;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
 }
 
 .card-subtitle {
@@ -249,6 +254,7 @@ textarea {
     margin-bottom: 0.3rem;
 }
 
-small, .text-gray {
+small, .text-gray,
+#orphaned-bots .card-body {
     color: var(--bs-secondary-color);
 }

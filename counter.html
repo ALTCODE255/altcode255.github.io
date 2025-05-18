@@ -51,7 +51,7 @@
     <div class="animate-in" id="content">
         <div class="container-fluid p-2">
             <h1>S Tally Counter</h1>
-            <div class="container" id="what">
+            <div id="what">
                 <h2>What is this?</h2>
                 <p>
                     <b class="text-primary">Short answer:</b>
@@ -137,12 +137,12 @@
                 </details>
             </div>
             <hr>
-            <div class="container" id="live">
+            <div id="live">
                 <h2 class="text-center">Live Table</h2>
                 <p>Data used to be stored on <a href="https://docs.google.com/spreadsheets/d/1VyD1fDG6noKldoNCQIhoGNAX7cTwuP8HAI0PViik0k0/">Google Sheets</a>, moved to PostgreSQL database.</p>
-                <div class="container" id="data">
+                <div id="data">
                     <p>Last updated: <code id="table-updated"></code></p>
-                    <div class="container-fluid mx-auto" id="plot"></div>
+                    <div class="mx-auto" id="plot"></div>
                     <div class="my-3 w-50 mx-auto">
                         <form onsubmit="return createFromData('plot', 's-table', 'number-of-days');">
                             <label class="col-form-label" for="number-of-days"># of Days of Data to Display (max <span id="num-days"></span>):</label>
