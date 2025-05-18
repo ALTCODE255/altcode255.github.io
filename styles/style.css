@@ -222,6 +222,14 @@ input[name="email"] {
     left: -999999999px;
 }
 
+.read-more[aria-expanded="false"]:after {
+    content: "read more"
+}
+
+.read-more[aria-expanded="true"]:after {
+    content: "read less"
+}
+
 .card {
     border: none;
     --bs-card-bg: rgba(49, 46, 82, 0.39);
@@ -229,6 +237,10 @@ input[name="email"] {
     padding: 0.5rem;
     padding-bottom: 0;
     margin-bottom: 1rem;
+}
+
+#akc .card {
+    --bs-card-bg: none;
 }
 
 .card-subtitle {
