@@ -95,7 +95,7 @@
                 <div class="col-sm">
                     <div class="container" id="about">
                         <h2>About</h2>
-                        <p>hi, I'm <span class="text-primary">Nameless</span> (21, <span class="text-primary">they/them</span>)! I'm a college student who likes to code and stuff; it's sort of my major. I also like to gather information and make resources for people.</p>
+                        <p>hi, I'm <span class="text-primary" data-bs-toggle="tooltip" data-bs-title="yes, that's my name">Nameless</span> (21, <span class="text-primary">they/them</span>)! I'm a college student who likes to code and stuff; it's sort of my major. I also like to gather information and make resources for people.</p>
                         <p>I reserve the right to block people if I don't like them 👍</p>
                     </div>
                     <div class="container" id="interests">
@@ -132,7 +132,7 @@
                                         I got like. one paragraph through writing this one until I realized I should probably write another love letter about Shuuenpro. so. uhm. stay tuned for that? eventually?
                                     </blockquote>
                                 </details>
-                            </p>
+                                </p>
                         </details>
                         <p><span class="text-primary">General:</span> computers + <a href="coding">programming</a> + memorizing numbers + <a href="writing">creative writing</a> + media-specific music + archival</p>
                     </div>
@@ -165,7 +165,10 @@
         <hr>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
 </body>
 
 </html>
