@@ -469,8 +469,7 @@ For more information/updates, visit altcode255.github.io/weekofdemise.">
         <img id="hits" src="">
         <script src="../scripts/footer.js"></script>
         <script>
-            var filepath = location.pathname.endsWith("html") ? location.pathname.substring(1) : location.pathname.substring(1) + ".html";
-            getLastUpdateTimestamp("last-updated", filepath)
+            getLastUpdateTimestamp("last-updated", "weekofdemise/index.html")
             if (!location.pathname.endsWith("html")) {
                 getHits("%2Fweekofdemise")
             }
