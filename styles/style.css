@@ -142,7 +142,7 @@ h6 {
 }
 
 .nav-item {
-    --bs-nav-link-color: white;
+    --bs-nav-link-color: var(--bs-light);
     --bs-nav-link-hover-color: white;
     --bs-navbar-nav-link-padding-x: 1rem;
     --bs-nav-link-padding-x: 0.5rem;
