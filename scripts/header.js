@@ -1,4 +1,4 @@
-document.getElementById("nav").innerHTML = `
+document.getElementById("header").innerHTML = `
     <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container-fluid">
             <ul class="navbar-nav justify-content-center w-100">
