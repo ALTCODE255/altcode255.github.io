@@ -22,10 +22,12 @@ function getLastUpdateTimestamp() {
 function getHits() {
     path =
         location.pathname == "/" ? "" : location.pathname.replace("/", "%2F");
-    document.getElementById(
-        "hits"
-    ).src = `https://hitscounter.dev/api/hit?url=altcode255.github.io${path}&label=Page+Visits&color=%23f5b52c`;
-    document.getElementById("unhide").classList.remove("d-none");
+    if (path != "%2Ftemplate" && path != "%2F404") {
+        document.getElementById(
+            "hits"
+        ).src = `https://hitscounter.dev/api/hit?url=altcode255.github.io${path}&label=Page+Visits&color=%23f5b52c`;
+        document.getElementById("unhide").classList.remove("d-none");
+    }
 }
 
 function setFooter() {
