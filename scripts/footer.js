@@ -24,7 +24,9 @@ function getHits() {
         location.pathname == "/" ? "" : location.pathname.replace("/", "%2F");
     if (path != "%2Ftemplate" && path != "%2F404") {
         fetch(
-            `https://corsproxy.io/?url=https://hitscounter.dev/api/hit?url=altcode255.github.io${path}&output=json`
+            `https://api.allorigins.win/get?url=${encodeURIComponent(
+                `https://hitscounter.dev/api/hit?url=altcode255.github.io${path}&output=json`
+            )}`
         )
             .then((res) => res.json())
             .then((res) => {
