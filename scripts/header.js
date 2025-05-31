@@ -16,7 +16,7 @@ document.getElementById("nav").innerHTML = `
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="akc">Akechi Archive</a>
+                    <a class="nav-link" href="writing">Writing</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,7 +29,7 @@ document.getElementById("nav").innerHTML = `
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="writing">Writing</a>
+                    <a class="nav-link" href="akc">Akechi Archive</a>
                 </li>
             </ul>
         </div>
