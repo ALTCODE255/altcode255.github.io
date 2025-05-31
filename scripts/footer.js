@@ -21,9 +21,9 @@ function getLastUpdateTimestamp() {
 
 function getHits() {
     path = location.pathname.endsWith("/")
-        ? location.pathname.slice(0, -1).replace("/", "%2F")
-        : location.pathname.replace("/", "%2F");
-    if (path != "%2Ftemplate" && path != "%2F404") {
+        ? location.pathname.slice(0, -1)
+        : location.pathname;
+    if (path != "/template" && path != "/404") {
         fetch(
             `https://api.allorigins.win/get?url=${encodeURIComponent(
                 `https://hitscounter.dev/api/hit?url=altcode255.github.io${path}&output=json`
