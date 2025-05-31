@@ -21,7 +21,7 @@ function getLastUpdateTimestamp() {
 
 function getHits() {
     path =
-        location.pathname == "/" ? "" : location.pathname.replace("/", "%2F");
+        location.pathname == "/" ? location.pathname.slice(0, -1) : location.pathname.replace("/", "%2F");
     if (path != "%2Ftemplate" && path != "%2F404") {
         fetch(
             `https://api.allorigins.win/get?url=${encodeURIComponent(
