@@ -136,6 +136,10 @@ h6 {
     font-size: 0.75rem;
 }
 
+#footer {
+    font-size: 90%;
+}
+
 .tooltip {
     --bs-tooltip-color: var(--bs-body-color);
     --bs-tooltip-bg: var(--bs-secondary-bg);

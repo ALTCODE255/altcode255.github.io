@@ -130,6 +130,10 @@ h3, #prompts summary {
     padding-top: 0.2em;
 }
 
+#footer {
+    font-size: 90%;
+}
+
 #faq summary {
     font-size: 1em;
     font-family: "QuickSand SemiBold";

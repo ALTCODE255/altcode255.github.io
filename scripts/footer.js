@@ -23,17 +23,21 @@ function getHits() {
     path =
         location.pathname == "/" ? "" : location.pathname.replace("/", "%2F");
     if (path != "%2Ftemplate" && path != "%2F404") {
-        document.getElementById(
-            "hits"
-        ).src = `https://hitscounter.dev/api/hit?url=altcode255.github.io${path}&label=Page+Visits&color=%23f5b52c`;
-        document.getElementById("unhide").classList.remove("d-none");
+        fetch(
+            `https://hitscounter.dev/api/hit?url=altcode255.github.io${path}&output=json`
+        )
+            .then((res) => res.json())
+            .then((res) => {
+                document.getElementById("visits").innerHTML = res.total_visits;
+            });
     }
 }
 
 function setFooter() {
     document.getElementById("footer").innerHTML = `
         <hr>
-        <span id="unhide" class="d-none"><img id="hits" src=""> | </span><b>Page Last Updated: </b><span id="last-updated"></span>
+            <b>Total Page Visits: </b><span id="visits"></span><br>
+            <b>Page Last Updated: </b><span id="last-updated"></span>
         <hr>
     `;
 }
