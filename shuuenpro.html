@@ -14,7 +14,6 @@
     <header>
         <div id="header"></div>
         <script src="./scripts/header.js"></script>
-        <script>setActive("shuuenpro");</script>
     </header>
     <div class="animate-in" id="content">
         <div class="container-fluid p-2">
@@ -145,8 +144,7 @@
         <div id="footer"></div>
         <script src="./scripts/footer.js"></script>
         <script>
-            var filepath = location.pathname.endsWith("html") ? location.pathname.substring(1) : location.pathname.substring(1) + ".html";
-            getLastUpdateTimestamp("last-updated", filepath);
+            getLastUpdateTimestamp("last-updated", location);
             if (!location.pathname.endsWith("html")) {
                 getHits("%2Fshuuenpro")
             }
