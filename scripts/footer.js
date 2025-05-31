@@ -30,7 +30,8 @@ function getHits() {
         )
             .then((res) => res.json())
             .then((res) => {
-                document.getElementById("visits").innerHTML = res.total_visits;
+                obj = JSON.parse(res.contents);
+                document.getElementById("visits").innerHTML = obj.total_hits;
             });
     }
 }
