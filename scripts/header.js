@@ -30,7 +30,7 @@ function setHeader() {
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="akc">Akechi Archive</a>
+                        <a class="nav-link" href="/akc">Akechi Archive</a>
                     </li>
                 </ul>
             </div>
