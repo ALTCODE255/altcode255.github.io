@@ -1,5 +1,6 @@
 var s = document.createElement("script");
-s.src = "1.js";
+s.src =
+    "https://cdn.jsdelivr.net/gh/ALTCODE255/altcode255.github.io/scripts/1.js";
 document.getElementsByTagName("head")[0].appendChild(s);
 
 function getLastUpdateTimestamp() {
@@ -29,9 +30,9 @@ function getHits() {
             ? "/index"
             : location.pathname.replace(".html", "");
     if (path != "/template" && path != "/404") {
-        fetch(u, {
+        fetch(atob(u), {
             method: "POST",
-            headers: { "Content-Type": "application/json", apikey: k },
+            headers: { "Content-Type": "application/json", apikey: atob(k) },
             body: JSON.stringify({ site: "altcode255.github.io", page: path }),
         })
             .then((res) => res.text())
@@ -50,8 +51,6 @@ function setFooter() {
     `;
 }
 
-u = atob(u);
-k = atob(k);
 setFooter();
 if (location.hostname == "altcode255.github.io") {
     getLastUpdateTimestamp();
