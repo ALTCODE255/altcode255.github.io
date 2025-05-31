@@ -1,8 +1,3 @@
-var s = document.createElement("script");
-s.src =
-    "https://cdn.jsdelivr.net/gh/ALTCODE255/altcode255.github.io/scripts/1.js";
-document.getElementsByTagName("head")[0].appendChild(s);
-
 function getLastUpdateTimestamp() {
     if (location.pathname.endsWith("/")) {
         filepath = location.pathname.substring(1) + "index.html";
@@ -30,14 +25,27 @@ function getHits() {
             ? "/index"
             : location.pathname.replace(".html", "");
     if (path != "/template" && path != "/404") {
-        fetch(atob(u), {
-            method: "POST",
-            headers: { "Content-Type": "application/json", apikey: atob(k) },
-            body: JSON.stringify({ site: "altcode255.github.io", page: path }),
-        })
+        fetch(
+            "https://gist.githubusercontent.com/ALTCODE255/0a9d9f5394d3b8a7de32d2920d0a854d/raw/1713"
+        )
             .then((res) => res.text())
-            .then((res) => {
-                document.getElementById("visits").innerHTML = res;
+            .then((res) => res.split("\n"))
+            .then((arr) => {
+                fetch(atob(arr[0]), {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        apikey: atob(arr[1]),
+                    },
+                    body: JSON.stringify({
+                        site: "altcode255.github.io",
+                        page: path,
+                    }),
+                })
+                    .then((res) => res.text())
+                    .then((res) => {
+                        document.getElementById("visits").innerHTML = res;
+                    });
             });
     }
 }
