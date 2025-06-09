@@ -1,4 +1,6 @@
 let DATA_ARRAY = getData();
+var max_days;
+var current_num_days = 30;
 
 function getData() {
     fetch("https://api.github.com/gists/f674d02b89b93cdeb51ea782e03f06ff")
@@ -21,7 +23,8 @@ function getData() {
         .then((res) => res.json())
         .then(data);
     promise.then((data) => {
-        document.getElementById("num-days").innerHTML = data.length;
+        max_days = data.length;
+        document.getElementById("num-days").innerHTML = max_days;
     });
     return promise;
 }
@@ -67,10 +70,19 @@ function createStatsTable(id) {
 
 function createFromData(plot_id, table_id, num_id) {
     num_days = parseInt(document.getElementById(num_id).value) || 30;
-    DATA_ARRAY.then((data) => data.slice(0, num_days)).then((array) => {
-        createTable(table_id, array);
-        createPlot(plot_id, array);
-    });
+    if (num_days >= max_days) {
+        if (current_num_days >= max_days) return false;
+        DATA_ARRAY.then((array) => {
+            createTable(table_id, array);
+            createPlot(plot_id, array);
+        });
+    } else {
+        DATA_ARRAY.then((data) => data.slice(0, num_days)).then((array) => {
+            createTable(table_id, array);
+            createPlot(plot_id, array);
+        });
+    }
+    current_num_days = num_days;
     return false;
 }
 
