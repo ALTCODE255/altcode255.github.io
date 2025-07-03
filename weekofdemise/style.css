@@ -86,10 +86,6 @@
     }
 }
 
-iframe {
-    font-family: "Quicksand SemiBold" !important;
-    }
-
 html {
     background-image: url("bg.png");
     background-color: var(--bs-dark);
