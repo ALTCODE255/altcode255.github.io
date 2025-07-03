@@ -23,13 +23,14 @@
     --bs-secondary-rgb: 244, 105, 156;
     --bs-light: rgb(225, 225, 225);
     --bs-light-rgb: 225, 225, 225;
+    --bs-dark: rgb(20, 20, 20);
+    --bs-dark-rgb: 20, 20, 20;
     --bs-body-font-family: "Quicksand SemiBold";
     --bs-body-color: var(--bs-light);
     --bs-body-color-rgb: var(--bs-light-rgb);
+    --bs-body-bg: none;
     --bs-secondary-color: rgb(170, 170, 170);
     --bs-secondary-color-rgb: 170, 170, 170;
-    --bs-body-bg: none;
-    --bs-body-bg-rgb: none;
     --bs-link-color: rgb(101, 189, 234);
     --bs-link-color-rgb: 101, 189, 234;
 }
@@ -90,7 +91,8 @@ iframe {
     }
 
 html {
-    background: url("bg.png");
+    background-image: url("bg.png");
+    background-color: var(--bs-dark);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
