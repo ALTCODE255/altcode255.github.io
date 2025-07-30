@@ -11,7 +11,9 @@
     <meta name="title" property="og:title" content="Nameless' Website Homepage">
     <meta property="og:image" content="preview.png">
     <meta name="twitter:image" content="preview.png">
-    <noscript>Please enable JavaScript on this site for header navigation.<hr></noscript>
+    <noscript>Please enable JavaScript on this site for header navigation.
+        <hr>
+    </noscript>
 </head>
 
 <body>
@@ -51,7 +53,9 @@
                             <input type="text" name="username" placeholder="Your username" tabindex="-1" autocomplete="new-password">
                             <input type="text" name="email" placeholder="Your email" tabindex="-1" autocomplete="new-password">
                             <!-- :)  -->
-                            <input class="form-control rounded-top shadow-none" name="who" placeholder="Name / Where to Respond" maxlength="50">
+                            <div class="small text-gray" style="padding-top: 0.5em; position: absolute">(optional) choose a color</div>
+                            <input type="color" class="form-control form-control-color me-1" style="float: right;" name="color" value="#FFBF00">
+                            <input type="text" class="form-control rounded-top shadow-none" name="who" placeholder="Name / Where to Respond" maxlength="50">
                             <textarea id="textinput" class="form-control rounded-bottom border-top-0 shadow-none" name="msg" placeholder="Ask or send me anything! Will respond by default on Bluesky." required maxlength="4000"></textarea>
                             <small>
                                 <div class="text-gray text-end" id="charactersRemaining">0/4000</div>
