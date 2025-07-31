@@ -1,7 +1,10 @@
 const url =
     "https://script.google.com/macros/s/AKfycbzDzcZhUWzTb8YHojLLKXinYr-qqrPWpoz3V9ChAFVO74Lpg0e8MlECo6sUhDvGEWpmtw/exec";
 
-document.getElementById("ask-box").addEventListener("submit", function (event) {
+var textarea = document.getElementById("textinput");
+var countRemaining = document.getElementById("charactersRemaining");
+
+function submitForm(event) {
     event.preventDefault();
 
     const formData = new FormData(this);
@@ -16,24 +19,17 @@ document.getElementById("ask-box").addEventListener("submit", function (event) {
     })
         .then((res) => res.json())
         .then((data) => {
-            console.log("Successful", data);
+            console.log("Form submit success", data);
         })
         .catch((err) => console.log("err", err));
-    var inputs = document.getElementsByClassName("form-control");
-    for (i of inputs) {
-        if (i.getAttribute("type") != "color") {
-            i.value = "";
-        }
-    }
-});
-
-var el;
+    textarea.value = "";
+    countRemaining.textContent = "0/4000";
+}
 
 function countCharacters() {
-    var textEntered, countRemaining, counter;
+    var textEntered, counter;
     textEntered = this.value;
     counter = textEntered.length + "/4000";
-    countRemaining = document.getElementById("charactersRemaining");
     countRemaining.textContent = counter;
 }
 
@@ -43,6 +39,7 @@ function autoGrow() {
     this.style.height = this.scrollHeight + "px";
 }
 
-el = document.getElementById("textinput");
-el.addEventListener("keyup", countCharacters, false);
-el.addEventListener("input", autoGrow, false);
+textarea.addEventListener("keyup", countCharacters, false);
+textarea.addEventListener("input", autoGrow, false);
+
+document.getElementById("ask-box").addEventListener("submit", submitForm);
