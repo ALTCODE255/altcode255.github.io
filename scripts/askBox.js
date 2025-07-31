@@ -1,5 +1,5 @@
 const url =
-    "https://script.google.com/macros/s/AKfycbzGRpwSlROQ5WVBOaRFBAhLJiEFqWqXcDj6O2mE8Jhlh2nS1cmys9XknrieoxpHjQ_RRA/exec";
+    "https://script.google.com/macros/s/AKfycbzDzcZhUWzTb8YHojLLKXinYr-qqrPWpoz3V9ChAFVO74Lpg0e8MlECo6sUhDvGEWpmtw/exec";
 
 document.getElementById("ask-box").addEventListener("submit", function (event) {
     event.preventDefault();
