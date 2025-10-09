@@ -54,17 +54,9 @@ svg a:focus text {
     width: 100vw;
 }
 
-@media (max-width: 768px) {
-    #symbols {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-}
-
-@media (min-width: 769px) {
-    #symbols {
-        min-height: 100vh;
-    }
+#symbols {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 /* Heading Size */
@@ -108,7 +100,7 @@ ul a {
 
 .nav-link:hover,
 .dropdown-item:hover {
-    background-color: rgba(228, 56, 56, 0.621)
+    background-color: rgba(228, 56, 56, 0.621);
 }
 
 .nav-item {
