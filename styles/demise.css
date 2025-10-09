@@ -92,6 +92,7 @@ h3 {
 /* Cards */
 .card {
     letter-spacing: 0.07em;
+    font-size: 1.1rem;
 }
 
 .card-subtitle {
