@@ -12,7 +12,7 @@
     --bs-body-color: var(--bs-light);
     --bs-body-color-rgb: var(--bs-light-rgb);
     --bs-body-font-family: "Dot Gothic";
-    --bs-body-font-size: 1.203rem;
+    --bs-body-font-size: 1.1rem;
     --bs-link-color: rgb(74, 169, 233);
     --bs-link-color-rgb: 74, 169, 233;
     --bs-link-hover-color: rgb(44, 100, 138);
@@ -65,20 +65,18 @@ svg a:focus text {
     #symbols {
         min-height: 100vh;
     }
-
-    .outer-border:nth-child(1) {
-        height: 100vh;
-    }
 }
 
 /* Heading Size */
 
 h1 {
     --bs-heading-color: rgb(232, 96, 96);
+    font-size: 2rem;
 }
 
 h2 {
     --bs-heading-color: rgb(173, 119, 234);
+    font-size: 1.5rem;
 }
 
 h3 {
@@ -92,7 +90,6 @@ h3 {
 /* Cards */
 .card {
     letter-spacing: 0.07em;
-    font-size: 1.1rem;
 }
 
 .card-subtitle {
