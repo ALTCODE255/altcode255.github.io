@@ -266,3 +266,8 @@ small,
 .text-gray {
     color: var(--bs-secondary-color);
 }
+
+.link-primary:hover {
+    color: var(--bs-link-hover-color) !important;
+    text-decoration-color: var(--bs-link-hover-color) !important;
+}
