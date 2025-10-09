@@ -21,15 +21,8 @@ function setHeader() {
                     <li class="nav-item">
                         <a class="nav-link" href="/writing">Writing</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Shuuenpro Stuff
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/shuuenpro">Directory</a></li>
-                            <li><a class="dropdown-item" href="https://shuuenpro.github.io">Nameless Shuuen no Shiori Guide</a></li>
-                            <li><a class="dropdown-item" href="/weekofdemise">Week of Demise (Art Week)</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shuuenpro">Shuuen no Shiori Stuff</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/akc">Akechi Archive</a>
