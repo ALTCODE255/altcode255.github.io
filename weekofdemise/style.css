@@ -23,7 +23,7 @@
     --bs-secondary-rgb: 244, 105, 156;
     --bs-light: rgb(225, 225, 225);
     --bs-light-rgb: 225, 225, 225;
-    --bs-dark: rgb(20, 20, 20);
+    --bs-dark: #141414;
     --bs-dark-rgb: 20, 20, 20;
     --bs-body-font-family: "Quicksand SemiBold";
     --bs-body-color: var(--bs-light);
@@ -87,11 +87,9 @@
 }
 
 html {
-    background-image: url("bg.png");
-    background-color: var(--bs-dark);
+    background: var(--bs-dark) url("bg.png") no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     height: auto;
     min-height: 100%;
