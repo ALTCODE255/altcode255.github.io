@@ -25,6 +25,12 @@
     --bs-secondary-color-rgb: 119, 145, 147;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --bs-body-font-size: 1rem;
+    }
+}
+
 /* SVGs */
 
 svg path {
@@ -59,16 +65,16 @@ svg a:focus text {
     padding-bottom: 5rem;
 }
 
-/* Heading Size */
+/* Headings */
 
 h1 {
     --bs-heading-color: rgb(232, 96, 96);
-    font-size: 2rem;
+    font-size: 1.713rem;
 }
 
 h2 {
     --bs-heading-color: rgb(173, 119, 234);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 h3 {
