@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="darkreader-lock">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALT255 | Shuuen-Style Name Generator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles/style.css" rel="stylesheet">
+    <meta name="title" property="og:title" content="ALT255 | Shuuen-Style Name Generator">
+    <meta name="description" property="og:description" content="Tool to generate names in the style of characters from Shuuen no Shiori.">
+    <noscript>Please enable JavaScript on this site for header navigation.
+        <hr>
+    </noscript>
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+        <script src="./scripts/header.js"></script>
+    </header>
+    <main class="animate-in" id="content">
+        <div class="container-fluid p-2">
+            <h1>Shuuen no Shiori Name Generator</h1>
+            <p class="small text-gray">This page uses the <a href="https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project">JMdict/EDICT</a> and <a href="https://www.edrdg.org/wiki/index.php/KANJIDIC_Project">KANJIDIC</a> dictionary files. These files are the property of the Electronic Dictionary Research and Development Group, and are used in conformance with the Group's license.</p>
+            <p>For OC-making or other purposes.</p>
+            <div class="container">
+                <form id="name-gen">
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="letter" class="form-label">Letter (optional)</label>
+                            <input type="text" class="form-control shadow-none" name="letter" placeholder="E" maxlength="1">
+                        </div>
+                        <div class="col-2">
+                            <label for="kanji" class="form-label">Kanji (optional)</label>
+                            <input type="text" class="form-control shadow-none" name="kanji" placeholder="祈" maxlength="1">
+                        </div>
+                    </div>
+                    <button class="btn btn-mini submit-btn my-2" type="submit">Generate / Look Up</button>
+                </form>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped w-auto">
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    Shuuen Name: <input class="bg-dark shadow-none text-light" readonly size="2" id="name"></input>
+                                    <button class="btn btn-mini p-0" onclick="copyName();">📄</button>
+                                    <br>
+                                    Possible Readings: <span class="text-light" id="readings"></span>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="width:35%">Kanji Meanings (<a href="" class="link-secondary" id="jisho">Jisho</a>)</th>
+                                <th style="width:65%">Name Examples</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td class="text-light">
+                                <ul id="meanings"></ul>
+                            </td>
+                            <td class="text-light">
+                                <div class="container-fluid">
+                                    <div id="names" class="row">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="./scripts/shuuen-names.js"></script>
+    </main>
+    <footer class="text-center">
+        <div id="footer"></div>
+        <script src="./scripts/footer.js"></script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
