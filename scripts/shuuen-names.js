@@ -63,7 +63,7 @@ function showNameInfo(letter, kanji) {
                 .map(([key, arr]) => {
                     const items = arr.map((n) => `<li>${n}</li>`).join("");
                     return `
-                        <details class="col-4">
+                        <details class="col-md-4 col-sm-5">
                             <summary>${key}</summary>
                             <ul>${items}</ul>
                         </details>`;
