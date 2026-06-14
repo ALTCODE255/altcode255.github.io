@@ -14,6 +14,7 @@ function setHeader() {
                             <li><a class="dropdown-item" href="/coding">Coding Projects</a></li>
                             <li><a class="dropdown-item" href="/bots">Twitter/Bluesky Bots</a></li>
                             <li><a class="dropdown-item" href="/counter">S Tally Counter</a></li>
+                            <li><a class="dropdown-item" href="/shuuen-names">Shuuen Name Generator</a></li>
                             <li><a class="dropdown-item" href="/pi">100,000 Decimals of π</a></li>
                             <li><a class="dropdown-item" href="/font_comparison_tool/web">Local Font Comparison Tool</a></li>
                         </ul>
