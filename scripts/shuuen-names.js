@@ -2,7 +2,7 @@ const NAME_DATA = getNameData();
 const keys = NAME_DATA.then((data) => Object.keys(data));
 
 function getNameData() {
-    return fetch("./JP-given-name-endings.json").then((res) => res.json());
+    return fetch("./scripts/JP-given-name-endings.json").then((res) => res.json());
 }
 
 function submitForm(event) {
