@@ -45,13 +45,15 @@ function lookupEnding(event) {
     if (!ending) {
         return false;
     }
+    
+    let hidden_nav = document.getElementById("search-indicators");
     // If user supplied a romanized name ending, search it
     if (isAlpha(ending)) {
         searchName(ending);
-        let hidden_nav = document.getElementById("search-indicators");
         hidden_nav.classList.remove("d-none");
     } else { // else use supplied kanji
         showNameInfo(ending);
+        hidden_nav.classList.add("d-none");
     }
     return false;
 }
