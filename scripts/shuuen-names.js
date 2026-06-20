@@ -51,8 +51,7 @@ function lookupEnding(event) {
         let hidden_nav = document.getElementById("search-indicators");
         hidden_nav.classList.remove("d-none");
     } else { // else use supplied kanji
-        let kanji = formData.get("kanji");
-        showNameInfo(kanji);;
+        showNameInfo(ending);
     }
     return false;
 }
