@@ -207,7 +207,6 @@ letterForm.addEventListener("submit", generateName);
 endingForm.addEventListener("submit", lookupEnding);
 meaningForm.addEventListener("submit", lookupMeaning);
 
-let userTriggered = true;
 let search_results = [];
 let search_idx = -1;
 
