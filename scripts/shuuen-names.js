@@ -1,16 +1,18 @@
 // Update URL parameters
 function updateURL() {
-    url.search = "";
-    if (letter) {
-        url.searchParams.set("letter", letter);
+    if (userTriggered) {
+        url.search = "";
+        if (letter) {
+            url.searchParams.set("letter", letter);
+        }
+        if (ending) {
+            url.searchParams.set("ending", ending);
+        }
+        if (meaning) {
+            url.searchParams.set("meaning", meaning);
+        }
+        window.history.pushState({}, "", url);
     }
-    if (ending) {
-        url.searchParams.set("ending", ending);
-    }
-    if (meaning) {
-        url.searchParams.set("meaning", meaning);
-    }
-    window.history.pushState({}, "", url);
 }
 
 // Reset innerHTML of elements
@@ -205,6 +207,7 @@ letterForm.addEventListener("submit", generateName);
 endingForm.addEventListener("submit", lookupEnding);
 meaningForm.addEventListener("submit", lookupMeaning);
 
+let userTriggered = true;
 let search_results = [];
 let search_idx = -1;
 
@@ -218,9 +221,13 @@ document.getElementById("letter").value = letter;
 document.getElementById("ending").value = ending;
 document.getElementById("meaning").value = meaning;
 
-// Submit form if either field is filled
-if (ending) {
+// Submit form if any field is filled
+let userTriggered = false;
+if (meaning) {
+    meaningForm.requestSubmit();
+} else if (ending) {
     endingForm.requestSubmit();
 } else if (letter) {
     letterForm.requestSubmit();
 }
+userTriggered = true;
