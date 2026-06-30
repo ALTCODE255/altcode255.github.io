@@ -1,12 +1,21 @@
 // Update URL parameters
 function updateURL() {
+    url.search = ""
     if (letter) {
         url.searchParams.set("letter", letter);
     }
     if (ending) {
         url.searchParams.set("ending", ending);
     }
+    if (meaning) {
+        url.searchParams.set("meaning", meaning);
+    }
     window.history.pushState({}, "", url);
+}
+
+// Reset innerHTML of elements
+function resetInner(el) {
+    el.innerHTML = "";
 }
 
 // Generate a random name
@@ -18,6 +27,7 @@ function generateName(event) {
     letter =
         formData.get("letter") ||
         String.fromCharCode(65 + Math.floor(Math.random() * 26));
+    meaning = null;
 
     hidden_nav.classList.add("d-none");
 
@@ -47,10 +57,22 @@ function lookupEnding(event) {
     if (!ending) {
         return false;
     }
+    meaning = null;
 
     // If user supplied a romanized name ending, search it
     if (isAlpha(ending)) {
-        searchName(ending);
+        nameData.then((data) => {
+            search_results = [];
+            search_idx = 0;
+            for (const kanji in data) {
+                const values = data[kanji];
+                if (values.readings.some((el) => el == ending)) {
+                    search_results.push(kanji);
+                }
+            }
+            showSearchRes();
+        });
+
         hidden_nav.classList.remove("d-none");
     } else {
         // else use supplied kanji
@@ -62,26 +84,47 @@ function lookupEnding(event) {
     return false;
 }
 
+// Lookup kanji that match a meaning
+function lookupMeaning(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    // Randomly pick letter if not user-submitted
+    letter =
+        document.getElementById("letter").value ||
+        String.fromCharCode(65 + Math.floor(Math.random() * 26));
+
+    ending = null;
+    meaning = formData.get("meaning");
+    if (!meaning) {
+        return false;
+    }
+
+    // If user supplied a meaning, search it
+    nameData.then((data) => {
+        search_results = [];
+        search_idx = 0;
+        for (const kanji in data) {
+            const values = data[kanji];
+            if (values.meanings.some((el) => el.indexOf(meaning) > -1)) {
+                search_results.push(kanji);
+            }
+        }
+        showSearchRes();
+    });
+    hidden_nav.classList.remove("d-none");
+
+    updateURL();
+    return false;
+}
+
 // Copy name to clipboard
 function copyName() {
     var copyText = document.getElementById("name");
     copyText.select();
     copyText.setSelectionRange(0, 99999); // For mobile devices
     navigator.clipboard.writeText(copyText.value);
-}
-
-function searchName(romaji) {
-    nameData.then((data) => {
-        search_results = [];
-        search_idx = 0;
-        for (const kanji in data) {
-            const values = data[kanji];
-            if (values.readings.some((el) => el == romaji)) {
-                search_results.push(kanji);
-            }
-        }
-        showSearchRes();
-    });
 }
 
 function prevSearchRes() {
@@ -112,15 +155,9 @@ function showNameInfo(kanji) {
         const namesEl = document.getElementById("names");
         const jishoEl = document.getElementById("jisho");
 
-        meaningsEl.innerHTML =
-            readingsEl.textContent =
-            namesEl.textContent =
-            jishoEl.href =
-            nameEl.value =
-                "";
-
         if (!values) {
-            readingsEl.textContent = "(Unknown given name ending.)";
+            nameEl.value = jishoEl.href = meaningsEl.innerHTML = namesEl.innerHTML = "";
+            readingsEl.textContent = "(Given name ending/meaning not found.)";
         } else {
             nameEl.value = `${letter}${kanji}`;
             jishoEl.href = `https://jisho.org/search/${encodeURI(kanji)}`;
@@ -153,12 +190,15 @@ const nameData = fetch("./scripts/JP-given-name-endings.json").then((res) =>
 // Other constants
 const letterForm = document.getElementById("name-gen");
 const endingForm = document.getElementById("ending-lookup");
-const hidden_nav = document.getElementById("search-indicators");
+const meaningForm = document.getElementById("meaning-search");
 const isAlpha = (str) => /^[a-zA-Z]*$/.test(str);
+
+const hidden_nav = document.getElementById("search-indicators");
 
 // Add event listeners
 letterForm.addEventListener("submit", generateName);
 endingForm.addEventListener("submit", lookupEnding);
+meaningForm.addEventListener("submit", lookupMeaning);
 
 let search_results = [];
 let search_idx = -1;
@@ -167,9 +207,11 @@ let search_idx = -1;
 const url = new URL(window.location);
 let letter = url.searchParams.get("letter");
 let ending = url.searchParams.get("ending");
+let meaning = url.searchParams.get("meaning");
 
 document.getElementById("letter").value = letter;
 document.getElementById("ending").value = ending;
+document.getElementById("meaning").value = meaning;
 
 // Submit form if either field is filled
 if (ending) {
