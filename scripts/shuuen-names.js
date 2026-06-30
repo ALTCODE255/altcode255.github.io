@@ -1,15 +1,15 @@
-const NAME_DATA = getNameData();
-let search_results = [];
-let search_idx = -1;
-let letter;
-const isAlpha = (str) => /^[a-zA-Z]*$/.test(str);
-
-function getNameData() {
-    return fetch("./scripts/JP-given-name-endings.json").then((res) =>
-        res.json(),
-    );
+// Update URL parameters
+function updateURL() {
+    if (letter) {
+        url.searchParams.set("letter", letter);
+    }
+    if (ending) {
+        url.searchParams.set("ending", ending);
+    }
+    window.history.pushState({}, "", url);
 }
 
+// Generate a random name
 function generateName(event) {
     event.preventDefault();
     const formData = new FormData(this);
@@ -19,21 +19,23 @@ function generateName(event) {
         formData.get("letter") ||
         String.fromCharCode(65 + Math.floor(Math.random() * 26));
 
-    let hidden_nav = document.getElementById("search-indicators");
     hidden_nav.classList.add("d-none");
 
     // Randomly pick kanji
-    NAME_DATA.then((data) => {
+    nameData.then((data) => {
         const keys = Object.keys(data);
-        let kanji = keys[Math.floor(Math.random() * keys.length)];
-        showNameInfo(kanji);
+        ending = keys[Math.floor(Math.random() * keys.length)];
+        showNameInfo(ending);
+        updateURL();
     });
+
     return false;
 }
-document.getElementById("name-gen").addEventListener("submit", generateName);
 
+// Lookup info for specified name ending
 function lookupEnding(event) {
     event.preventDefault();
+
     const formData = new FormData(this);
 
     // Randomly pick letter if not user-submitted
@@ -41,26 +43,26 @@ function lookupEnding(event) {
         document.getElementById("letter").value ||
         String.fromCharCode(65 + Math.floor(Math.random() * 26));
 
-    let ending = formData.get("ending");
+    ending = formData.get("ending");
     if (!ending) {
         return false;
     }
-    
-    let hidden_nav = document.getElementById("search-indicators");
+
     // If user supplied a romanized name ending, search it
     if (isAlpha(ending)) {
         searchName(ending);
         hidden_nav.classList.remove("d-none");
-    } else { // else use supplied kanji
+    } else {
+        // else use supplied kanji
         showNameInfo(ending);
         hidden_nav.classList.add("d-none");
     }
+
+    updateURL();
     return false;
 }
-document
-    .getElementById("ending-lookup")
-    .addEventListener("submit", lookupEnding);
 
+// Copy name to clipboard
 function copyName() {
     var copyText = document.getElementById("name");
     copyText.select();
@@ -68,13 +70,13 @@ function copyName() {
     navigator.clipboard.writeText(copyText.value);
 }
 
-function searchName(ending) {
-    NAME_DATA.then((data) => {
+function searchName(romaji) {
+    nameData.then((data) => {
         search_results = [];
         search_idx = 0;
         for (const kanji in data) {
             const values = data[kanji];
-            if (values.readings.some((el) => el == ending)) {
+            if (values.readings.some((el) => el == romaji)) {
                 search_results.push(kanji);
             }
         }
@@ -101,7 +103,7 @@ function showSearchRes() {
 }
 
 function showNameInfo(kanji) {
-    NAME_DATA.then((data) => {
+    nameData.then((data) => {
         const values = data[kanji];
 
         const nameEl = document.getElementById("name");
@@ -118,8 +120,7 @@ function showNameInfo(kanji) {
                 "";
 
         if (!values) {
-            readingsEl.textContent =
-                "(Unknown given name ending.)";
+            readingsEl.textContent = "(Unknown given name ending.)";
         } else {
             nameEl.value = `${letter}${kanji}`;
             jishoEl.href = `https://jisho.org/search/${encodeURI(kanji)}`;
@@ -142,4 +143,37 @@ function showNameInfo(kanji) {
                 .join("");
         }
     });
+}
+
+// Get name data from JSON file
+const nameData = fetch("./scripts/JP-given-name-endings.json").then((res) =>
+    res.json(),
+);
+
+// Other constants
+const letterForm = document.getElementById("name-gen");
+const endingForm = document.getElementById("ending-lookup");
+const hidden_nav = document.getElementById("search-indicators");
+const isAlpha = (str) => /^[a-zA-Z]*$/.test(str);
+
+// Add event listeners
+letterForm.addEventListener("submit", generateName);
+endingForm.addEventListener("submit", lookupEnding);
+
+let search_results = [];
+let search_idx = -1;
+
+// Fill in form fields from URL parameters if applicable
+const url = new URL(window.location);
+let letter = url.searchParams.get("letter");
+let ending = url.searchParams.get("ending");
+
+document.getElementById("letter").value = letter;
+document.getElementById("ending").value = ending;
+
+// Submit form if either field is filled
+if (ending) {
+    endingForm.requestSubmit();
+} else if (letter) {
+    letterForm.requestSubmit();
 }

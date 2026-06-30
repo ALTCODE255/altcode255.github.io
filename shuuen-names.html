@@ -31,19 +31,18 @@
                         <form id="name-gen" class="col col-sm-3">
                             <label for="letter" class="form-label">Letter (optional)</label>
                             <input type="text" id="letter" class="form-control shadow-none" name="letter" placeholder="E" maxlength="1">
-                            <button class="btn btn-mini submit-btn my-2" type="submit">Generate Name</button>
+                            <button class="btn btn-mini btn-primary my-2" type="submit">Generate Name</button>
                         </form>
                         <form id="ending-lookup" class="col col-sm-3">
                             <label for="ending" class="form-label">Name Ending</label>
-                            <input type="text" class="form-control shadow-none" name="ending" placeholder='"祈" or "noru"' maxlength="10">
-                            <button class="btn btn-mini submit-btn my-2" type="submit">Look Up Ending</button>
+                            <input type="text" id="ending" class="form-control shadow-none" name="ending" placeholder='"祈" or "noru"' maxlength="10">
+                            <button class="btn btn-mini btn-primary my-2" type="submit">Look Up Ending</button>
                         </form>
                     </div>
                     <div id="search-indicators" class="d-none">
-                        <span id="item-number" class="text-gray">0 out of 0</span>
-                        <br>
-                        <button onclick="prevSearchRes();" class="btn btn-mini submit-btn my-2" type="button">←</button>
-                        <button onclick="nextSearchRes();" class="btn btn-mini submit-btn my-2" type="button">→</button>
+                        <span id="item-number" class="text-gray">0 out of 0</span><br>
+                        <button onclick="prevSearchRes();" class="btn btn-mini btn-primary my-2" type="button">←</button>
+                        <button onclick="nextSearchRes();" class="btn btn-mini btn-primary my-2" type="button">→</button>
                     </div>
                 <div class="table-responsive">
                     <table id="name-table" class="table table-bordered table-striped w-auto">
