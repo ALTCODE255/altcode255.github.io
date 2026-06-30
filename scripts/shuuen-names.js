@@ -1,6 +1,6 @@
 // Update URL parameters
 function updateURL() {
-    url.search = ""
+    url.search = "";
     if (letter) {
         url.searchParams.set("letter", letter);
     }
@@ -105,9 +105,10 @@ function lookupMeaning(event) {
     nameData.then((data) => {
         search_results = [];
         search_idx = 0;
+        let re = new RegExp(String.raw`\b${meaning}\b`, "i");
         for (const kanji in data) {
             const values = data[kanji];
-            if (values.meanings.some((el) => el.indexOf(meaning) > -1)) {
+            if (values.meanings.some((el) => re.test(el))) {
                 search_results.push(kanji);
             }
         }
@@ -156,7 +157,11 @@ function showNameInfo(kanji) {
         const jishoEl = document.getElementById("jisho");
 
         if (!values) {
-            nameEl.value = jishoEl.href = meaningsEl.innerHTML = namesEl.innerHTML = "";
+            nameEl.value =
+                jishoEl.href =
+                meaningsEl.innerHTML =
+                namesEl.innerHTML =
+                    "";
             readingsEl.textContent = "(Given name ending/meaning not found.)";
         } else {
             nameEl.value = `${letter}${kanji}`;
