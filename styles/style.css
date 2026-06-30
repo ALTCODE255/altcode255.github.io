@@ -174,10 +174,14 @@ li.dropdown:has(a.dropdown-item.active) {
     background-color: var(--primary-muted);
 }
 
-.submit-btn {
+.btn-primary {
     --bs-btn-bg: var(--primary-muted);
+    --bs-btn-border-color: var(--primary-muted);
     --bs-btn-hover-color: var(--bs-light);
     --bs-btn-hover-bg: rgba(var(--primary-muted-rgb), 0.8);
+    --bs-btn-hover-border-color: rgba(var(--primary-muted-rgb), 0.8);
+    --bs-btn-active-bg: none;
+    --bs-btn-active-border-color: var(--primary-muted);
 }
 
 ::selection {
