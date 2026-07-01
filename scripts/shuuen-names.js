@@ -1,10 +1,13 @@
-// Update URL parameters
-function updateURL() {
+// Update URL parameters based on user inputs
+function updateURL(letter = false, ending = false, meaning = false) {
     if (userTriggered) {
         url.search = "";
-        if (letter) url.searchParams.set("letter", letter);
-        if (ending) url.searchParams.set("ending", ending);
-        if (meaning) url.searchParams.set("meaning", meaning);
+        if (letter == true && letterInput.value)
+            url.searchParams.set("letter", letterInput.value);
+        if (ending == true && endingInput.value)
+            url.searchParams.set("ending", endingInput.value);
+        if (meaning == true && meaningInput.value)
+            url.searchParams.set("meaning", meaningInput.value);
         window.history.pushState({}, "", url);
     }
 }
@@ -12,6 +15,8 @@ function updateURL() {
 // Generate a random name
 function generateName(event) {
     event.preventDefault();
+    updateURL((letter = true));
+
     const formData = new FormData(this);
 
     // Randomly pick letter if not user-submitted
@@ -27,7 +32,6 @@ function generateName(event) {
         const keys = Object.keys(data);
         ending = keys[Math.floor(Math.random() * keys.length)];
         showNameInfo(ending);
-        updateURL();
     });
 
     return false;
@@ -36,6 +40,7 @@ function generateName(event) {
 // Lookup info for specified name ending
 function lookupEnding(event) {
     event.preventDefault();
+    updateURL((letter = true), (ending = true));
 
     const formData = new FormData(this);
 
@@ -68,14 +73,13 @@ function lookupEnding(event) {
         showNameInfo(ending);
         hidden_nav.classList.add("d-none");
     }
-
-    updateURL();
     return false;
 }
 
 // Lookup kanji that match a meaning
 function lookupMeaning(event) {
     event.preventDefault();
+    updateURL((letter = true), (ending = false), (meaning = true));
 
     const formData = new FormData(this);
 
@@ -102,8 +106,6 @@ function lookupMeaning(event) {
         showSearchRes();
     });
     hidden_nav.classList.remove("d-none");
-
-    updateURL();
     return false;
 }
 
@@ -113,6 +115,13 @@ function copyName() {
     copyText.select();
     copyText.setSelectionRange(0, 99999); // For mobile devices
     navigator.clipboard.writeText(copyText.value);
+}
+
+// Copy link of corresponding name to clipboard
+function copyLink() {
+    navigator.clipboard.writeText(
+        `${location.origin}${location.pathname}?letter=${letter}&ending=${ending}`,
+    );
 }
 
 function prevSearchRes() {
@@ -183,6 +192,9 @@ const nameData = fetch("./scripts/JP-given-name-endings.json").then((res) =>
 const letterForm = document.getElementById("name-gen");
 const endingForm = document.getElementById("ending-lookup");
 const meaningForm = document.getElementById("meaning-search");
+const letterInput = document.getElementById("letter");
+const endingInput = document.getElementById("ending");
+const meaningInput = document.getElementById("meaning");
 const isAlpha = (str) => /^[a-zA-Z]*$/.test(str);
 
 const hidden_nav = document.getElementById("search-indicators");
