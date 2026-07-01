@@ -72,7 +72,7 @@ function lookupMeaning(event) {
     event.preventDefault();
     url.search = "";
     if (letterInput.value) url.searchParams.set("letter", letterInput.value);
-    if (meaningInput.value) url.searchParams.set("ending", meaningInput.value);
+    if (meaningInput.value) url.searchParams.set("meaning", meaningInput.value);
     window.history.pushState({}, "", url);
 
     const formData = new FormData(this);
