@@ -1,21 +1,9 @@
-// Update URL parameters based on user inputs
-function updateURL(letter = false, ending = false, meaning = false) {
-    if (userTriggered) {
-        url.search = "";
-        if (letter == true && letterInput.value)
-            url.searchParams.set("letter", letterInput.value);
-        if (ending == true && endingInput.value)
-            url.searchParams.set("ending", endingInput.value);
-        if (meaning == true && meaningInput.value)
-            url.searchParams.set("meaning", meaningInput.value);
-        window.history.pushState({}, "", url);
-    }
-}
-
 // Generate a random name
 function generateName(event) {
     event.preventDefault();
-    updateURL((letter = true));
+    url.search = "";
+    if (letterInput.value) url.searchParams.set("letter", letterInput.value);
+    window.history.pushState({}, "", url);
 
     const formData = new FormData(this);
 
@@ -40,7 +28,10 @@ function generateName(event) {
 // Lookup info for specified name ending
 function lookupEnding(event) {
     event.preventDefault();
-    updateURL((letter = true), (ending = true));
+    url.search = "";
+    if (letterInput.value) url.searchParams.set("letter", letterInput.value);
+    if (endingInput.value) url.searchParams.set("ending", endingInput.value);
+    window.history.pushState({}, "", url);
 
     const formData = new FormData(this);
 
@@ -79,7 +70,10 @@ function lookupEnding(event) {
 // Lookup kanji that match a meaning
 function lookupMeaning(event) {
     event.preventDefault();
-    updateURL((letter = true), (ending = false), (meaning = true));
+    url.search = "";
+    if (letterInput.value) url.searchParams.set("letter", letterInput.value);
+    if (meaningInput.value) url.searchParams.set("ending", meaningInput.value);
+    window.history.pushState({}, "", url);
 
     const formData = new FormData(this);
 
@@ -218,8 +212,6 @@ document.getElementById("ending").value = ending;
 document.getElementById("meaning").value = meaning;
 
 // Submit form if any field is filled
-let userTriggered = false;
 if (meaning) meaningForm.requestSubmit();
 else if (ending) endingForm.requestSubmit();
 else if (letter) letterForm.requestSubmit();
-userTriggered = true;
