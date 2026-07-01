@@ -2,22 +2,11 @@
 function updateURL() {
     if (userTriggered) {
         url.search = "";
-        if (letter) {
-            url.searchParams.set("letter", letter);
-        }
-        if (ending) {
-            url.searchParams.set("ending", ending);
-        }
-        if (meaning) {
-            url.searchParams.set("meaning", meaning);
-        }
+        if (letter) url.searchParams.set("letter", letter);
+        if (ending) url.searchParams.set("ending", ending);
+        if (meaning) url.searchParams.set("meaning", meaning);
         window.history.pushState({}, "", url);
     }
-}
-
-// Reset innerHTML of elements
-function resetInner(el) {
-    el.innerHTML = "";
 }
 
 // Generate a random name
@@ -56,9 +45,7 @@ function lookupEnding(event) {
         String.fromCharCode(65 + Math.floor(Math.random() * 26));
 
     ending = formData.get("ending");
-    if (!ending) {
-        return false;
-    }
+    if (!ending) return false;
     meaning = null;
 
     // If user supplied a romanized name ending, search it
@@ -99,9 +86,7 @@ function lookupMeaning(event) {
 
     ending = null;
     meaning = formData.get("meaning");
-    if (!meaning) {
-        return false;
-    }
+    if (!meaning) return false;
 
     // If user supplied a meaning, search it
     nameData.then((data) => {
@@ -222,11 +207,7 @@ document.getElementById("meaning").value = meaning;
 
 // Submit form if any field is filled
 let userTriggered = false;
-if (meaning) {
-    meaningForm.requestSubmit();
-} else if (ending) {
-    endingForm.requestSubmit();
-} else if (letter) {
-    letterForm.requestSubmit();
-}
+if (meaning) meaningForm.requestSubmit();
+else if (ending) endingForm.requestSubmit();
+else if (letter) letterForm.requestSubmit();
 userTriggered = true;
