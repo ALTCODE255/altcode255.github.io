@@ -133,7 +133,8 @@ function nextSearchRes() {
 function showSearchRes() {
     let indicator = document.getElementById("item-number");
     indicator.textContent = `${search_idx + 1} out of ${search_results.length}`;
-    showNameInfo(search_results[search_idx]);
+    ending = search_results[search_idx];
+    showNameInfo(ending);
 }
 
 function showNameInfo(kanji) {
