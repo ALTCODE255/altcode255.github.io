@@ -25,35 +25,39 @@
         <div class="container-fluid p-2">
             <h1>Shuuen no Shiori Name Generator</h1>
             <p class="small text-gray">This page uses the <a href="https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project">JMdict/EDICT</a> and <a href="https://www.edrdg.org/wiki/index.php/KANJIDIC_Project">KANJIDIC</a> dictionary files. These files are the property of the Electronic Dictionary Research and Development Group, and are used in conformance with the Group's license.</p>
-            <p>For OC-making or other purposes.</p>
+            <p>For OC-making or other purposes. Total number of kanji in database: <code id="total"></code></p>
             <div class="container">
-                    <div class="row">
-                        <form id="name-gen" class="col col-sm-4 col-md-3">
-                            <label for="letter" class="form-label">Letter (optional)</label>
-                            <input type="text" id="letter" class="form-control shadow-none" name="letter" placeholder="E" maxlength="1">
-                            <button class="btn btn-mini btn-primary my-2" type="submit">Generate Name</button>
-                        </form>
-                        <form id="ending-lookup" class="col col-sm-4 col-md-3">
-                            <label for="ending" class="form-label">Name Ending</label>
-                            <input type="text" id="ending" class="form-control shadow-none" name="ending" placeholder="'祈' or 'noru'" maxlength="10">
-                            <button class="btn btn-mini btn-primary my-2" type="submit">Look Up Ending</button>
-                        </form>
-                        <form id="meaning-search" class="col col-sm-4 col-md-3">
-                            <label for="meaning" class="form-label">Kanji Meaning</label>
-                            <input type="text" id="meaning" class="form-control shadow-none" name="meaning" placeholder="match full words">
-                            <button class="btn btn-mini btn-primary my-2" type="submit">Look Up Meaning</button>
-                        </form>
-                    </div>
-                    <div id="search-indicators" class="d-none">
-                        <span id="item-number" class="text-gray">0 out of 0</span><br>
-                        <button onclick="prevSearchRes();" class="btn btn-mini btn-primary my-2" type="button">←</button>
-                        <button onclick="nextSearchRes();" class="btn btn-mini btn-primary my-2" type="button">→</button>
-                    </div>
+                <div class="row">
+                    <form id="name-gen" class="col col-sm-4 col-md-3">
+                        <label for="letter" class="form-label">Letter (optional)</label>
+                        <input type="text" id="letter" class="form-control shadow-none" name="letter" placeholder="E" maxlength="1">
+                        <button class="btn btn-mini btn-primary my-2" type="submit">Generate Name</button>
+                    </form>
+                    <form id="ending-lookup" class="col col-sm-4 col-md-3">
+                        <label for="ending" class="form-label">Name Ending</label>
+                        <input type="text" id="ending" class="form-control shadow-none" name="ending" placeholder="'祈' or 'noru'" maxlength="10">
+                        <button class="btn btn-mini btn-primary my-2" type="submit">Look Up Ending</button>
+                    </form>
+                    <form id="meaning-search" class="col col-sm-4 col-md-3">
+                        <label for="meaning" class="form-label">Kanji Meaning</label>
+                        <input type="text" id="meaning" class="form-control shadow-none" name="meaning" placeholder="match full words">
+                        <button class="btn btn-mini btn-primary my-2" type="submit">Look Up Meaning</button>
+                    </form>
+                </div>
+                <div id="search-indicators" class="d-none">
+                    <span id="item-number" class="text-gray">0 out of 0</span><br>
+                    <button onclick="prevSearchRes();" class="btn btn-mini btn-primary my-2" type="button">←</button>
+                    <button onclick="nextSearchRes();" class="btn btn-mini btn-primary my-2" type="button">→</button>
+                </div>
                 <div class="table-responsive">
                     <table id="name-table" class="table table-bordered table-striped w-auto">
                         <thead>
                             <tr>
                                 <th colspan="2">
+                                    <small id="jinmeiyo" class="d-none text-light">
+                                        <span class=text-primary>Note:</span> this is not a valid <a href="https://en.wikipedia.org/wiki/Jinmeiy%C5%8D_kanji">jinmeiyō / "name kanji"</a>.
+                                        <br>
+                                    </small>
                                     Shuuen Name: <input class="bg-dark shadow-none text-light" readonly size="2" id="name"></input>
                                     <button class="btn btn-mini p-0" onclick="copyName();">📄</button>
                                     <button class="btn btn-mini p-0" onclick="copyLink();">🔗</button>
@@ -63,7 +67,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <th style="width:35%">Kanji Meanings (<a href="" class="link-secondary" id="jisho">Jisho</a>)</th>
+                                <th style="width:35%">Kanji Meanings (<a href="" id="jisho">Jisho</a>)</th>
                                 <th style="width:65%">Name Examples</th>
                             </tr>
                         </thead>
@@ -82,9 +86,9 @@
 
                 </div>
             </div>
-
         </div>
         <script src="./scripts/shuuen-names.js"></script>
+        <script>on_load();</script>
     </main>
     <footer class="text-center">
         <div id="footer"></div>

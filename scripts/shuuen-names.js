@@ -155,6 +155,12 @@ function showNameInfo(kanji) {
                     "";
             readingsEl.textContent = "(Given name ending/meaning not found.)";
         } else {
+            if (values.is_jinmeiyo) {
+                jinmeiyo_note.classList.add("d-none");
+            } else {
+                jinmeiyo_note.classList.remove("d-none");
+            }
+
             nameEl.value = `${letter}${kanji}`;
             jishoEl.href = `https://jisho.org/search/${encodeURI(kanji)}`;
             meaningsEl.innerHTML = values.meanings
@@ -163,17 +169,18 @@ function showNameInfo(kanji) {
             readingsEl.textContent = values.readings
                 .map((r) => `${letter}-${r}`)
                 .join(", ");
-
-            namesEl.innerHTML = Object.entries(values.names)
-                .map(([key, arr]) => {
-                    const items = arr.map((n) => `<li>${n}</li>`).join("");
-                    return `
+            namesEl.innerHTML =
+                Object.entries(values.names)
+                    .map(([key, arr]) => {
+                        const items = arr.map((n) => `<li>${n}</li>`).join("");
+                        return `
                         <details class="col-md-5 col-lg-4">
                             <summary>${key}</summary>
                             <ul>${items}</ul>
                         </details>`;
-                })
-                .join("");
+                    })
+                    .join("") ||
+                "(No examples found of given names that use this character.)";
         }
     });
 }
@@ -193,6 +200,7 @@ const meaningInput = document.getElementById("meaning");
 const isAlpha = (str) => /^[a-zA-Z]*$/.test(str);
 
 const hidden_nav = document.getElementById("search-indicators");
+const jinmeiyo_note = document.getElementById("jinmeiyo");
 
 // Add event listeners
 letterForm.addEventListener("submit", generateName);
@@ -216,3 +224,11 @@ document.getElementById("meaning").value = meaning;
 if (meaning) meaningForm.requestSubmit();
 else if (ending) endingForm.requestSubmit();
 else if (letter) letterForm.requestSubmit();
+
+function on_load() {
+    nameData.then(
+        (data) =>
+            (document.getElementById("total").innerText =
+                Object.keys(data).length),
+    );
+}
