@@ -50,16 +50,6 @@ function getHits() {
     }
 }
 
-function setFooter() {
-    document.getElementById("footer").innerHTML = `
-        <hr>
-            <b>Total Page Visits: </b><span id="visits"></span><br>
-            <b>Page Last Updated: </b><span id="last-updated"></span>
-        <hr>
-    `;
-}
-
-setFooter();
 if (location.hostname == "altcode255.github.io") {
     getLastUpdateTimestamp();
     getHits();

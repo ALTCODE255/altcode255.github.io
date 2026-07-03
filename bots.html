@@ -1,135 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta name="darkreader-lock">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALT255 | Twitter and Bluesky Bots</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./styles/style.css" rel="stylesheet">
-    <meta name="title" property="og:title" content="Nameless' Twitter and Bluesky Bots">
-    <meta name="description" property="og:description" content="List of Twitter/Bluesky bots, as well as a means to search their quotes.">
-    <noscript>Please enable JavaScript on this site for header navigation.<hr></noscript>
-</head>
-
-<body onload="loadQuotes();">
-    <header>
-        <div id="header"></div>
-        <script src="./scripts/header.js"></script>
-    </header>
-    <main class="animate-in" id="content">
-        <div class="container-fluid p-2">
-            <h1>Nameless' Twitter and Bluesky Bots</h1>
-            <p>Submit quotes for any of the quote bots <a href="https://forms.gle/L2QqR4dAGMNXcGCU6">here</a>.</p>
-            <p>Want to make your own bot? Have a server / machine you can use to run it? Consider checking out <a href="https://github.com/ALTCODE255/template_post_bot">this</a>.</p>
-            <details>
-                <summary class="text-secondary">Orphaned Bots</summary>
-                <p>The following quote bots are no longer updated, and have been orphaned to GimmickBots.</p>
-                <div id="orphaned-bots" class="row row-cols-1 row-cols-sm-2">
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="https://twitter.com/hourlysonicbot">Hourly Sonic Quotes (Twitter Bot)</a></h3>
-                            <h6 class="card-subtitle">APR 9 2023 -> JAN 23 2025</h6>
-                            <div class="card-text">Posts quotes said by Sonic the Hedgehog every three hours.</div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="https://twitter.com/hourlyshadowbot">Hourly Shadow Quotes (Twitter Bot)</a></h3>
-                            <h6 class="card-subtitle">JUN 1 2023 -> JAN 23 2025</h6>
-                            <div class="card-text">Posts quotes said by Shadow the Hedgehog every three hours.</div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="https://twitter.com/coolsonicquotes">Cool Sonic Quotes (Twitter Bot)</a></h3>
-                            <h6 class="card-subtitle">NOV 19 2023 -> JAN 23 2025</h6>
-                            <div class="card-text">Posts memorable quotes said by various Sonic characters every three hours.</div>
-                        </div>
-                    </div>
-                </div>
-            </details>
-            <hr>
-            <h2>Active Bots</h2>
-            <div id="bots" class="row row-cols-1 row-cols-sm-2">
-                <div class="col">
-                    <div class="card card-body">
-                        <h3 class="card-title"><a href="https://twitter.com/30music_shuuen">30s Shuuen no Shiori Bot</a> (Halted)</h3>
-                        <h6 class="card-subtitle">FEB 15 2022 -> APR 30 2026</h6>
-                        <div class="card-text">Posts trimmed clips of Shuuen no Shiori tracks every two hours. Halted due to the suspension of Twitter API's Free Tier.</div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card card-body">
-                        <h3 class="card-titl text-primary">E-ki Quote Bot (<a href="https://thereses-sigh.bsky.social">Bluesky</a>)</h3>
-                        <h6 class="card-subtitle">JAN 6 2025 -> PRESENT</h6>
-                        <div class="card-text">Posts quotes/lyrics said by E-ki from <a href="https://shuuenpro.github.io">Shuuen no Shiori</a>. Hourly on Bluesky.</div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card card-body">
-                        <h3 class="card-title">Hourly Film Club 🎞️ (<a href="https://bokutachidays.bsky.social">Bluesky</a>)</h3>
-                        <h6 class="card-subtitle">APR 12 2025 -> PRESENT</h6>
-                        <div class="card-text">Posts quotes or images relating to the film club from <a href="https://shuuenpro.github.io">Shuuen no Shiori</a>. Hourly on Bluesky.</div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card card-body">
-                        <h3 class="card-title">Goro Akechi Quotes (<a href="https://akechiquotebot.bsky.social">Bluesky</a>)</h3>
-                        <h6 class="card-subtitle">FEB 2 2024 -> PRESENT</h6>
-                        <div class="card-text">Posts quotes said by Goro Akechi. Hourly on Bluesky. Halted on <a href="https://twitter.com/akechiquotebot">Twitter</a> due to suspension of free API.</div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card card-body">
-                        <h3 class="card-title">Quotes That Make You Miss Goro Akechi (<a href="https://ourtruereality.bsky.social">Bluesky</a>)</h3>
-                        <h6 class="card-subtitle">AUG 23 2024 -> PRESENT</h6>
-                        <div class="card-text">Posts quotes or conversation snippets relating to Goro Akechi (not necessarily spoken by him). Hourly on Bluesky. Halted on <a href="https://twitter.com/akechiquotebot">Twitter</a> due to suspension of free API.</div>
-                    </div>
-                </div>
+---
+title: Nameless' Twitter and Bluesky Bots
+description: List of Twitter/Bluesky bots, as well as a means to search their quotes.
+---
+<h1>{{ page.title }}</h1>
+<p>Submit quotes for any of the quote bots <a href="https://forms.gle/L2QqR4dAGMNXcGCU6">here</a>.</p>
+<p>Want to make your own bot? Have a server / machine you can use to run it? Consider checking out <a href="https://github.com/ALTCODE255/template_post_bot">this</a>.</p>
+<details>
+    <summary class="text-secondary">Orphaned Bots</summary>
+    <p>The following quote bots are no longer updated, and have been orphaned to GimmickBots.</p>
+    <div id="orphaned-bots" class="row row-cols-1 row-cols-sm-2">
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="https://twitter.com/hourlysonicbot">Hourly Sonic Quotes (Twitter Bot)</a></h3>
+                <h6 class="card-subtitle">APR 9 2023 -> JAN 23 2025</h6>
+                <div class="card-text">Posts quotes said by Sonic the Hedgehog every three hours.</div>
             </div>
-            <hr>
-            <h1>Quotes Search</h1>
-            <div id="quotesCard" class="card card-body">
-                <div class="card-text rounded">
-                    <p>Quotes last updated: <code id="quotes-updated"></code></p>
-                    <div class="form-floating">
-                        <select class="form-select shadow-none" id="selectBot" onchange="updateActiveSection(this.value);">
-                            <option selected>Click to select a bot to view the quotes of</option>
-                            <option value="akechiquotebot">Goro Akechi Quotes (@akechiquotebot)</option>
-                            <option value="ourtruereality_">Quotes That Make You Miss Goro Akechi (@ourtruereality_)</option>
-                            <option value="thereses_sigh">E-ki Quote Bot (@thereses-sigh.bsky.social)</option>
-                            <option value="bokutachidays">Hourly Film Club 🎞️ (@bokutachidays.bsky.social)</option>
-                        </select>
-                        <label for="selectBot">Quote Bot Selection</label>
-                    </div>
-                    <input type="search" id="search" class="form-control shadow-none mb-2" placeholder="Select a tab to view a bot's quotes." autocomplete="off" disabled>
-                    <div id="results"></div>
-                    <style>
-                        #quoteSets img {
-                            max-height: 20em;
-                            max-width: 20em;
-                        }
-                    </style>
-                    <div id="quoteSets">
-                        <div id="akechiquotebot"></div>
-                        <div id="ourtruereality_"></div>
-                        <div id="thereses_sigh"></div>
-                        <div id="bokutachidays"></div>
-                    </div>
-                </div>
-            </div>
-            <script src="./scripts/showdown.js"></script>
-            <script src="./scripts/searchQuotes.js"></script>
         </div>
-    </main>
-    <footer class="text-center">
-        <div id="footer"></div>
-        <script src="./scripts/footer.js"></script>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="https://twitter.com/hourlyshadowbot">Hourly Shadow Quotes (Twitter Bot)</a></h3>
+                <h6 class="card-subtitle">JUN 1 2023 -> JAN 23 2025</h6>
+                <div class="card-text">Posts quotes said by Shadow the Hedgehog every three hours.</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="https://twitter.com/coolsonicquotes">Cool Sonic Quotes (Twitter Bot)</a></h3>
+                <h6 class="card-subtitle">NOV 19 2023 -> JAN 23 2025</h6>
+                <div class="card-text">Posts memorable quotes said by various Sonic characters every three hours.</div>
+            </div>
+        </div>
+    </div>
+</details>
+<hr>
+<h2>Active Bots</h2>
+<div id="bots" class="row row-cols-1 row-cols-sm-2">
+    <div class="col">
+        <div class="card card-body">
+            <h3 class="card-title"><a href="https://twitter.com/30music_shuuen">30s Shuuen no Shiori Bot</a> (Halted)</h3>
+            <h6 class="card-subtitle">FEB 15 2022 -> APR 30 2026</h6>
+            <div class="card-text">Posts trimmed clips of Shuuen no Shiori tracks every two hours. Halted due to the suspension of Twitter API's Free Tier.</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card card-body">
+            <h3 class="card-titl text-primary">E-ki Quote Bot (<a href="https://thereses-sigh.bsky.social">Bluesky</a>)</h3>
+            <h6 class="card-subtitle">JAN 6 2025 -> PRESENT</h6>
+            <div class="card-text">Posts quotes/lyrics said by E-ki from <a href="https://shuuenpro.github.io">Shuuen no Shiori</a>. Hourly on Bluesky.</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card card-body">
+            <h3 class="card-title">Hourly Film Club 🎞️ (<a href="https://bokutachidays.bsky.social">Bluesky</a>)</h3>
+            <h6 class="card-subtitle">APR 12 2025 -> PRESENT</h6>
+            <div class="card-text">Posts quotes or images relating to the film club from <a href="https://shuuenpro.github.io">Shuuen no Shiori</a>. Hourly on Bluesky.</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card card-body">
+            <h3 class="card-title">Goro Akechi Quotes (<a href="https://akechiquotebot.bsky.social">Bluesky</a>)</h3>
+            <h6 class="card-subtitle">FEB 2 2024 -> PRESENT</h6>
+            <div class="card-text">Posts quotes said by Goro Akechi. Hourly on Bluesky. Halted on <a href="https://twitter.com/akechiquotebot">Twitter</a> due to suspension of free API.</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card card-body">
+            <h3 class="card-title">Quotes That Make You Miss Goro Akechi (<a href="https://ourtruereality.bsky.social">Bluesky</a>)</h3>
+            <h6 class="card-subtitle">AUG 23 2024 -> PRESENT</h6>
+            <div class="card-text">Posts quotes or conversation snippets relating to Goro Akechi (not necessarily spoken by him). Hourly on Bluesky. Halted on <a href="https://twitter.com/akechiquotebot">Twitter</a> due to suspension of free API.</div>
+        </div>
+    </div>
+</div>
+<hr>
+<h1>Quotes Search</h1>
+<div id="quotesCard" class="card card-body">
+    <div class="card-text rounded">
+        <p>Quotes last updated: <code id="quotes-updated"></code></p>
+        <div class="form-floating">
+            <select class="form-select shadow-none" id="selectBot" onchange="updateActiveSection(this.value);">
+                <option selected>Click to select a bot to view the quotes of</option>
+                <option value="akechiquotebot">Goro Akechi Quotes (@akechiquotebot)</option>
+                <option value="ourtruereality_">Quotes That Make You Miss Goro Akechi (@ourtruereality_)</option>
+                <option value="thereses_sigh">E-ki Quote Bot (@thereses-sigh.bsky.social)</option>
+                <option value="bokutachidays">Hourly Film Club 🎞️ (@bokutachidays.bsky.social)</option>
+            </select>
+            <label for="selectBot">Quote Bot Selection</label>
+        </div>
+        <input type="search" id="search" class="form-control shadow-none mb-2" placeholder="Select a tab to view a bot's quotes." autocomplete="off" disabled>
+        <div id="results"></div>
+        <style>
+            #quoteSets img {
+                max-height: 20em;
+                max-width: 20em;
+            }
+        </style>
+        <div id="quoteSets">
+            <div id="akechiquotebot"></div>
+            <div id="ourtruereality_"></div>
+            <div id="thereses_sigh"></div>
+            <div id="bokutachidays"></div>
+        </div>
+    </div>
+</div>
+<script src="./scripts/showdown.js"></script>
+<script src="./scripts/searchQuotes.js"></script>

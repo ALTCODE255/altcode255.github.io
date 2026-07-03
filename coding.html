@@ -1,109 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta name="darkreader-lock">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALT255 | Coding Projects</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./styles/style.css" rel="stylesheet">
-    <meta name="title" property="og:title" content="ALT255 | Coding Projects">
-    <meta name="description" property="og:description" content="List of Nameless' coding(-adjacent) projects.">
-    <noscript>Please enable JavaScript on this site for header navigation.
-        <hr>
-    </noscript>
-</head>
-
-<body>
-    <header>
-        <div id="header"></div>
-        <script src="./scripts/header.js"></script>
-    </header>
-    <main class="animate-in" id="content">
-        <div class="container-fluid p-2">
-            <h1>Coding Projects</h1>
-            <div id="coding">
-                <p>More small coding projects</a> can be found on my <a href="https://github.com/ALTCODE255">Github page</a>.</p>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="counter">S Tally Counter</a></h3>
-                            <h6 class="card-subtitle">AUG 22 2020 -> PRESENT</h6>
-                            <div class="card-text">Automated utility used to record statistics about how many times I mention "Shuuen" or "Sonic" on any day. Has a <a href="https://bsky.app/hashtag/namelessbot?author=alt255.bsky.social">Bluesky bot</a>. Also has <a href="counter">live-viewable graphs and tables</a>.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title">FISHEYE 🔍🐠 (Discord Bot)</h3>
-                            <h6 class="card-subtitle">APR 9 2022 -> PRESENT</h6>
-                            <div class="card-text">The project that taught me how to code. A (currently semi-public, used in Shuuen no Shiori discord) Discord bot that functions as a tool to notify / DM users when a keyword of their choosing is mentioned in any message.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="bots">Various Twitter/Bluesky Bots</a></h3>
-                            <h6 class="card-subtitle">FEB 15 2022 -> PRESENT</h6>
-                            <div class="card-text">A collection of Twitter/Bluesky bots I actively run! Mostly quote bots. Webpage includes search function for quotes.</div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="https://github.com/ALTCODE255/template_post_bot">Template Posts Bot</a></h3>
-                            <h6 class="card-subtitle">NOV 2 2024 -> PRESENT<br>(<a href="https://github.com/ALTCODE255/template_twitter_bot">OLD</a>: MAR 9 2024 -> NOV 1 2024)</span></h6>
-                            <div class="card-text">A template to make Twitter/Bluesky bots.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="https://discord.com/oauth2/authorize?client_id=1328503283928662088">-Re꞉wind- 🔎🎵 (Discord Bot)</a></h3>
-                            <h6 class="card-subtitle">JAN 13 2025 -> PRESENT</h6>
-                            <div class="card-text">A Discord bot that is designed to show album/song/track info and play music tracks from Shuuen no Shiori Project (over 100 tracks).
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="web-tools">
-                <h2 class="text-center">Web Tools</h2>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="p_in_bio">░P░U░S░S░Y░ ░I░N░ ░B░I░O░ ░G░E░N░E░R░A░T░O░R░</a></h3>
-                            <h6 class="card-subtitle">APRIL 13 2024</h6>
-                            <div class="card-text">Exactly what it sounds like.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="font_comparison_tool/web">Font Comparison Tool</a></h3>
-                            <h6 class="card-subtitle">MAY 2 2024</h6>
-                            <div class="card-text">Simple tool to compare how text looks between two <em>local</em> fonts on a machine.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-body">
-                            <h3 class="card-title"><a href="shuuen-names">Shuuen-Style Name Generator</a></h3>
-                            <h6 class="card-subtitle">JUNE 14 2026</h6>
-                            <div class="card-text">Tool to generate a valid "Shuuen no Shiori-style" given name, including potential readings and name examples.
-                            </div>
-                        </div>
-                    </div>
+---
+title: Coding Projects
+description: List of Nameless' coding(-adjacent) projects.
+---
+<h1>{{ page.title }}</h1>
+<div id="coding">
+    <p>More small coding projects</a> can be found on my <a href="https://github.com/ALTCODE255">Github page</a>.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="counter">S Tally Counter</a></h3>
+                <h6 class="card-subtitle">AUG 22 2020 -> PRESENT</h6>
+                <div class="card-text">Automated utility used to record statistics about how many times I mention "Shuuen" or "Sonic" on any day. Has a <a href="https://bsky.app/hashtag/namelessbot?author=alt255.bsky.social">Bluesky bot</a>. Also has <a href="counter">live-viewable graphs and tables</a>.
                 </div>
             </div>
         </div>
-    </main>
-    <footer class="text-center">
-        <div id="footer"></div>
-        <script src="./scripts/footer.js"></script>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title">FISHEYE 🔍🐠 (Discord Bot)</h3>
+                <h6 class="card-subtitle">APR 9 2022 -> PRESENT</h6>
+                <div class="card-text">The project that taught me how to code. A (currently semi-public, used in Shuuen no Shiori discord) Discord bot that functions as a tool to notify / DM users when a keyword of their choosing is mentioned in any message.
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="bots">Various Twitter/Bluesky Bots</a></h3>
+                <h6 class="card-subtitle">FEB 15 2022 -> PRESENT</h6>
+                <div class="card-text">A collection of Twitter/Bluesky bots I actively run! Mostly quote bots. Webpage includes search function for quotes.</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="https://github.com/ALTCODE255/template_post_bot">Template Posts Bot</a></h3>
+                <h6 class="card-subtitle">NOV 2 2024 -> PRESENT<br>(<a href="https://github.com/ALTCODE255/template_twitter_bot">OLD</a>: MAR 9 2024 -> NOV 1 2024)</span></h6>
+                <div class="card-text">A template to make Twitter/Bluesky bots.
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="https://discord.com/oauth2/authorize?client_id=1328503283928662088">-Re꞉wind- 🔎🎵 (Discord Bot)</a></h3>
+                <h6 class="card-subtitle">JAN 13 2025 -> PRESENT</h6>
+                <div class="card-text">A Discord bot that is designed to show album/song/track info and play music tracks from Shuuen no Shiori Project (over 100 tracks).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="web-tools">
+    <h2 class="text-center">Web Tools</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="p_in_bio">░P░U░S░S░Y░ ░I░N░ ░B░I░O░ ░G░E░N░E░R░A░T░O░R░</a></h3>
+                <h6 class="card-subtitle">APRIL 13 2024</h6>
+                <div class="card-text">Exactly what it sounds like.
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="font_comparison_tool/web">Font Comparison Tool</a></h3>
+                <h6 class="card-subtitle">MAY 2 2024</h6>
+                <div class="card-text">Simple tool to compare how text looks between two <em>local</em> fonts on a machine.
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card-body">
+                <h3 class="card-title"><a href="shuuen-names">Shuuen-Style Name Generator</a></h3>
+                <h6 class="card-subtitle">JUNE 14 2026</h6>
+                <div class="card-text">Tool to generate a valid "Shuuen no Shiori-style" given name, including potential readings and name examples.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
