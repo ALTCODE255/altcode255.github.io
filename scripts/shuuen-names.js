@@ -186,7 +186,7 @@ function showNameInfo(kanji) {
 }
 
 // Get name data from JSON file
-const nameData = fetch("./scripts/JP-given-name-endings.json").then((res) =>
+const nameData = fetch("/scripts/JP-given-name-endings.json").then((res) =>
     res.json(),
 );
 
