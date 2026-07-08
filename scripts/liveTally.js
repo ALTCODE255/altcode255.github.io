@@ -70,7 +70,7 @@ function createTable(array) {
                 <td class="px-3">${item.total}</td>
             </tr>`;
     });
-    document.getElementById("table-rows").innerHTML += table_rows;
+    document.getElementById("table-rows").innerHTML = table_rows;
 }
 
 function createPlot(array) {
