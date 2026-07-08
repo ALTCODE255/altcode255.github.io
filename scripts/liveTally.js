@@ -18,114 +18,75 @@ function getData() {
             headers: {
                 Accept: "application/json",
             },
-        }
+        },
     )
         .then((res) => res.json())
         .then(data);
     promise.then((data) => {
         max_days = data.length;
-        document.getElementById("num-days").innerHTML = max_days;
+        document.getElementById("max-days").innerHTML = max_days;
     });
     return promise;
 }
 
-function createStatsTable(id) {
+function populateStats() {
     fetch(
         "https://gist.githubusercontent.com/ALTCODE255/f674d02b89b93cdeb51ea782e03f06ff/raw/Stats.json",
         {
             headers: {
                 Accept: "application/json",
             },
-        }
+        },
     )
         .then((res) => res.json())
-        .then(data)
         .then((array) => {
-            table = `
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th class="px-3">Start</th>
-                    <th class="px-3">Word</th>
-                    <th colspan=2 class="px-3">Average<br>(30D vs All)</th>
-                    <th class="px-3">Best</th>
-                    <th class="px-3">Total</th>
-                </tr>
-            </thead>
-        `;
-            array.forEach((item) => {
-                table += `
-            <tr>
-                <td class="px-3">${item.start_date}</td>
-                <td class="px-3">${item.word}</td>
-                <td class="px-3">${item.avg_30d}</td>
-                <td class="px-3">${item.average}</td>
-                <td class="px-3">${item.best}</td>
-                <td class="px-3">${item.total}</td>
-            </tr>`;
+            array.forEach((stats) => {
+                document.getElementById("stats").innerHTML = `
+                    <b>30-Day Average:</b> ${stats.avg_30d}<br>
+                    <b>All-Time Average:</b> ${stats.average}<br>
+                    <b>Personal Best:</b> ${stats.best}<br>
+                    <b>Total:</b> ${stats.total}`;
+                return;
             });
-            document.getElementById(id).innerHTML = table;
         });
 }
 
-function createFromData(plot_id, table_id, num_id) {
-    num_days = parseInt(document.getElementById(num_id).value) || 30;
-    if (num_days >= max_days) {
-        if (current_num_days >= max_days) return false;
-        DATA_ARRAY.then((array) => {
-            createTable(table_id, array);
-            createPlot(plot_id, array);
-        });
-    } else {
-        DATA_ARRAY.then((data) => data.slice(0, num_days)).then((array) => {
-            createTable(table_id, array);
-            createPlot(plot_id, array);
-        });
-    }
+function createFromData() {
+    num_days = parseInt(document.getElementById("number-of-days").value) || 30;
+    DATA_ARRAY.then((data) => data.slice(0, num_days)).then((array) => {
+        createTable("table-rows", array);
+        createPlot("plot", array);
+    });
     current_num_days = num_days;
     return false;
 }
 
 function createTable(id, array) {
-    table = `
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th class="px-3">Date</th>
-                <th class="px-3">Sonic</th>
-                <th class="px-3">Shuuen</th>
-            </tr>
-        </thead>
-    `;
+    table_rows = "";
     array.forEach((item) => {
-        table += `
+        table_rows += `
             <tr>
                 <td class="px-3">${item.date}</td>
-                <td class="px-3">${item.sonic}</td>
-                <td class="px-3">${item.shuuen}</td>
+                <td class="px-3">${item.total}</td>
             </tr>`;
     });
-    document.getElementById(id).innerHTML = table;
+    document.getElementById(id).innerHTML += table_rows;
 }
 
 function createPlot(id, array) {
     let x_val = new Array();
-    let y_akc = new Array();
-    let y_sth = new Array();
     let y_sp = new Array();
 
     array.forEach((item) => {
         x_val.push(item.date);
-        y_akc.push(item.akechi);
-        y_sth.push(item.sonic);
-        y_sp.push(item.shuuen);
+        y_sp.push(item.total);
     });
 
     plot = document.getElementById(id);
 
     layout = {
         title: {
-            text: `Mention Count Over Past ${array.length} Days`,
+            text: `"Shuuen" Count Over Past ${array.length} Days`,
         },
         paper_bgcolor: "rgba(0, 0, 0, 0)",
         plot_bgcolor: "rgba(0, 0, 0, 0)",
@@ -146,27 +107,13 @@ function createPlot(id, array) {
             fixedrange: true,
             showgrid: false,
         },
-        legend: {
-            y: 0.99,
-            x: 0.05,
-        },
     };
 
     plot_data = [
         {
             x: x_val,
-            y: y_sth,
-            mode: "lines",
-            name: "Sonic",
-            marker: {
-                color: "rgb(22, 99, 162)",
-            },
-        },
-        {
-            x: x_val,
             y: y_sp,
             mode: "lines",
-            name: "Shuuen",
             marker: {
                 color: "rgb(214, 51, 132)",
             },

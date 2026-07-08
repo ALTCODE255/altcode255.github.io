@@ -42,21 +42,19 @@
     --primary-muted-rgb: 184, 130, 31;
 }
 
-@media (min-width: 769px) {
-    #s-table,
-    #stats-table {
-        max-width: 75%;
+@media (min-width: 576px) {
+    #s-table {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    #s-table {
+        max-width: 100vw;
     }
 }
 
 @media (max-width: 768px) {
-    #s-table,
-    #stats-table {
-        max-width: 100vw;
-    }
-    #stats-table {
-        font-size: 0.9em;
-    }
     .animate-in {
         -webkit-animation: none !important;
         animation: none !important;
