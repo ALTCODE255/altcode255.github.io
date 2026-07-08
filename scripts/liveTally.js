@@ -54,14 +54,14 @@ function populateStats() {
 function createFromData() {
     num_days = parseInt(document.getElementById("number-of-days").value) || 30;
     DATA_ARRAY.then((data) => data.slice(0, num_days)).then((array) => {
-        createTable("table-rows", array);
-        createPlot("plot", array);
+        createTable(array);
+        createPlot(array);
     });
     current_num_days = num_days;
     return false;
 }
 
-function createTable(id, array) {
+function createTable(array) {
     table_rows = "";
     array.forEach((item) => {
         table_rows += `
@@ -70,10 +70,10 @@ function createTable(id, array) {
                 <td class="px-3">${item.total}</td>
             </tr>`;
     });
-    document.getElementById(id).innerHTML += table_rows;
+    document.getElementById("table-rows").innerHTML += table_rows;
 }
 
-function createPlot(id, array) {
+function createPlot(array) {
     let x_val = new Array();
     let y_sp = new Array();
 
@@ -82,7 +82,7 @@ function createPlot(id, array) {
         y_sp.push(item.total);
     });
 
-    plot = document.getElementById(id);
+    plot = document.getElementById("plot");
 
     layout = {
         title: {
@@ -100,7 +100,7 @@ function createPlot(id, array) {
             b: 40,
         },
         xaxis: {
-            fixedrange: true,
+            fixedrange: false,
             showgrid: false,
         },
         yaxis: {
