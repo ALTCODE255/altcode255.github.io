@@ -247,6 +247,16 @@ input[name="email"] {
     margin-bottom: 1rem;
 }
 
+.card-title a:not(.link-normal) {
+    --bs-link-color: var(--bs-primary);
+    --bs-link-color-rgb: var(--bs-primary-rgb);
+}
+
+.card-title a:hover:not(.link-normal) {
+    --bs-link-color: var(--primary-muted);
+    --bs-link-color-rgb: var(--primary-muted-rgb);
+}
+
 .card-subtitle {
     --bs-card-subtitle-color: var(--bs-secondary-color);
     margin-bottom: 0.5em;
